@@ -1,0 +1,30 @@
+// Background
+
+$bodyBackgroundColor: #080808;
+
+$headerBackgroundDark: #233975;
+$headerBackgroundLight: #2c5db1;
+
+$baseButtonBackground: #93939a;
+$basicHoverButton: #b0b0b1;
+
+
+
+// Fonts
+
+$basicMenuFontColor: #b9c0da;
+$menuLogoColor: white;
+
+
+// Czcionki:
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+@font-face {
+  font-family: 'angry-birds';
+  src: url('../fonts/angrybirds-regular.ttf');
+}
+
+// Cienie
+
+$basicTextShadow: 3px 3px 0px rgba(0, 0, 0, 1);

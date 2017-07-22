@@ -1,0 +1,39 @@
+.web-center-section {
+    background-color: white;
+    width: 95%;
+    margin: auto;
+    margin-top: 0;
+    padding-top: 150px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 100px;
+    min-height: 1000px;
+    font-family: 'Roboto', sans-serif;
+
+    @media screen and (min-width: 430px){
+        padding-top: 160px;
+    }
+
+    @media screen and (min-width: 767px){
+        width: 85%;
+        padding-top: 255px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @media screen and (min-width: 1100px){
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Oswald', sans-serif;
+        position: relative;
+
+        @media screen and (min-width: 767px){
+            font-size: 40px;
+        }
+    }
+}

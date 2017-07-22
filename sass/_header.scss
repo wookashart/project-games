@@ -1,0 +1,394 @@
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-first-line, .header-second-line, .header-third-line, {
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.first-line-conteiner, .second-line-conteiner, .third-line-conteiner, .hamburger-line-conteiner {
+    width: 95%;
+    margin: auto;
+
+    @media screen and (min-width: 767px){
+        width: 85%;
+    }
+
+    @media screen and (min-width: 1100px){
+        width: 70%;
+    }
+}
+
+// Pierwsza sekcja
+.header-first-line {
+    background-color: $headerBackgroundDark;
+
+    .first-line-conteiner{
+        display: flex;
+
+        .website-name {
+            width: 50%;
+            padding: 15px 0 15px 0;
+
+            a {
+                font-size: 20px;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-family: 'angry-birds';
+                color: $menuLogoColor;
+                text-shadow: $basicTextShadow;
+
+                @media screen and (min-width: 430px){
+                    font-size: 30px;
+                }
+            }  
+        }
+
+        .website-login-panel {
+            margin-left: auto;
+            font-size: 15px;
+            padding: 15px 0 15px 0;
+            font-family: 'Oswald', sans-serif;
+
+            @media screen and (min-width: 430px){
+                font-size: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: $basicMenuFontColor;
+            }
+        }
+
+        .website-user-panel {
+            display: none;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .website-user-logged {
+            // display: flex;
+            margin-left: auto;
+            font-size: 15px;
+            // padding: 15px 0 15px 0;
+            font-family: 'Oswald', sans-serif;
+            // position: relative;
+
+            @media screen and (min-width: 430px){
+                font-size: 20px;
+            }
+
+            .greatings {
+                margin-top: -4px;
+
+                ul {
+                    padding: 0;
+                    line-height: 30px;
+
+                    li {
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                        float: left;
+                        position: relative;
+
+                        &:hover{
+
+                            ul {
+                                visibility: visible;
+                            }
+                        }
+
+                        .user-panel {
+                            color: $basicMenuFontColor;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            text-align: right;
+                            height: 30px;
+                            width: 150px;
+                            display: block;
+
+                            i {
+                                margin-left: 10px;
+                            }
+                        }
+
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            line-height: 30px;
+                            position: absolute;
+                            visibility: hidden;
+                            top: 30px;
+                            transition-duration: 200ms;
+                            padding: 20px 0px;
+                            border: 1px solid black;
+                            border-radius: 4px;
+                            background: $headerBackgroundLight;
+                            box-shadow: 0 0 13px -3px black;
+                            z-index: 10;
+
+                            li {
+                                margin: 5px 0;
+                                padding: 0;
+                                list-style: none;
+                                float: left;
+                                position: relative;
+
+                                .user-panel-menu-item {
+                                    text-align: center;
+                                    text-decoration: none;
+                                    height: 30px;
+                                    width: 150px;
+                                    display: block;
+                                    color: #b9c0da;
+                                    text-transform: lowercase;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+
+            .user-panel-menu {
+                position: absolute;
+                display: none;
+                width: 150px;
+                display: flex;
+                flex-direction: column;
+                top: 50px;
+                padding: 20px;
+                text-align: right;
+                right: 0;
+                border: 1px solid black;
+                border-radius: 4px;
+                background: $headerBackgroundLight;
+                box-shadow: 0 0 13px -3px black;
+
+                .user-panel-menu-item {
+                    color: $basicMenuFontColor;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .login-box {
+        position: absolute;
+        right: 2.5%;
+        display: none;
+        flex-direction: column;
+        width: 300px;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 4px;
+        background: $headerBackgroundLight;
+        padding: 0 15px 15px;
+        top: 50px;
+        box-shadow: 0 0 13px -3px black;
+        z-index: 10;
+
+        @media screen and (min-width: 767px){
+            right: 7.5%;
+        }
+
+        @media screen and (min-width: 1100px){
+            right: 15%;
+        }
+
+        .base-input {
+            height: 25px;
+            width: 250px;
+            padding-left: 15px;
+            font-style: italic;
+            margin: auto;
+            margin-bottom: 15px;
+            border: none;
+
+            
+        }
+
+        .log-reg-text {
+            color: $basicMenuFontColor;
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+        }
+
+        .password-reminder {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+
+            a {
+                text-decoration: none;
+                color: $basicMenuFontColor;
+            }
+
+            &:after {
+                content: '';
+                width: 80%;
+                height: 2px;
+                position: absolute;
+                z-index: 9999;
+                background: $basicMenuFontColor;
+                bottom: 115px;
+                margin: auto;
+                left: 0;
+                right: 0;
+            }
+        }
+
+        .registration-button {
+            
+            a {
+                padding: 12px 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+
+    .login-open {
+            display: flex;
+        }
+}
+
+// Druga sekcja
+.header-second-line {
+    background-color: $headerBackgroundLight;
+    
+    .second-line-conteiner {
+        text-align: center;
+        padding: 10px 0;
+
+        @media screen and (min-width: 767px){
+            padding: 20px;
+        }
+
+        .find-game-input {
+            height: 40px;
+            width: 80%;
+            font-style: italic;
+            padding-left: 15px;
+            margin: 0;
+            border: 0;
+
+            @media screen and (min-width: 767px){
+                width: 300px;
+            }
+        }
+
+        .search-btn {
+            margin-left: -5px;
+            border: 0;
+            height: 40px;
+            width: 40px;
+            background: $baseButtonBackground;
+            transition-duration: 300ms;
+            cursor: pointer;
+
+            &:hover {
+                background: $basicHoverButton;
+            }
+        }
+    }
+}
+
+// Trzecia sekcja
+.header-third-line {
+    background-color: $headerBackgroundDark;
+    transition-duration: 300ms;
+    transform: translateX(100%);
+    
+
+    @media screen and (min-width: 767px){
+        width: 100%;
+        display: block;
+        transform: translateX(0);
+    }
+
+    .third-line-conteiner {
+
+        nav {
+
+            ul {
+                margin: 0;
+                padding: 0;
+                text-align: right;
+
+                li {
+                    display: block;
+                    text-align: center;
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    padding: 15px 0 15px 15px;
+
+                    @media screen and (min-width: 767px){
+                        font-size: 18px;
+                        display: inline-block;
+                    }
+
+                    @media screen and (min-width: 1300px){
+                        font-size: 25px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $basicMenuFontColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-toggle{
+    text-indent: 0;
+    width: 100%;
+    display: block;
+    transition-duration: 300ms;
+    transform: translateX(0);
+}
+
+// Hamburger
+
+.header-hamburger-line {
+    width: 100%;
+    border-bottom: 2px solid black;
+    background-color: $headerBackgroundDark;
+
+    @media screen and (min-width: 767px){
+        display: none;
+    }
+
+    .hamburger-line-conteiner {
+        padding: 5px 0 5px 0;
+
+        @media screen and (min-width: 767px){
+            padding: 15px 0 15px 0;
+        }
+
+
+        .hamburger-on {
+            display: block;
+            text-align: right;
+            font-size: 30px;
+            color: $menuLogoColor;
+            text-shadow: $basicTextShadow;
+        }
+
+        .hamburger-toggle {
+
+            &:before {
+                content: '\f00d';
+            }
+        }
+    }
+}

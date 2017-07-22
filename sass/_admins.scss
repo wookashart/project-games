@@ -1,0 +1,42 @@
+body.admin-panel {
+    font-family: 'Roboto', sans-serif;
+
+    .admin-panel-conteiner{
+        display: flex;
+        padding: 0 50px;
+        background: white;
+        min-height: 950px;
+        margin: 0 20px;
+
+    .left-panel {
+            width: 15%;
+            border-right: 2px solid $bodyBackgroundColor;
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                li {
+                    margin: 15px 0;
+
+                    a {
+                        font-size: 20px;
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    img {
+                        width: 25px;
+                        margin-right: 10px;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+
+        .right-panel {
+            width: 84%;
+        }
+    }
+}

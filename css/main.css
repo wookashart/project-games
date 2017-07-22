@@ -1,0 +1,415 @@
+@font-face {
+  font-family: 'angry-birds';
+  src: url("../fonts/angrybirds-regular.ttf"); }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin: auto;
+  background-color: #080808; }
+
+button.base-btn, input[type="submit"] {
+  border: none;
+  width: 150px;
+  margin: auto;
+  height: 40px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #93939a;
+  transition-duration: 300ms;
+  cursor: pointer; }
+  button.base-btn:hover, input[type="submit"]:hover {
+    background: #b0b0b1; }
+
+input {
+  width: 100%;
+  height: 30px; }
+
+input[type="radio"], input[type="checkbox"] {
+  width: 15px;
+  height: 15px; }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 10; }
+
+.header-first-line, .header-second-line, .header-third-line {
+  width: 100%;
+  border-bottom: 2px solid black; }
+
+.first-line-conteiner, .second-line-conteiner, .third-line-conteiner, .hamburger-line-conteiner {
+  width: 95%;
+  margin: auto; }
+  @media screen and (min-width: 767px) {
+    .first-line-conteiner, .second-line-conteiner, .third-line-conteiner, .hamburger-line-conteiner {
+      width: 85%; } }
+  @media screen and (min-width: 1100px) {
+    .first-line-conteiner, .second-line-conteiner, .third-line-conteiner, .hamburger-line-conteiner {
+      width: 70%; } }
+
+.header-first-line {
+  background-color: #233975; }
+  .header-first-line .first-line-conteiner {
+    display: flex; }
+    .header-first-line .first-line-conteiner .website-name {
+      width: 50%;
+      padding: 15px 0 15px 0; }
+      .header-first-line .first-line-conteiner .website-name a {
+        font-size: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: 'angry-birds';
+        color: white;
+        text-shadow: 3px 3px 0px black; }
+        @media screen and (min-width: 430px) {
+          .header-first-line .first-line-conteiner .website-name a {
+            font-size: 30px; } }
+    .header-first-line .first-line-conteiner .website-login-panel {
+      margin-left: auto;
+      font-size: 15px;
+      padding: 15px 0 15px 0;
+      font-family: 'Oswald', sans-serif; }
+      @media screen and (min-width: 430px) {
+        .header-first-line .first-line-conteiner .website-login-panel {
+          font-size: 20px; } }
+      .header-first-line .first-line-conteiner .website-login-panel a {
+        text-decoration: none;
+        color: #b9c0da; }
+    .header-first-line .first-line-conteiner .website-user-panel {
+      display: none;
+      font-family: 'Oswald', sans-serif; }
+    .header-first-line .first-line-conteiner .website-user-logged {
+      margin-left: auto;
+      font-size: 15px;
+      font-family: 'Oswald', sans-serif; }
+      @media screen and (min-width: 430px) {
+        .header-first-line .first-line-conteiner .website-user-logged {
+          font-size: 20px; } }
+      .header-first-line .first-line-conteiner .website-user-logged .greatings {
+        margin-top: -4px; }
+        .header-first-line .first-line-conteiner .website-user-logged .greatings ul {
+          padding: 0;
+          line-height: 30px; }
+          .header-first-line .first-line-conteiner .website-user-logged .greatings ul li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            float: left;
+            position: relative; }
+            .header-first-line .first-line-conteiner .website-user-logged .greatings ul li:hover ul {
+              visibility: visible; }
+            .header-first-line .first-line-conteiner .website-user-logged .greatings ul li .user-panel {
+              color: #b9c0da;
+              text-decoration: none;
+              text-transform: uppercase;
+              text-align: right;
+              height: 30px;
+              width: 150px;
+              display: block; }
+              .header-first-line .first-line-conteiner .website-user-logged .greatings ul li .user-panel i {
+                margin-left: 10px; }
+            .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul {
+              margin: 0;
+              padding: 0;
+              line-height: 30px;
+              position: absolute;
+              visibility: hidden;
+              top: 30px;
+              transition-duration: 200ms;
+              padding: 20px 0px;
+              border: 1px solid black;
+              border-radius: 4px;
+              background: #2c5db1;
+              box-shadow: 0 0 13px -3px black;
+              z-index: 10; }
+              .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul li {
+                margin: 5px 0;
+                padding: 0;
+                list-style: none;
+                float: left;
+                position: relative; }
+                .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul li .user-panel-menu-item {
+                  text-align: center;
+                  text-decoration: none;
+                  height: 30px;
+                  width: 150px;
+                  display: block;
+                  color: #b9c0da;
+                  text-transform: lowercase; }
+      .header-first-line .first-line-conteiner .website-user-logged .user-panel-menu {
+        position: absolute;
+        display: none;
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        top: 50px;
+        padding: 20px;
+        text-align: right;
+        right: 0;
+        border: 1px solid black;
+        border-radius: 4px;
+        background: #2c5db1;
+        box-shadow: 0 0 13px -3px black; }
+        .header-first-line .first-line-conteiner .website-user-logged .user-panel-menu .user-panel-menu-item {
+          color: #b9c0da;
+          text-decoration: none;
+          text-transform: uppercase;
+          margin-bottom: 10px; }
+  .header-first-line .login-box {
+    position: absolute;
+    right: 2.5%;
+    display: none;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: #2c5db1;
+    padding: 0 15px 15px;
+    top: 50px;
+    box-shadow: 0 0 13px -3px black;
+    z-index: 10; }
+    @media screen and (min-width: 767px) {
+      .header-first-line .login-box {
+        right: 7.5%; } }
+    @media screen and (min-width: 1100px) {
+      .header-first-line .login-box {
+        right: 15%; } }
+    .header-first-line .login-box .base-input {
+      height: 25px;
+      width: 250px;
+      padding-left: 15px;
+      font-style: italic;
+      margin: auto;
+      margin-bottom: 15px;
+      border: none; }
+    .header-first-line .login-box .log-reg-text {
+      color: #b9c0da;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px; }
+    .header-first-line .login-box .password-reminder {
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px; }
+      .header-first-line .login-box .password-reminder a {
+        text-decoration: none;
+        color: #b9c0da; }
+      .header-first-line .login-box .password-reminder:after {
+        content: '';
+        width: 80%;
+        height: 2px;
+        position: absolute;
+        z-index: 9999;
+        background: #b9c0da;
+        bottom: 115px;
+        margin: auto;
+        left: 0;
+        right: 0; }
+    .header-first-line .login-box .registration-button a {
+      padding: 12px 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: black; }
+  .header-first-line .login-open {
+    display: flex; }
+
+.header-second-line {
+  background-color: #2c5db1; }
+  .header-second-line .second-line-conteiner {
+    text-align: center;
+    padding: 10px 0; }
+    @media screen and (min-width: 767px) {
+      .header-second-line .second-line-conteiner {
+        padding: 20px; } }
+    .header-second-line .second-line-conteiner .find-game-input {
+      height: 40px;
+      width: 80%;
+      font-style: italic;
+      padding-left: 15px;
+      margin: 0;
+      border: 0; }
+      @media screen and (min-width: 767px) {
+        .header-second-line .second-line-conteiner .find-game-input {
+          width: 300px; } }
+    .header-second-line .second-line-conteiner .search-btn {
+      margin-left: -5px;
+      border: 0;
+      height: 40px;
+      width: 40px;
+      background: #93939a;
+      transition-duration: 300ms;
+      cursor: pointer; }
+      .header-second-line .second-line-conteiner .search-btn:hover {
+        background: #b0b0b1; }
+
+.header-third-line {
+  background-color: #233975;
+  transition-duration: 300ms;
+  transform: translateX(100%); }
+  @media screen and (min-width: 767px) {
+    .header-third-line {
+      width: 100%;
+      display: block;
+      transform: translateX(0); } }
+  .header-third-line .third-line-conteiner nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: right; }
+    .header-third-line .third-line-conteiner nav ul li {
+      display: block;
+      text-align: center;
+      font-family: 'Oswald', sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      padding: 15px 0 15px 15px; }
+      @media screen and (min-width: 767px) {
+        .header-third-line .third-line-conteiner nav ul li {
+          font-size: 18px;
+          display: inline-block; } }
+      @media screen and (min-width: 1300px) {
+        .header-third-line .third-line-conteiner nav ul li {
+          font-size: 25px; } }
+      .header-third-line .third-line-conteiner nav ul li a {
+        text-decoration: none;
+        color: #b9c0da; }
+
+.menu-toggle {
+  text-indent: 0;
+  width: 100%;
+  display: block;
+  transition-duration: 300ms;
+  transform: translateX(0); }
+
+.header-hamburger-line {
+  width: 100%;
+  border-bottom: 2px solid black;
+  background-color: #233975; }
+  @media screen and (min-width: 767px) {
+    .header-hamburger-line {
+      display: none; } }
+  .header-hamburger-line .hamburger-line-conteiner {
+    padding: 5px 0 5px 0; }
+    @media screen and (min-width: 767px) {
+      .header-hamburger-line .hamburger-line-conteiner {
+        padding: 15px 0 15px 0; } }
+    .header-hamburger-line .hamburger-line-conteiner .hamburger-on {
+      display: block;
+      text-align: right;
+      font-size: 30px;
+      color: white;
+      text-shadow: 3px 3px 0px black; }
+    .header-hamburger-line .hamburger-line-conteiner .hamburger-toggle:before {
+      content: '\f00d'; }
+
+.web-center-section {
+  background-color: white;
+  width: 95%;
+  margin: auto;
+  margin-top: 0;
+  padding-top: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 100px;
+  min-height: 1000px;
+  font-family: 'Roboto', sans-serif; }
+  @media screen and (min-width: 430px) {
+    .web-center-section {
+      padding-top: 160px; } }
+  @media screen and (min-width: 767px) {
+    .web-center-section {
+      width: 85%;
+      padding-top: 255px;
+      padding-left: 50px;
+      padding-right: 50px; } }
+  @media screen and (min-width: 1100px) {
+    .web-center-section {
+      width: 70%; } }
+  .web-center-section h1 {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    position: relative; }
+    @media screen and (min-width: 767px) {
+      .web-center-section h1 {
+        font-size: 40px; } }
+
+@media screen and (min-width: 767px) {
+  div.register-new-user {
+    padding: 0 100px; } }
+
+div.register-new-user form {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px; }
+  @media screen and (min-width: 767px) {
+    div.register-new-user form {
+      padding: 30px 50px; } }
+  div.register-new-user form .form-line {
+    margin-bottom: 15px; }
+    div.register-new-user form .form-line .form-left-column {
+      display: inline-block;
+      width: 150px;
+      text-align: left;
+      padding-right: 10px; }
+    div.register-new-user form .form-line .form-right-column {
+      display: inline-block;
+      width: 100%; }
+      @media screen and (min-width: 420px) {
+        div.register-new-user form .form-line .form-right-column {
+          width: 50%; } }
+      @media screen and (min-width: 767px) {
+        div.register-new-user form .form-line .form-right-column {
+          width: 100%; } }
+      @media screen and (min-width: 900px) {
+        div.register-new-user form .form-line .form-right-column {
+          width: 50%; } }
+      @media screen and (min-width: 1420px) {
+        div.register-new-user form .form-line .form-right-column {
+          width: 350px; } }
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.need-to-registration {
+  font-size: 14px;
+  color: #303133; }
+
+body.admin-panel {
+  font-family: 'Roboto', sans-serif; }
+  body.admin-panel .admin-panel-conteiner {
+    display: flex;
+    padding: 0 50px;
+    background: white;
+    min-height: 950px;
+    margin: 0 20px; }
+    body.admin-panel .admin-panel-conteiner .left-panel {
+      width: 15%;
+      border-right: 2px solid #080808; }
+      body.admin-panel .admin-panel-conteiner .left-panel ul {
+        padding: 0;
+        margin: 0;
+        list-style: none; }
+        body.admin-panel .admin-panel-conteiner .left-panel ul li {
+          margin: 15px 0; }
+          body.admin-panel .admin-panel-conteiner .left-panel ul li a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black; }
+          body.admin-panel .admin-panel-conteiner .left-panel ul li img {
+            width: 25px;
+            margin-right: 10px;
+            vertical-align: top; }
+    body.admin-panel .admin-panel-conteiner .right-panel {
+      width: 84%; }
