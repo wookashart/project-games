@@ -13,6 +13,12 @@ body {
   margin: auto;
   background-color: #080808; }
 
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0; }
+
 button.base-btn, input[type="submit"] {
   border: none;
   width: 150px;
@@ -413,3 +419,38 @@ body.admin-panel {
             vertical-align: top; }
     body.admin-panel .admin-panel-conteiner .right-panel {
       width: 84%; }
+
+.games-administration .admin-add-new-game form {
+  display: flex;
+  padding: 50px;
+  margin: 20px;
+  border: 1px solid #080808;
+  border-radius: 10px;
+  position: relative; }
+  .games-administration .admin-add-new-game form .game-data {
+    flex: 1;
+    margin-right: 100px; }
+  .games-administration .admin-add-new-game form .hardware-requirements {
+    flex: 1; }
+    .games-administration .admin-add-new-game form .hardware-requirements .hardware-requirements-title {
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid #b0b0b1; }
+  .games-administration .admin-add-new-game form label {
+    display: block; }
+    .games-administration .admin-add-new-game form label span {
+      display: inline-block;
+      width: 30%; }
+    .games-administration .admin-add-new-game form label input, .games-administration .admin-add-new-game form label textarea {
+      display: inline-block;
+      width: 70%; }
+    .games-administration .admin-add-new-game form label textarea {
+      height: 200px;
+      vertical-align: middle; }
+    .games-administration .admin-add-new-game form label input[name="game-description"] {
+      height: 200px; }
+  .games-administration .admin-add-new-game form input[type="submit"] {
+    position: absolute;
+    bottom: 50px;
+    right: 50px; }

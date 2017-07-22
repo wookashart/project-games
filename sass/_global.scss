@@ -12,6 +12,13 @@ body {
     background-color: $bodyBackgroundColor;
 }
 
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
 button.base-btn, input[type="submit"] {
     border: none;
     width: 150px;

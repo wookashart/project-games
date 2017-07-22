@@ -40,3 +40,63 @@ body.admin-panel {
         }
     }
 }
+
+.games-administration {
+
+    .admin-add-new-game {
+
+        form {
+            display: flex;
+            padding: 50px;
+            margin: 20px;
+            border: 1px solid $bodyBackgroundColor;
+            border-radius: 10px;
+            position: relative;
+
+            .game-data {
+                flex: 1;
+                margin-right: 100px;
+            }
+
+            .hardware-requirements {
+                flex: 1;
+
+                .hardware-requirements-title {
+                    margin-bottom: 30px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    border-bottom: 1px solid $basicHoverButton;
+                }
+            }
+
+            label {
+                display: block;
+
+                span {
+                    display: inline-block;
+                    width: 30%;
+                }
+
+                input, textarea {
+                    display: inline-block;
+                    width: 70%;
+                }
+
+                textarea {
+                    height: 200px;
+                    vertical-align: middle;
+                }
+
+                input[name="game-description"]{
+                    height: 200px;
+                }
+            }
+
+            input[type="submit"]{
+                position: absolute;
+                bottom: 50px;
+                right: 50px;
+            }
+        }
+    }
+}
