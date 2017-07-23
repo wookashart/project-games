@@ -4,11 +4,11 @@
 
     require_once "./db/connect.php";
 
-    $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+    $connection = @new mysqli($host, $db_user, $db_password, $db_name);
 
-    if($polaczenie->connect_errno!=0)
+    if($connection->connect_errno!=0)
     {
-        echo "Error: ".$polaczenie->connect_errno;
+        echo "Error: ".$connection->connect_errno;
     }
     else
     {
@@ -18,8 +18,8 @@
         $login = htmlentities($login, ENT_QUOTES, "UTF-8");
         
 
-        if ($rezultat = @$polaczenie->query(
-            sprintf("SELECT * FROM users WHERE login='%s'", mysqli_real_escape_string($polaczenie, $login))))
+        if ($rezultat = @$connection->query(
+            sprintf("SELECT * FROM users WHERE login='%s'", mysqli_real_escape_string($connection, $login))))
         {
             $ilu_userow = $rezultat->num_rows;
             if($ilu_userow>0)
@@ -47,7 +47,7 @@
             }
         }
 
-        $polaczenie->close();
+        $connection->close();
     }
 
 ?>

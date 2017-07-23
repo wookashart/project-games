@@ -5,12 +5,13 @@
         exit();
     }
 
+
 ?>
 
 <div class="games-administration">
     <section class="admin-add-new-game">
         <h2>Dodaj nową grę do bazy</h2>
-        <form method="POST">
+        <form method="POST" action="../db/addgames.php">
             <div class="game-data">
                 <label>
                     <span>Tytuł gry</span><input type="text" name="game-title">
@@ -63,5 +64,12 @@
             </div>
             <input type="submit" value="Dodaj grę">
         </form>
+         <?php
+            if(isset($_SESSION['addsuccess'])){
+                echo $_SESSION['addsuccess'];
+            } else {
+                echo $_SESSION['notadd'];
+            }
+        ?> 
     </section>
 </div>
