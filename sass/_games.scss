@@ -1,0 +1,32 @@
+div.games-list {
+    margin-left: 200px;
+    margin-right: 200px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        font-size: 20px;
+
+        li.games-list-item {
+            display: flex;
+            width: 100%;
+            border: 1px solid transparent;
+
+            a {
+                text-decoration: none;
+                color: $basicSectionColor;
+                flex: 1;
+            }
+
+            span {
+                text-align: left;
+                flex: 1;
+            }
+
+            &:hover {
+                border-bottom: 1px solid $headerBackgroundDark;
+                border-top: 1px solid $headerBackgroundDark;
+            }
+        }
+    }
+}

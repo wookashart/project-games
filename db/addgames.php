@@ -23,6 +23,7 @@
     $gameDirectx = $_POST['game-directx'];
     $gameSpace = $_POST['game-space'];
     $addDate = date('Y-m-d H:i:s');
+    $addCover = $_POST['game-cover'];
 
     require_once "connect.php";
 
@@ -35,7 +36,7 @@
         exit();
 
     } else {
-        $addresoult = $connection->query("INSERT INTO games VALUES (NULL, '$gameTitle', '$gamePlatform', '$gameDateWorld', '$gameDatePl', '$gameType', '$gameProducer', '$gamePublisher', '$gameDistributor', '$gameDescription', '$gameProcessor', '$gameGraphic', '$gameRam', '$gameSystem', '$gameDirectx', '$gameSpace', '$addDate')");
+        $addresoult = $connection->query("INSERT INTO games VALUES (NULL, '$gameTitle', '$gamePlatform', '$gameDateWorld', '$gameDatePl', '$gameType', '$gameProducer', '$gamePublisher', '$gameDistributor', '$gameDescription', '$gameProcessor', '$gameGraphic', '$gameRam', '$gameSystem', '$gameDirectx', '$gameSpace', '$addDate', '$addCover')");
 
         if($addresoult){
             $_SESSION['addsuccess'] = 'Gra pomyślnie dodana do bazy.';

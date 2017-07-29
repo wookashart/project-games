@@ -332,7 +332,7 @@ header {
   @media screen and (min-width: 767px) {
     .web-center-section {
       width: 85%;
-      padding-top: 255px;
+      padding-top: 195px;
       padding-left: 50px;
       padding-right: 50px; } }
   @media screen and (min-width: 1100px) {
@@ -454,3 +454,25 @@ body.admin-panel {
     position: absolute;
     bottom: 50px;
     right: 50px; }
+
+div.games-list {
+  margin-left: 200px;
+  margin-right: 200px; }
+  div.games-list ul {
+    list-style: none;
+    padding: 0;
+    font-size: 20px; }
+    div.games-list ul li.games-list-item {
+      display: flex;
+      width: 100%;
+      border: 1px solid transparent; }
+      div.games-list ul li.games-list-item a {
+        text-decoration: none;
+        color: #000000;
+        flex: 1; }
+      div.games-list ul li.games-list-item span {
+        text-align: left;
+        flex: 1; }
+      div.games-list ul li.games-list-item:hover {
+        border-bottom: 1px solid #233975;
+        border-top: 1px solid #233975; }

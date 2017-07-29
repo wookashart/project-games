@@ -4,6 +4,9 @@
 
     $site = (isset($_GET['action'])) ? $_GET['action'] : 'home';
 
+    require_once "./db/connect.php";
+    $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+
 ?>
 
 <!DOCTYPE html>
@@ -99,6 +102,7 @@
                     case 'registration' : include 'pages/registration.php'; break;
                     case 'regulamin' : include 'pages/regulamin.php'; break;
                     case 'thanksregistery' : include 'pages/thanksregistery.php'; break;
+                    case 'gamedetail' : include 'pages/gamedetail.php'; break;
                     default : include 'pages/home.php'; break;
                 }
             ?>
