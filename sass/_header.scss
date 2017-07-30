@@ -165,7 +165,7 @@ header {
                 border: 1px solid black;
                 border-radius: 4px;
                 background: $headerBackgroundLight;
-                box-shadow: 0 0 13px -3px black;
+                box-shadow: $basicBoxShadow;
 
                 .user-panel-menu-item {
                     color: $basicMenuFontColor;

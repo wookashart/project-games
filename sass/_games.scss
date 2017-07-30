@@ -1,6 +1,9 @@
 div.games-list {
-    margin-left: 200px;
-    margin-right: 200px;
+
+    @media screen and (min-width: 1450px){
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 
     ul {
         list-style: none;
@@ -21,11 +24,111 @@ div.games-list {
             span {
                 text-align: left;
                 flex: 1;
+
+                &:nth-of-type(2){
+                    text-align: center;
+                }
             }
 
             &:hover {
                 border-bottom: 1px solid $headerBackgroundDark;
                 border-top: 1px solid $headerBackgroundDark;
+            }
+        }
+    }
+}
+
+div.game-detail {
+
+    .return-game-list {
+        position: absolute;
+        text-decoration: none;
+        bottom: 0;
+    }
+
+    .game-detail-conteiner {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: $basicBoxShadow;
+
+        @media screen and (min-width: 767px){
+            flex-direction: row;
+        }
+
+        @media screen and (min-width: 1450px){
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        @media screen and (min-width: 1750px){
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .game-cover {
+            flex: 1;
+            text-align: center;
+
+            @media screen and (min-width: 767px){
+                text-align: left;
+            }
+
+            img {
+                width: 200px;
+                height: 280px;
+                border: 1px solid black;
+            }
+        }
+
+        .game-information {
+            flex: 2;
+
+            p {
+                display: flex;
+
+                .game-info1 {
+                    flex: 1;
+                    font-weight: bold;
+                }
+
+                .game-info2 {
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+    .game-description {
+        line-height: 25px;
+        font-size: 18px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: justify;
+    }
+
+    .game-requirements {
+
+        h3 {
+            border-bottom: 1px solid black;
+        }
+
+        ul {
+            list-style-image: url('../img/icons/xbox.png');
+            
+
+            li {
+                margin: 10px;
+
+                span {
+                    margin: 5px;
+
+                    &:nth-of-type(1) {
+                        font-weight: bold;
+                    }
+                }
             }
         }
     }

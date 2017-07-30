@@ -455,24 +455,90 @@ body.admin-panel {
     bottom: 50px;
     right: 50px; }
 
-div.games-list {
-  margin-left: 200px;
-  margin-right: 200px; }
-  div.games-list ul {
-    list-style: none;
-    padding: 0;
-    font-size: 20px; }
-    div.games-list ul li.games-list-item {
-      display: flex;
-      width: 100%;
-      border: 1px solid transparent; }
-      div.games-list ul li.games-list-item a {
-        text-decoration: none;
-        color: #000000;
+@media screen and (min-width: 1450px) {
+  div.games-list {
+    margin-left: 100px;
+    margin-right: 100px; } }
+
+div.games-list ul {
+  list-style: none;
+  padding: 0;
+  font-size: 20px; }
+  div.games-list ul li.games-list-item {
+    display: flex;
+    width: 100%;
+    border: 1px solid transparent; }
+    div.games-list ul li.games-list-item a {
+      text-decoration: none;
+      color: #000000;
+      flex: 1; }
+    div.games-list ul li.games-list-item span {
+      text-align: left;
+      flex: 1; }
+      div.games-list ul li.games-list-item span:nth-of-type(2) {
+        text-align: center; }
+    div.games-list ul li.games-list-item:hover {
+      border-bottom: 1px solid #233975;
+      border-top: 1px solid #233975; }
+
+div.game-detail .return-game-list {
+  position: absolute;
+  text-decoration: none;
+  bottom: 0; }
+
+div.game-detail .game-detail-conteiner {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 13px -3px black; }
+  @media screen and (min-width: 767px) {
+    div.game-detail .game-detail-conteiner {
+      flex-direction: row; } }
+  @media screen and (min-width: 1450px) {
+    div.game-detail .game-detail-conteiner {
+      margin-left: 100px;
+      margin-right: 100px; } }
+  @media screen and (min-width: 1750px) {
+    div.game-detail .game-detail-conteiner {
+      margin-left: 200px;
+      margin-right: 200px; } }
+  div.game-detail .game-detail-conteiner .game-cover {
+    flex: 1;
+    text-align: center; }
+    @media screen and (min-width: 767px) {
+      div.game-detail .game-detail-conteiner .game-cover {
+        text-align: left; } }
+    div.game-detail .game-detail-conteiner .game-cover img {
+      width: 200px;
+      height: 280px;
+      border: 1px solid black; }
+  div.game-detail .game-detail-conteiner .game-information {
+    flex: 2; }
+    div.game-detail .game-detail-conteiner .game-information p {
+      display: flex; }
+      div.game-detail .game-detail-conteiner .game-information p .game-info1 {
+        flex: 1;
+        font-weight: bold; }
+      div.game-detail .game-detail-conteiner .game-information p .game-info2 {
         flex: 1; }
-      div.games-list ul li.games-list-item span {
-        text-align: left;
-        flex: 1; }
-      div.games-list ul li.games-list-item:hover {
-        border-bottom: 1px solid #233975;
-        border-top: 1px solid #233975; }
+
+div.game-detail .game-description {
+  line-height: 25px;
+  font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: justify; }
+
+div.game-detail .game-requirements h3 {
+  border-bottom: 1px solid black; }
+
+div.game-detail .game-requirements ul {
+  list-style-image: url("../img/icons/xbox.png"); }
+  div.game-detail .game-requirements ul li {
+    margin: 10px; }
+    div.game-detail .game-requirements ul li span {
+      margin: 5px; }
+      div.game-detail .game-requirements ul li span:nth-of-type(1) {
+        font-weight: bold; }

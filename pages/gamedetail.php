@@ -7,13 +7,13 @@
 
     ?>
 
-    <a href="index.php?action=biblioteka">Powrót do listy gier</a>
+    <!-- <a class="return-game-list" href="index.php?action=biblioteka">Powrót do listy gier</a> -->
     <h1>
         <?php
             echo $detail['tytul'];
         ?>
     </h1>
-    <div>
+    <div class="game-detail-conteiner">
         <div class="game-cover">
             <?php
                 echo '<img src="'.$detail['cover'].'">'
@@ -21,13 +21,13 @@
         </div>
         <div class="game-information">
             <?php
-                echo '<p><span>Dostępna na:</span><span>'.$detail['platforma'].'</span></p>';
-                echo '<p><span>Data premiery na świecie:</span><span>'.$detail['data_premiery'].'</span></p>';
-                echo '<p><span>Data premiery w Polsce:</span><span>'.$detail['data_premiery_pl'].'</span></p>';
-                echo '<p><span>Gatunek:</span><span>'.$detail['gatunek'].'</span></p>';
-                echo '<p><span>Producent:</span><span>'.$detail['producent'].'</span></p>';
-                echo '<p><span>Wydawca:</span><span>'.$detail['wydawca'].'</span></p>';
-                echo '<p><span>Dystrybutor:</span><span>'.$detail['dystrybutor'].'</span></p>';
+                echo '<p><span class="game-info1">Dostępna na:</span><span class="game-info2">'.$detail['platforma'].'</span></p>';
+                echo '<p><span class="game-info1">Data premiery na świecie:</span><span class="game-info2">'.$detail['data_premiery'].'</span></p>';
+                echo '<p><span class="game-info1">Data premiery w Polsce:</span><span class="game-info2">'.$detail['data_premiery_pl'].'</span></p>';
+                echo '<p><span class="game-info1">Gatunek:</span><span class="game-info2">'.$detail['gatunek'].'</span></p>';
+                echo '<p><span class="game-info1">Producent:</span><span class="game-info2">'.$detail['producent'].'</span></p>';
+                echo '<p><span class="game-info1">Wydawca:</span><span class="game-info2">'.$detail['wydawca'].'</span></p>';
+                echo '<p><span class="game-info1">Dystrybutor:</span><span class="game-info2">'.$detail['dystrybutor'].'</span></p>';
             ?>
         </div>
     </div>
