@@ -4,7 +4,7 @@ header {
     z-index: 10;
 }
 
-.header-first-line, .header-second-line, .header-third-line, {
+.header-second-line, .header-third-line, {
     width: 100%;
     border-bottom: 2px solid black;
 }
@@ -30,7 +30,7 @@ header {
         display: flex;
 
         .website-name {
-            width: 50%;
+            // width: 50%;
             padding: 15px 0 15px 0;
 
             a {
@@ -69,12 +69,9 @@ header {
         }
 
         .website-user-logged {
-            // display: flex;
             margin-left: auto;
             font-size: 15px;
-            // padding: 15px 0 15px 0;
             font-family: 'Oswald', sans-serif;
-            // position: relative;
 
             @media screen and (min-width: 430px){
                 font-size: 20px;
@@ -260,8 +257,8 @@ header {
 }
 
 // Druga sekcja
-.header-second-line {
-    background-color: $headerBackgroundLight;
+// .header-second-line {
+//     background-color: $headerBackgroundLight;
     
     .second-line-conteiner {
         text-align: center;
@@ -298,7 +295,7 @@ header {
             }
         }
     }
-}
+// }
 
 // Trzecia sekcja
 .header-third-line {

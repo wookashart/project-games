@@ -28,6 +28,10 @@
                 <div class="header-first-line">
                     <div class="first-line-conteiner">
                         <div class="website-name"><a href="index.php?action=home">project games</a></div>
+                        <div class="second-line-conteiner">
+                            <input type="search" placeholder="Wyszukaj grę" class="base-input find-game-input">
+                            <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
                         <?php
                             if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
                                 
@@ -61,12 +65,9 @@
                     </div>
                 </div>
                 <!--Druga linia headera-->
-                <div class="header-second-line">
-                    <div class="second-line-conteiner">
-                        <input type="text" placeholder="Wyszukaj grę" class="base-input find-game-input">
-                        <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </div>
-                </div>
+                <!-- <div class="header-second-line">
+                    
+                </div> -->
                 <!--Menu hamburger-->
                 <div class="header-hamburger-line">
                     <div class="hamburger-line-conteiner">

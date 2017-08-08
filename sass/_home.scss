@@ -1,0 +1,42 @@
+section.last-add-game {
+    border: $basicSectionBorder;
+    border-radius: 10px;
+    box-shadow: $basicBoxShadow;
+    margin-top: 45px;
+
+    width: 300px; //temporary
+
+    h3 {
+        text-align: center;
+        background: $headerBackgroundLight;
+        margin: 0;
+        padding: 15px;
+        color: $basicMenuFontColor;
+        border-radius: 9px 9px 0 0;
+        font-size: 20px;
+        text-transform: uppercase;
+        
+    }
+    
+    .last-add-game-cover {
+        margin: 10px;
+        text-align: center;
+
+        a {
+            img {
+                width: 200px;
+                border: $basicSectionBorder;
+            }
+        }
+    }
+
+    .last-add-game-info {
+        text-align: center;
+        padding-bottom: 15px;
+
+        h4 {
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+}

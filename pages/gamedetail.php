@@ -6,8 +6,7 @@
     $detail = $gameDetail->fetch_assoc();
 
     ?>
-
-    <!-- <a class="return-game-list" href="index.php?action=biblioteka">Powrót do listy gier</a> -->
+    
     <h1>
         <?php
             echo $detail['tytul'];
@@ -16,7 +15,7 @@
     <div class="game-detail-conteiner">
         <div class="game-cover">
             <?php
-                echo '<img src="'.$detail['cover'].'">'
+                echo '<img src="db/covers/'.$detail['cover'].'">'
             ?>
         </div>
         <div class="game-information">
@@ -31,11 +30,11 @@
             ?>
         </div>
     </div>
-    <p class="game-description">
+    <article class="game-description">
         <?php
             echo $detail['opis_gry'];
         ?>
-    </p>
+    </article>
     <div class="game-requirements">
         <h3>Wymagania sprzętowe</h3>
         <ul>

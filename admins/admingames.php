@@ -11,7 +11,7 @@
 <div class="games-administration">
     <section class="admin-add-new-game">
         <h2>Dodaj nową grę do bazy</h2>
-        <form method="POST" action="../db/addgames.php">
+        <form method="POST" action="../db/addgames.php" enctype="multipart/form-data">
             <div class="game-data">
                 <label>
                     <span>Tytuł gry</span><input type="text" name="game-title">
@@ -62,17 +62,17 @@
                     <span>Miejsce na dysku</span><input type="text" name="game-space">
                 </label>
                 <label>
-                    <span>Lokalizacja okładki</span><input type="text" name="game-cover">
+                    <span>Okładki</span><input type="file" name="game-cover">
                 </label>
             </div>
-            <input type="submit" value="Dodaj grę">
+            <input type="submit" value="Dodaj grę" name="submit">
         </form>
          <?php
-            if(isset($_SESSION['addsuccess'])){
-                echo $_SESSION['addsuccess'];
-            } else {
-                echo $_SESSION['notadd'];
-            }
+            // if(isset($_SESSION['addsuccess'])){
+                // echo $_SESSION['addsuccess'];
+            // } else {
+                // echo $_SESSION['notadd'];
+            // }
         ?> 
     </section>
 </div>

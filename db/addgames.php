@@ -7,7 +7,7 @@
         exit();
     }
 
-    $gameTitle = $_POST['game-title'];
+    $gameTitle = addslashes($_POST['game-title']);
     $gamePlatform = $_POST['game-platform'];
     $gameDateWorld = $_POST['game-date-world'];
     $gameDatePl = $_POST['game-date-pl'];
@@ -15,7 +15,7 @@
     $gameProducer = $_POST['game-producer'];
     $gamePublisher = $_POST['game-publisher'];
     $gameDistributor = $_POST['game-distributor'];
-    $gameDescription = $_POST['game-description'];
+    $gameDescription = addslashes($_POST['game-description']);
     $gameProcessor = $_POST['game-processor'];
     $gameGraphic = $_POST['game-graphic'];
     $gameRam = $_POST['game-ram'];
@@ -23,7 +23,29 @@
     $gameDirectx = $_POST['game-directx'];
     $gameSpace = $_POST['game-space'];
     $addDate = date('Y-m-d H:i:s');
-    $addCover = $_POST['game-cover'];
+
+    // upload cover
+    $targetDir = "covers/";
+    $targetFile = $targetDir.basename($_FILES['game-cover']["name"]);
+    $uploadOk = true;
+    $imageFileType = pathinfo($targetFile, PATHINFO_EXTENSION);
+
+    if(isset($_POST['submit'])){
+        $check = getimagesize($_FILES['game-cover']['tmp_name']);
+
+        if($check !== false){
+            $uploadOk = true;
+        } else {
+            $uploadOk = false;
+        }
+    }
+
+    if($uploadOk == true){
+        move_uploaded_file($_FILES['game-cover']['tmp_name'], $targetFile);
+    }
+
+    $addCover = $_FILES['game-cover']["name"];
+
 
     require_once "connect.php";
 
