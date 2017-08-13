@@ -22,3 +22,56 @@ var loginAndRegistration = function(){
 }
 loginAndRegistration();
 
+// PC requirements visible
+var pcRequirements = function(){
+    var reqCont = $('.game-requirements');
+    var platforms = $('.game-platform');
+    var isPc = $(platforms).text().search('PC');
+
+    if(isPc == -1){
+        $(reqCont).css('display', 'none');
+    }
+}
+pcRequirements();
+
+// Add games to library modal
+var addToLibraryModal = function(){
+    $('.add-to-library').on('click', function(){
+        $('.modal-add-games-collection-conteiner').addClass('modal-open');
+
+        var platforms = $('.game-platform');
+        var allPlatforms = $(platforms).text().split(' ');
+        var removed = allPlatforms.filter(item => item !== '/')
+
+        $(removed).each(function(val){
+            $('.select-platform').append('<option class="select-platform-options" value="'+ removed[val] +'">'+ removed[val] +'</option>');  
+        })
+    })
+
+    $('.cancel-select-platform').on('click', function(e){
+        e.preventDefault();
+        $('.modal-add-games-collection-conteiner').removeClass('modal-open');
+        $('.select-platform-options').remove();
+        $('.distribution-options-conteiner').remove();
+        $('.submit-to-library').attr('disabled', true);
+    })
+}
+addToLibraryModal();
+
+function onchangeOptions(){
+    var selected = $('.select-platform').val();
+    var distributors = ['BOX', 'Czasopismo', 'Steam', 'Uplay', 'GOG', 'Origin', 'Blizzard', 'RockStar Social Club', 'Inne'];
+
+    if(selected == 'brak'){
+        $('.submit-to-library').attr('disabled', true);
+    } else {
+        $('.submit-to-library').attr('disabled', false);
+    }
+
+    if(selected == 'PC'){
+        $('.select-distribution').append('<div class="distribution-options-conteiner"><h4>Wybierz rodzaj dystrybucji</h4><label class="distribution-options-box"><span>BOX</span><input type="radio" value="BOX" name="distribution" checked></label><label class="distribution-options-box"><span>Czasopismo</span><input type="radio" value="Czasopismo" name="distribution"></label><label class="distribution-options-box"><span>Steam</span><input type="radio" value="Steam" name="distribution"></label><label class="distribution-options-box"><span>Uplay</span><input type="radio" value="Uplay" name="distribution"></label><label class="distribution-options-box"><span>GOG</span><input type="radio" value="GOG" name="distribution"></label><label class="distribution-options-box"><span>Origin</span><input type="radio" value="Origin" name="distribution"></label><label class="distribution-options-box"><span>Blizzard</span><input type="radio" value="Blizzard" name="distribution"></label><label class="distribution-options-box"><span>RockStar Social Club</span><input type="radio" value="RockStar Social Club" name="distribution"></label><label class="distribution-options-box"><span>inne</span><input type="radio" value="inne" name="distribution"></label></label>')
+    } else {
+        $('.distribution-options-conteiner').remove();
+    }
+}
+onchangeOptions();

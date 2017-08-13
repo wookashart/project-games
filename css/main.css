@@ -497,10 +497,6 @@ div.game-detail .game-detail-conteiner {
     div.game-detail .game-detail-conteiner {
       margin-left: 100px;
       margin-right: 100px; } }
-  @media screen and (min-width: 1750px) {
-    div.game-detail .game-detail-conteiner {
-      margin-left: 200px;
-      margin-right: 200px; } }
   div.game-detail .game-detail-conteiner .game-cover {
     flex: 1;
     text-align: center; }
@@ -509,7 +505,6 @@ div.game-detail .game-detail-conteiner {
         text-align: left; } }
     div.game-detail .game-detail-conteiner .game-cover img {
       width: 200px;
-      height: 280px;
       border: 1px solid black; }
   div.game-detail .game-detail-conteiner .game-information {
     flex: 2; }
@@ -520,6 +515,67 @@ div.game-detail .game-detail-conteiner {
         font-weight: bold; }
       div.game-detail .game-detail-conteiner .game-information p .game-info2 {
         flex: 1; }
+  div.game-detail .game-detail-conteiner .gameplay-detail {
+    text-align: center;
+    flex: 1; }
+
+div.game-detail .add-games-collect {
+  display: flex;
+  justify-content: center; }
+  div.game-detail .add-games-collect button {
+    margin: 10px; }
+
+div.game-detail .modal-add-games-collection-conteiner {
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 200ms;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.8); }
+  div.game-detail .modal-add-games-collection-conteiner .modal-add-games-collection {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #2c5db1;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    box-shadow: 0 0 13px -3px black;
+    text-align: center; }
+    @media screen and (min-width: 500px) {
+      div.game-detail .modal-add-games-collection-conteiner .modal-add-games-collection {
+        width: 500px;
+        height: 400px; } }
+    div.game-detail .modal-add-games-collection-conteiner .modal-add-games-collection h3 {
+      text-transform: uppercase;
+      color: #b9c0da; }
+    div.game-detail .modal-add-games-collection-conteiner .modal-add-games-collection .select-platform-form .select-platform {
+      display: block;
+      width: 300px;
+      margin: auto;
+      margin-bottom: 20px;
+      height: 40px;
+      font-size: 16px; }
+    div.game-detail .modal-add-games-collection-conteiner .modal-add-games-collection .distribution-options-conteiner {
+      margin: 40px; }
+      div.game-detail .modal-add-games-collection-conteiner .modal-add-games-collection .distribution-options-conteiner h4 {
+        text-transform: uppercase;
+        color: #b9c0da; }
+      div.game-detail .modal-add-games-collection-conteiner .modal-add-games-collection .distribution-options-conteiner .distribution-options-box {
+        display: inline-block;
+        margin: 5px; }
+
+div.game-detail .modal-open {
+  visibility: visible;
+  opacity: 1; }
 
 div.game-detail .game-description {
   line-height: 25px;
