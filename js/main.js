@@ -75,3 +75,24 @@ function onchangeOptions(){
     }
 }
 onchangeOptions();
+
+var slider = new Slider("#ex8", {
+	tooltip: 'always'
+});
+
+// Add played games modal
+var addToPlayedModal = function(){
+    $('.add-to-played-btn').on('click', function(){
+        $('.modal-add-played-games-conteiner').addClass('modal-open');
+   
+    });
+
+    $('.cancel-played-game').on('click', function(e){
+        e.preventDefault();
+        $('.modal-add-played-games-conteiner').removeClass('modal-open');
+    });
+
+
+}
+addToPlayedModal();
+

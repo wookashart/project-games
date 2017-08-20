@@ -18,6 +18,7 @@
         <title>Project Games</title>
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/css/bootstrap-slider.css">
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,400i,900,900i&amp;subset=latin-ext" rel="stylesheet">
         <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
@@ -37,10 +38,10 @@
                                 
                                 if(($_SESSION['user_type'] == 'admin')){
 
-                                    echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="#" class="user-panel-menu-item">mój profil</a></li><li><a href="./admins/admins.php" target="_blank" class="user-panel-menu-item">panel admina</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li></ul></li></ul></div></div>';
+                                    echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="./admins/admins.php" target="_blank" class="user-panel-menu-item">panel admina</a></li><li><a href="index.php?action=mycollection" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames" class="user-panel-menu-item">ograne tytuły</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li></ul></li></ul></div></div>';
 
                                 } else {
-                                    echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="#" class="user-panel-menu-item">mój profil</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li></ul></li></ul></div></div>';
+                                    echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="index.php?action=mycollection" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames" class="user-panel-menu-item">ograne tytuły</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li></ul></li></ul></div></div>';
                                 }                               
                             } else {
                                 echo '<div class="website-login-panel"><a class="login-panel-button" href="#">Zaloguj się / Zarejestruj się</a></div>';
@@ -80,7 +81,7 @@
                         <nav>
                             <ul>
                                 <!--<li><a href="index.php?action=home">Strona główna</a></li>-->
-                                <li><a href="index.php?action=biblioteka">Biblioteka gier</a></li>
+                                <li><a href="index.php?action=biblioteka&page=1">Biblioteka gier</a></li>
                                 <li><a href="index.php?action=articles">Artykuły</a></li>
                                 <li><a href="index.php?action=tutorials">Poradniki</a></li>
                                 <li><a href="index.php?action=forum">Forum</a></li>
@@ -104,12 +105,16 @@
                     case 'regulamin' : include 'pages/regulamin.php'; break;
                     case 'thanksregistery' : include 'pages/thanksregistery.php'; break;
                     case 'gamedetail' : include 'pages/gamedetail.php'; break;
+                    case 'userprofile' : include 'pages/userprofile.php'; break;
+                    case 'editprofile' : include 'pages/edituserprofile.php'; break;
+                    case 'mycollection' : include 'pages/mygamescollection.php'; break;
+                    case 'playedgames' : include 'pages/playedgames.php'; break;
                     default : include 'pages/home.php'; break;
                 }
             ?>
         </section>
         <!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/bootstrap-slider.js"></script>
         <script src="./js/jquery-3.1.1.min.js"></script>
         <script src="./js/main.js"></script>
     </body>

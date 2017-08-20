@@ -32,7 +32,30 @@
             ?>
         </div>
         <div class="gameplay-detail">
-            <div><span>Ocena graczy:</span></div>
+            <div><p>Ocena graczy:</p>
+            <?php
+
+                $playersScore = $connection->query("SELECT sum(ocena) AS sumScore, count(ocena) AS allPosition FROM finish_games WHERE id_gry = {$_SESSION['gameId']}");
+                $allScore = $playersScore->fetch_assoc();
+
+                if ($allScore['sumScore'] != 0 && $allScore['allPosition'] != 0){
+                    $playersAverage = $allScore['sumScore'] / $allScore['allPosition'];
+                    echo '<p>'.$playersAverage.'</p>';
+                } else {
+                    echo '<p>Jeszcze nikt nie ocenił!</p>';
+                }
+
+            ?>
+            </div>
+            <?php
+                if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
+                    $yourScore = $connection->query("SELECT * FROM finish_games WHERE id_gry = {$_SESSION['gameId']} AND id_gracza = {$_SESSION['id']}");
+                    $displYourScore = $yourScore->fetch_assoc();
+                    
+                    echo '<p>Twoja ocena:</p><p>'.$displYourScore['ocena'].'</p>';
+                }
+
+            ?>
             <div><span>Średni czas przejścia:</span></div>
             <div><span>Najszybsze przejście gry:</span></div>
         </div>
@@ -48,19 +71,28 @@
             if ($haveGame = $connection->query("SELECT * FROM users_library WHERE id_user = $idUser AND id_game = $idGame")){
             $alredyHave = $haveGame->num_rows;
 
-            if($alredyHave > 0){
-                echo '<button class="base-btn alredy-in-library" disabled>Posiadasz już tą grę</button>';
-            } else {
-                echo '<button class="base-btn add-to-library">Dodaj grę do kolekcji</button>';
+                if($alredyHave > 0){
+                    echo '<button class="base-btn alredy-in-library" disabled>Posiadasz już tą grę</button>';
+                } else {
+                    echo '<button class="base-btn add-to-library">Dodaj grę do kolekcji</button>';
+                }
             }
-        }   
-            echo '<button class="base-btn">Grałem w tą grę</button>';
+
+            if ($scoreGame = $connection->query("SELECT * FROM finish_games WHERE id_gracza = $idUser AND id_gry = $idGame")){
+            $alredyScore = $scoreGame->num_rows;
+
+                if($alredyScore > 0){
+                    echo '<button class="base-btn alredy-played-btn" disabled>Przeszedłem</button>';
+                } else {
+                    echo '<button class="base-btn add-to-played-btn">Grałem w tą grę</button>';
+                }
+            }      
         }
 
     ?>
     </div>
-    <div class="modal-add-games-collection-conteiner">
-        <div class="modal-add-games-collection">
+    <div class="modal-add-games-collection-conteiner modal-conteiner">
+        <div class="modal-add-games-collection modal-add-game">
             <h3>Wybierz platformę</h3>
             <form action="./db/addtolibrary.php" method="POST" class="select-platform-form">
                 <select class="select-platform" name="select-platform" onchange="onchangeOptions()">
@@ -69,6 +101,21 @@
                 <div class="select-distribution"></div>
                 <input type="submit" class="submit-to-library">
                 <button class="base-btn cancel-select-platform">Rozmyśliłem się</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal-add-played-games-conteiner modal-conteiner">
+         <div class="modal-add-played-games modal-add-game">
+            <h3>Twoja ocena</h3>
+            <form action="./db/playedgames.php" method="POST" class="played-games-form">
+                <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="1" name="played-slider">
+                <div class="game-time">
+                    <h3>Czas poświęcony grze</h3>
+                    <input type="number" min="0" name="played-hour" placeholder="Godziny" value="0">
+                    <input type="number" min="0" max="60" name="played-minut" placeholder="Minuty" value="0">
+                </div>
+                <input type="submit">
+                <button class="base-btn cancel-played-game">Rozmyśliłem się</button>
             </form>
         </div>
     </div>

@@ -112,7 +112,7 @@
                 
                 if($validation == true){
                     // Weryfikacja udana
-                    if($connection->query("INSERT INTO users VALUES (NULL, '$nick', '$password_hash', 'user', '$email', '$radio_value', '$miasto', '$data_ur', '$zgoda_marketingowa')")){
+                    if($connection->query("INSERT INTO users VALUES (NULL, '$nick', '$password_hash', 'user', '$email', '$radio_value', '$miasto', '$data_ur', '$zgoda_marketingowa', '', '')")){
                         $_SESSION['udanarejestracja'] = true;
                         header('Location: index.php?action=thanksregistery');
                     } else {
