@@ -30,19 +30,24 @@
                     <div class="first-line-conteiner">
                         <div class="website-name"><a href="index.php?action=home">project games</a></div>
                         <div class="second-line-conteiner">
-                            <input type="search" placeholder="Wyszukaj grę" class="base-input find-game-input">
-                            <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <form method="GET" action="php/searchresult.php">
+                                <input type="text" placeholder="Wyszukaj grę" class="base-input find-game-input" name="search">
+                                <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <!-- <input type="submit" value="szukaj"> -->
+                            </form>
+                            
                         </div>
                         <?php
                             if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
-                                
+
+                                echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="index.php?action=mycollection" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames" class="user-panel-menu-item">ostatnio grane</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li>';
+
                                 if(($_SESSION['user_type'] == 'admin')){
+                                    echo '<li><a href="./admins/admins.php" target="_blank" class="user-panel-menu-item">panel admina</a></li>';
+                                }
 
-                                    echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="./admins/admins.php" target="_blank" class="user-panel-menu-item">panel admina</a></li><li><a href="index.php?action=mycollection" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames" class="user-panel-menu-item">ograne tytuły</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li></ul></li></ul></div></div>';
+                                echo '</ul></li></ul></div></div>';
 
-                                } else {
-                                    echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="index.php?action=mycollection" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames" class="user-panel-menu-item">ograne tytuły</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li></ul></li></ul></div></div>';
-                                }                               
                             } else {
                                 echo '<div class="website-login-panel"><a class="login-panel-button" href="#">Zaloguj się / Zarejestruj się</a></div>';
                             }
@@ -81,7 +86,7 @@
                         <nav>
                             <ul>
                                 <!--<li><a href="index.php?action=home">Strona główna</a></li>-->
-                                <li><a href="index.php?action=biblioteka&page=1">Biblioteka gier</a></li>
+                                <li><a href="index.php?action=gamelibrary&amp;page=1">Biblioteka gier</a></li>
                                 <li><a href="index.php?action=articles">Artykuły</a></li>
                                 <li><a href="index.php?action=tutorials">Poradniki</a></li>
                                 <li><a href="index.php?action=forum">Forum</a></li>
@@ -96,7 +101,7 @@
             <?php
                 switch($site){
                     case 'home' : include 'pages/home.php'; break;
-                    case 'biblioteka' : include 'pages/biblioteka.php'; break;
+                    case 'gamelibrary' : include 'pages/gamelibrary.php'; break;
                     case 'articles' : include 'pages/articles.php'; break;
                     case 'tutorials' : include 'pages/tutorials.php'; break;
                     case 'forum' : include 'pages/forum.php'; break;
@@ -109,11 +114,11 @@
                     case 'editprofile' : include 'pages/edituserprofile.php'; break;
                     case 'mycollection' : include 'pages/mygamescollection.php'; break;
                     case 'playedgames' : include 'pages/playedgames.php'; break;
+                    case 'searchgame' : include 'pages/searchgame.php'; break;
                     default : include 'pages/home.php'; break;
                 }
             ?>
         </section>
-        <!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/bootstrap-slider.js"></script>
         <script src="./js/jquery-3.1.1.min.js"></script>
         <script src="./js/main.js"></script>

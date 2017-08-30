@@ -1,41 +1,139 @@
-div.games-list {
+div.games-list, .search-game-list {
 
     @media screen and (min-width: 1450px){
-        margin-left: 100px;
-        margin-right: 100px;
+        // margin-left: 100px;
+        // margin-right: 100px;
+    }
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    .all-rows-sum {
+        text-align: center;
+        font-size: 20px;
     }
 
     ul {
         list-style: none;
         padding: 0;
-        font-size: 20px;
+        font-size: 25px;
 
         li.games-list-item {
             display: flex;
             width: 100%;
-            border: 1px solid transparent;
+            transition-duration: 200ms;
+            position: relative;
 
             a {
                 text-decoration: none;
                 color: $basicSectionColor;
+                display: flex;
+                padding: 10px 30px;
                 flex: 1;
+                align-items: center;
+            }
+
+            .library-list-information {
+                display: flex;
+                flex: 1;
+                padding-left: 50px;
+                align-items: center;
+
+                span {
+                    font-size: 18px;
+                    padding: 5px;
+                    
+                    &:nth-of-type(2){
+                        flex: 1;
+                        text-align: right;
+                        font-size: 30px;
+                        padding: 0;
+                    }
+                }
             }
 
             span {
                 text-align: left;
-                flex: 1;
+                
 
                 &:nth-of-type(2){
                     text-align: center;
                 }
             }
 
+            .hover-cover {
+                visibility: hidden;
+                opacity: 0;
+                transition-duration: 300ms;
+                position: absolute;
+                top: -200px;
+                z-index: 10;
+
+                img {
+                    height: 200px;
+                }
+            }
+
             &:hover {
-                border-bottom: 1px solid $headerBackgroundDark;
-                border-top: 1px solid $headerBackgroundDark;
+                background-color: $headerBackgroundLight; 
+                box-shadow: $basicBoxShadow;
+                color: $basicMenuFontColor;
+                cursor: pointer;
+
+                span {
+                    color: $basicMenuFontColor;
+                }
+
+                .hover-cover {
+                    visibility: visible;
+                    opacity: 1;
+                    transition-delay: 400ms;
+                }
             }
         }
     }
+
+    .search-result-text {
+        padding-top: 20px;
+        font-size: 25px;
+        text-align: center;
+        border-bottom: $basicSectionBorder;
+    }
+
+    .search-no-result {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .pagination-nav-bar {
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            font-size: 24px;
+            color: $menuLogoColor;
+            background-color: $baseButtonBackground;
+            display: inline-block;
+            padding: 5px 0;
+            border-radius: 4px;
+            margin: 2px;
+            transition-duration: 250ms;
+            width: 45px;
+
+            &:hover {
+                background-color: $basicHoverButton;
+            }
+        }
+
+        .active-page {
+            background-color: $headerBackgroundDark;
+
+            &:hover {
+                background-color: $headerBackgroundLight;
+            }
+        }
+    } 
 }
 
 div.game-detail {

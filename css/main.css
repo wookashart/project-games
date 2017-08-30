@@ -452,31 +452,96 @@ body.admin-panel {
     bottom: 50px;
     right: 50px; }
 
-@media screen and (min-width: 1450px) {
-  div.games-list {
-    margin-left: 100px;
-    margin-right: 100px; } }
+div.games-list h1, .search-game-list h1 {
+  margin-bottom: 0; }
 
-div.games-list ul {
+div.games-list .all-rows-sum, .search-game-list .all-rows-sum {
+  text-align: center;
+  font-size: 20px; }
+
+div.games-list ul, .search-game-list ul {
   list-style: none;
   padding: 0;
-  font-size: 20px; }
-  div.games-list ul li.games-list-item {
+  font-size: 25px; }
+  div.games-list ul li.games-list-item, .search-game-list ul li.games-list-item {
     display: flex;
     width: 100%;
-    border: 1px solid transparent; }
-    div.games-list ul li.games-list-item a {
+    transition-duration: 200ms;
+    position: relative; }
+    div.games-list ul li.games-list-item a, .search-game-list ul li.games-list-item a {
       text-decoration: none;
       color: #000000;
-      flex: 1; }
-    div.games-list ul li.games-list-item span {
-      text-align: left;
-      flex: 1; }
-      div.games-list ul li.games-list-item span:nth-of-type(2) {
+      display: flex;
+      padding: 10px 30px;
+      flex: 1;
+      align-items: center; }
+    div.games-list ul li.games-list-item .library-list-information, .search-game-list ul li.games-list-item .library-list-information {
+      display: flex;
+      flex: 1;
+      padding-left: 50px;
+      align-items: center; }
+      div.games-list ul li.games-list-item .library-list-information span, .search-game-list ul li.games-list-item .library-list-information span {
+        font-size: 18px;
+        padding: 5px; }
+        div.games-list ul li.games-list-item .library-list-information span:nth-of-type(2), .search-game-list ul li.games-list-item .library-list-information span:nth-of-type(2) {
+          flex: 1;
+          text-align: right;
+          font-size: 30px;
+          padding: 0; }
+    div.games-list ul li.games-list-item span, .search-game-list ul li.games-list-item span {
+      text-align: left; }
+      div.games-list ul li.games-list-item span:nth-of-type(2), .search-game-list ul li.games-list-item span:nth-of-type(2) {
         text-align: center; }
-    div.games-list ul li.games-list-item:hover {
-      border-bottom: 1px solid #233975;
-      border-top: 1px solid #233975; }
+    div.games-list ul li.games-list-item .hover-cover, .search-game-list ul li.games-list-item .hover-cover {
+      visibility: hidden;
+      opacity: 0;
+      transition-duration: 300ms;
+      position: absolute;
+      top: -200px;
+      z-index: 10; }
+      div.games-list ul li.games-list-item .hover-cover img, .search-game-list ul li.games-list-item .hover-cover img {
+        height: 200px; }
+    div.games-list ul li.games-list-item:hover, .search-game-list ul li.games-list-item:hover {
+      background-color: #2c5db1;
+      box-shadow: 0 0 13px -3px black;
+      color: #b9c0da;
+      cursor: pointer; }
+      div.games-list ul li.games-list-item:hover span, .search-game-list ul li.games-list-item:hover span {
+        color: #b9c0da; }
+      div.games-list ul li.games-list-item:hover .hover-cover, .search-game-list ul li.games-list-item:hover .hover-cover {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 400ms; }
+
+div.games-list .search-result-text, .search-game-list .search-result-text {
+  padding-top: 20px;
+  font-size: 25px;
+  text-align: center;
+  border-bottom: 1px solid #000000; }
+
+div.games-list .search-no-result, .search-game-list .search-no-result {
+  margin-top: 100px;
+  text-align: center; }
+
+div.games-list .pagination-nav-bar, .search-game-list .pagination-nav-bar {
+  text-align: center; }
+  div.games-list .pagination-nav-bar a, .search-game-list .pagination-nav-bar a {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #93939a;
+    display: inline-block;
+    padding: 5px 0;
+    border-radius: 4px;
+    margin: 2px;
+    transition-duration: 250ms;
+    width: 45px; }
+    div.games-list .pagination-nav-bar a:hover, .search-game-list .pagination-nav-bar a:hover {
+      background-color: #b0b0b1; }
+  div.games-list .pagination-nav-bar .active-page, .search-game-list .pagination-nav-bar .active-page {
+    background-color: #233975; }
+    div.games-list .pagination-nav-bar .active-page:hover, .search-game-list .pagination-nav-bar .active-page:hover {
+      background-color: #2c5db1; }
 
 div.game-detail .return-game-list {
   position: absolute;

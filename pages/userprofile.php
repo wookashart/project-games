@@ -103,11 +103,17 @@
         </ul>
     </div>
     <div class="last-add-games">
-        <h3>Ostatnio ogrywane tytuły</h3>
         <?php
+
+            if ($detail['plec'] == 'Kobieta'){
+                echo '<h3>Gry, w które grałaś najdłużej</h3>';
+            } else {
+                echo '<h3>Gry, w które grałeś najdłużej</h3>';
+            }
+        
             echo '<a href="index.php?action=playedgames" class="see-all">(Zobacz wszystkie)</a>';
 
-            $myPlayedGames = $connection->query("SELECT games.id_games, games.tytul, games.cover, finish_games.ocena, finish_games.czas_przejscia_godz, finish_games.czas_przejscia_min FROM games, finish_games WHERE games.id_games = finish_games.id_gry AND finish_games.id_gracza = {$_SESSION['id']} ORDER BY finish_games.id_fin_game DESC LIMIT 3");
+            $myPlayedGames = $connection->query("SELECT games.id_games, games.tytul, games.cover, finish_games.ocena, finish_games.czas_przejscia_godz, finish_games.czas_przejscia_min FROM games, finish_games WHERE games.id_games = finish_games.id_gry AND finish_games.id_gracza = {$_SESSION['id']} ORDER BY finish_games.czas_przejscia_godz DESC LIMIT 3");
         ?>
 
         <ul>
