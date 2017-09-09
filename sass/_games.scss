@@ -105,35 +105,6 @@ div.games-list, .search-game-list {
         margin-top: 100px;
         text-align: center;
     }
-
-    .pagination-nav-bar {
-        text-align: center;
-
-        a {
-            text-decoration: none;
-            font-size: 24px;
-            color: $menuLogoColor;
-            background-color: $baseButtonBackground;
-            display: inline-block;
-            padding: 5px 0;
-            border-radius: 4px;
-            margin: 2px;
-            transition-duration: 250ms;
-            width: 45px;
-
-            &:hover {
-                background-color: $basicHoverButton;
-            }
-        }
-
-        .active-page {
-            background-color: $headerBackgroundDark;
-
-            &:hover {
-                background-color: $headerBackgroundLight;
-            }
-        }
-    } 
 }
 
 div.game-detail {

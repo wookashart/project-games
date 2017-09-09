@@ -48,12 +48,12 @@
         <div class="user-games-info">
             <?php
 
-                $howManyGames = $connection->query("SELECT count(*) AS allgames FROM users_library WHERE id_user = {$_SESSION['id']}");
+                $howManyGames = $connection->query("SELECT count(*) AS allgames FROM users_library WHERE id_user = {$_SESSION['id']} AND have = 'yes'");
                 $allGames = $howManyGames->fetch_assoc();
 
                 echo '<p><span class="user-info1">Gier w kolekcji:</span><span class="user-info2">'.$allGames['allgames'].'</span></p>';
 
-                $allFinishGames = $connection->query("SELECT count(*) AS allfinishgames, sum(czas_przejscia_godz) AS sumHour, sum(czas_przejscia_min) AS sumMin FROM finish_games WHERE id_gracza = {$_SESSION['id']}");
+                $allFinishGames = $connection->query("SELECT count(*) AS allfinishgames, sum(finish_game_h) AS sumHour, sum(finish_game_m) AS sumMin FROM users_library WHERE id_user = {$_SESSION['id']} AND finish = 'yes'");
                 $endGames = $allFinishGames->fetch_assoc();
 
                 echo '<p><span class="user-info1">Ukończonych gier:</span><span class="user-info2">'.$endGames['allfinishgames'].'</span></p>';
@@ -87,9 +87,9 @@
     <div class="last-add-games">
         <h3>Ostatnio dodane do kolekcji</h3>
         <?php
-            echo '<a href="index.php?action=mycollection" class="see-all">(Zobacz wszystkie)</a>';
+            echo '<a href="index.php?action=mycollection&amp;page=1" class="see-all">(Zobacz wszystkie)</a>';
 
-            $myGameCollection = $connection->query("SELECT games.id_games, games.tytul, games.cover, users_library.game_platform, users_library.game_pc_platform FROM games, users_library WHERE games.id_games = users_library.id_game AND users_library.id_user = {$_SESSION['id']} ORDER BY users_library.id_library DESC LIMIT 3");
+            $myGameCollection = $connection->query("SELECT games.id_games, games.tytul, games.cover, users_library.game_platform, users_library.game_pc_platform FROM games, users_library WHERE games.id_games = users_library.id_game AND users_library.id_user = {$_SESSION['id']} AND have = 'yes' ORDER BY users_library.id_library DESC LIMIT 3");
             
         ?>
         <ul>
@@ -111,16 +111,16 @@
                 echo '<h3>Gry, w które grałeś najdłużej</h3>';
             }
         
-            echo '<a href="index.php?action=playedgames" class="see-all">(Zobacz wszystkie)</a>';
+            echo '<a href="index.php?action=playedgames&amp;page=1" class="see-all">(Zobacz wszystkie)</a>';
 
-            $myPlayedGames = $connection->query("SELECT games.id_games, games.tytul, games.cover, finish_games.ocena, finish_games.czas_przejscia_godz, finish_games.czas_przejscia_min FROM games, finish_games WHERE games.id_games = finish_games.id_gry AND finish_games.id_gracza = {$_SESSION['id']} ORDER BY finish_games.czas_przejscia_godz DESC LIMIT 3");
+            $myPlayedGames = $connection->query("SELECT games.id_games, games.tytul, games.cover, users_library.rating, users_library.finish_game_h, users_library.finish_game_m FROM games, users_library WHERE games.id_games = users_library.id_game AND users_library.id_user = {$_SESSION['id']} AND finish = 'yes' ORDER BY users_library.finish_game_h DESC LIMIT 3");
         ?>
 
         <ul>
             <?php
 
                 while($lastPlayed = $myPlayedGames->fetch_assoc()){
-                    echo '<li><a href="index.php?action=gamedetail&id='.$lastPlayed['id_games'].'"><img src="db/covers/'.$lastPlayed['cover'].'"><span>'.$lastPlayed['tytul'].'</span><span>Ocena: '.$lastPlayed['ocena'].'</span><span>Czas gry: '.$lastPlayed['czas_przejscia_godz'].':'.$lastPlayed['czas_przejscia_min'].'</span></a></li>';
+                    echo '<li><a href="index.php?action=gamedetail&id='.$lastPlayed['id_games'].'"><img src="db/covers/'.$lastPlayed['cover'].'"><span>'.$lastPlayed['tytul'].'</span><span>Ocena: '.$lastPlayed['rating'].'</span><span>Czas gry: '.$lastPlayed['finish_game_h'].':'.$lastPlayed['finish_game_m'].'</span></a></li>';
                 }
                 
             ?>

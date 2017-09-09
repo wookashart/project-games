@@ -40,7 +40,7 @@
                         <?php
                             if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
 
-                                echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="index.php?action=mycollection" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames" class="user-panel-menu-item">ostatnio grane</a></li><li><a href="logout.php" class="user-panel-menu-item">Wyloguj się</a></li>';
+                                echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="index.php?action=mycollection&amp;page=1" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames&amp;page=1" class="user-panel-menu-item">ostatnio grane</a></li><li><a href="php/logout.php" class="user-panel-menu-item">Wyloguj się</a></li>';
 
                                 if(($_SESSION['user_type'] == 'admin')){
                                     echo '<li><a href="./admins/admins.php" target="_blank" class="user-panel-menu-item">panel admina</a></li>';
@@ -56,7 +56,7 @@
                     </div>
                     <div class="login-box">
                         <p class="log-reg-text">Zaloguj się</p>
-                        <form action="userlogin.php" method="post">
+                        <form action="php/userlogin.php" method="post">
                             <input type="text" name="login" placeholder="Login" class="base-input">
                             <input type="password" name="haslo" placeholder="Hasło" class="base-input">
                             <input type="submit" value="Zaloguj się">
@@ -111,9 +111,9 @@
                     case 'thanksregistery' : include 'pages/thanksregistery.php'; break;
                     case 'gamedetail' : include 'pages/gamedetail.php'; break;
                     case 'userprofile' : include 'pages/userprofile.php'; break;
-                    case 'editprofile' : include 'pages/edituserprofile.php'; break;
-                    case 'mycollection' : include 'pages/mygamescollection.php'; break;
-                    case 'playedgames' : include 'pages/playedgames.php'; break;
+                    case 'editprofile' : include 'pages/userprofileedit.php'; break;
+                    case 'mycollection' : include 'pages/usergamecollection.php'; break;
+                    case 'playedgames' : include 'pages/userplayedgames.php'; break;
                     case 'searchgame' : include 'pages/searchgame.php'; break;
                     default : include 'pages/home.php'; break;
                 }

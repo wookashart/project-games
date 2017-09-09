@@ -82,24 +82,20 @@
             $idUser = $_SESSION['id'];
 
             if ($haveGame = $connection->query("SELECT * FROM users_library WHERE id_user = $idUser AND id_game = $idGame")){
-            $alredyHave = $haveGame->num_rows;
+            $game = $haveGame->fetch_assoc();
 
-                if($alredyHave > 0){
+                if($game['have'] == 'yes'){
                     echo '<button class="base-btn alredy-in-library" disabled>Posiadasz już tą grę</button>';
                 } else {
                     echo '<button class="base-btn add-to-library">Dodaj grę do kolekcji</button>';
                 }
-            }
 
-            if ($scoreGame = $connection->query("SELECT * FROM finish_games WHERE id_gracza = $idUser AND id_gry = $idGame")){
-            $alredyScore = $scoreGame->num_rows;
-
-                if($alredyScore > 0){
+                if($game['finish'] == 'yes'){
                     echo '<button class="base-btn alredy-played-btn" disabled>Przeszedłem</button>';
                 } else {
                     echo '<button class="base-btn add-to-played-btn">Grałem w tą grę</button>';
-                }
-            }      
+                } 
+            }
         }
 
     ?>
@@ -107,7 +103,7 @@
     <div class="modal-add-games-collection-conteiner modal-conteiner">
         <div class="modal-add-games-collection modal-add-game">
             <h3>Wybierz platformę</h3>
-            <form action="./db/addtolibrary.php" method="POST" class="select-platform-form">
+            <form action="./php/addtolibrary.php" method="POST" class="select-platform-form">
                 <select class="select-platform" name="select-platform" onchange="onchangeOptions()">
                     <option value="brak">-</option>
                 </select>
@@ -120,7 +116,7 @@
     <div class="modal-add-played-games-conteiner modal-conteiner">
          <div class="modal-add-played-games modal-add-game">
             <h3>Twoja ocena</h3>
-            <form action="./db/playedgames.php" method="POST" class="played-games-form">
+            <form action="./php/playedgames.php" method="POST" class="played-games-form">
                 <input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="10" data-slider-step="1" data-slider-value="1" name="played-slider">
                 <div class="game-time">
                     <h3>Czas poświęcony grze</h3>
