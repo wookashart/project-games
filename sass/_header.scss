@@ -128,14 +128,11 @@ header {
                             z-index: 10;
 
                             li {
-                                padding: 5px 0;
+                                margin: 5px 0;
+                                padding: 0;
                                 list-style: none;
                                 float: left;
                                 position: relative;
-
-                                &:hover {
-                                    background-color: $headerBackgroundDark;
-                                }
 
                                 .user-panel-menu-item {
                                     text-align: center;

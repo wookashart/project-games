@@ -45,32 +45,3 @@ input[type="radio"], input[type="checkbox"]{
     width: 15px;
     height: 15px;
 }
-
-.pagination-nav-bar {
-    text-align: center;
-
-    a {
-        text-decoration: none;
-        font-size: 24px;
-        color: $menuLogoColor;
-        background-color: $baseButtonBackground;
-        display: inline-block;
-        padding: 5px 0;
-        border-radius: 4px;
-        margin: 2px;
-        transition-duration: 250ms;
-        width: 45px;
-
-        &:hover {
-            background-color: $basicHoverButton;
-        }
-    }
-
-    .active-page {
-        background-color: $headerBackgroundDark;
-
-        &:hover {
-            background-color: $headerBackgroundLight;
-        }
-    }
-} 
