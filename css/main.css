@@ -41,6 +41,26 @@ input[type="radio"], input[type="checkbox"] {
   width: 15px;
   height: 15px; }
 
+.pagination-nav-bar {
+  text-align: center; }
+  .pagination-nav-bar a {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    background-color: #93939a;
+    display: inline-block;
+    padding: 5px 0;
+    border-radius: 4px;
+    margin: 2px;
+    transition-duration: 250ms;
+    width: 45px; }
+    .pagination-nav-bar a:hover {
+      background-color: #b0b0b1; }
+  .pagination-nav-bar .active-page {
+    background-color: #233975; }
+    .pagination-nav-bar .active-page:hover {
+      background-color: #2c5db1; }
+
 header {
   position: fixed;
   width: 100%;
@@ -135,11 +155,12 @@ header {
               box-shadow: 0 0 13px -3px black;
               z-index: 10; }
               .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul li {
-                margin: 5px 0;
-                padding: 0;
+                padding: 5px 0;
                 list-style: none;
                 float: left;
                 position: relative; }
+                .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul li:hover {
+                  background-color: #233975; }
                 .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul li .user-panel-menu-item {
                   text-align: center;
                   text-decoration: none;
@@ -523,26 +544,6 @@ div.games-list .search-no-result, .search-game-list .search-no-result {
   margin-top: 100px;
   text-align: center; }
 
-div.games-list .pagination-nav-bar, .search-game-list .pagination-nav-bar {
-  text-align: center; }
-  div.games-list .pagination-nav-bar a, .search-game-list .pagination-nav-bar a {
-    text-decoration: none;
-    font-size: 24px;
-    color: white;
-    background-color: #93939a;
-    display: inline-block;
-    padding: 5px 0;
-    border-radius: 4px;
-    margin: 2px;
-    transition-duration: 250ms;
-    width: 45px; }
-    div.games-list .pagination-nav-bar a:hover, .search-game-list .pagination-nav-bar a:hover {
-      background-color: #b0b0b1; }
-  div.games-list .pagination-nav-bar .active-page, .search-game-list .pagination-nav-bar .active-page {
-    background-color: #233975; }
-    div.games-list .pagination-nav-bar .active-page:hover, .search-game-list .pagination-nav-bar .active-page:hover {
-      background-color: #2c5db1; }
-
 div.game-detail .return-game-list {
   position: absolute;
   text-decoration: none;
@@ -821,3 +822,50 @@ div.user-profile-page .user-info-conteiner {
     .my-games-conteiner .last-played-games h3 {
       text-align: center;
       margin: 0; }
+
+div.user-game-collection h3, .user-played-games h3 {
+  margin-top: 50px; }
+
+div.user-game-collection ul, .user-played-games ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+  margin-bottom: 30px; }
+  div.user-game-collection ul li, .user-played-games ul li {
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 0 13px -3px black;
+    border-radius: 10px;
+    padding: 10px;
+    border: 10px solid transparent; }
+    div.user-game-collection ul li.played-game, .user-played-games ul li.played-game {
+      border: 10px solid green;
+      position: relative; }
+      div.user-game-collection ul li.played-game:after, .user-played-games ul li.played-game:after {
+        content: '';
+        background-image: url("../img/complete.png");
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: -15px;
+        right: -15px;
+        background-size: cover; }
+    div.user-game-collection ul li a, .user-played-games ul li a {
+      display: flex;
+      flex-direction: column;
+      height: 230px; }
+      div.user-game-collection ul li a img, .user-played-games ul li a img {
+        max-height: 170px;
+        max-width: 120px;
+        margin: auto;
+        border: 1px solid #000000;
+        margin-top: 0; }
+
+.user-played-games ul {
+  margin-bottom: 30px; }
+  .user-played-games ul .played-game-item {
+    width: 250px; }

@@ -33,7 +33,7 @@
                     <li><img src="../img/icons/browser.svg"><a href="admins.php?id=baza_artykuly">Artykuły</a></li>
                     <li><img src="../img/icons/notepad.svg"><a href="admins.php?id=baza_poradniki">Poradniki</a></li>
                     <li><img src="../img/icons/users.svg"><a href="admins.php?id=baza_users">Zarządzanie kontami</a></li>
-                    <li><img src="../img/icons/switch.svg"><a href="../logout.php">Wyloguj się</a></li>
+                    <li><img src="../img/icons/switch.svg"><a href="../php/logout.php">Wyloguj się</a></li>
                 </ul>
             </div>
             <div class="right-panel">
