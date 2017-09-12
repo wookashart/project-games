@@ -62,7 +62,7 @@
                     <span>Miejsce na dysku</span><input type="text" name="game-space">
                 </label>
                 <label>
-                    <span>Okładki</span><input type="file" name="game-cover">
+                    <span>Okładka</span><input type="file" name="game-cover">
                 </label>
             </div>
             <input type="submit" value="Dodaj grę" name="submit">

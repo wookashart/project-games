@@ -7,7 +7,15 @@
 
         
         while ($row = $allGames->fetch_assoc()) {
-            echo '<div class="last-add-game-cover"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><img src="db/covers/'.$row['cover'].'"></a></div><div class="last-add-game-info"><h4>'.$row['tytul'].'</h4><div class="last-add-game-platform">'.$row['platforma'].'</div><div class="last-add-game-type">'.$row['gatunek'].'</div></div>';
+            echo '<div class="last-add-game-cover"><a href="index.php?action=gamedetail&id='.$row['id_games'].'">';
+            
+            if($row['cover'] != null){
+                echo '<img src="db/covers/'.$row['cover'].'">';
+            } else {
+                echo '<img src="img/no-cover.png">';
+            }
+            
+            echo '</a></div><div class="last-add-game-info"><h4>'.$row['tytul'].'</h4><div class="last-add-game-platform">'.$row['platforma'].'</div><div class="last-add-game-type">'.$row['gatunek'].'</div></div>';
         }
 
     ?>

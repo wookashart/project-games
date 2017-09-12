@@ -8,13 +8,13 @@
     }
 
     $gameTitle = addslashes($_POST['game-title']);
-    $gamePlatform = $_POST['game-platform'];
+    $gamePlatform = addslashes($_POST['game-platform']);
     $gameDateWorld = $_POST['game-date-world'];
     $gameDatePl = $_POST['game-date-pl'];
-    $gameType = $_POST['game-type'];
-    $gameProducer = $_POST['game-producer'];
-    $gamePublisher = $_POST['game-publisher'];
-    $gameDistributor = $_POST['game-distributor'];
+    $gameType = addslashes($_POST['game-type']);
+    $gameProducer = addslashes($_POST['game-producer']);
+    $gamePublisher = addslashes($_POST['game-publisher']);
+    $gameDistributor = addslashes($_POST['game-distributor']);
     $gameDescription = addslashes($_POST['game-description']);
     $gameProcessor = $_POST['game-processor'];
     $gameGraphic = $_POST['game-graphic'];

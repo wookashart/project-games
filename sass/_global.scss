@@ -39,6 +39,7 @@ button.base-btn, input[type="submit"] {
 input {
     width: 100%;
     height: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
 input[type="radio"], input[type="checkbox"]{
@@ -73,4 +74,10 @@ input[type="radio"], input[type="checkbox"]{
             background-color: $headerBackgroundLight;
         }
     }
-} 
+}
+
+textarea {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 20px;
+}

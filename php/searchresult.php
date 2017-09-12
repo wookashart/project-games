@@ -18,4 +18,6 @@
         exit;
     }
 
+    $connection->close();
+
 ?>

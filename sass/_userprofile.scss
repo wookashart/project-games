@@ -1,229 +1,317 @@
 div.user-profile-page {
-    
-        .user-info-conteiner {
-            margin-top: 70px;
-            display: flex;
-            border: $basicSectionBorder;
-            padding: 20px;
-            border-radius: 10px;
-            margin-left: 100px;
-            margin-right: 100px;
-            box-shadow: $basicBoxShadow;
-            position: relative;
-    
-            .user-avatar {
-                flex: 1;
-    
-                img {
-                    max-width: 200px;
-                    max-height: 200px;
-                    border: $basicSectionBorder;
-                }
-            }
-    
-            .user-info {
-                flex: 1;
-            }
-    
-            .user-games-info {
-                flex: 1
-            }
-    
-            .user-info1 {
-                font-weight: bold;
-                margin: 10px;
-            }
-    
-            .user-info2 {
-                font-size: 20px;
-                margin: 5px;
-    
-                span {
-                    font-weight: normal;
-                    font-size: 15px;
-                    margin: 5px;
-                }
-    
-                .play-time {
-                    font-weight: bold;
-                    font-size: 20px;
-                }
-            }
-    
-            .edit-profile-btn {
-                text-decoration: none;
-                color: $basicSectionColor;
-                position: absolute;
-                right: 10px;
-                bottom: 10px;
-                background: $baseButtonBackground;
-                padding: 15px;
-                border-radius: 4px;
-                text-transform: uppercase;
-                font-weight: bold;
-                font-size: 12px;
-                transition-duration: 300ms;
-    
-                &:hover {
-                    background: $basicHoverButton;
-                }
+
+    .user-info-conteiner {
+        margin-top: 70px;
+        display: flex;
+        border: $basicSectionBorder;
+        padding: 20px;
+        border-radius: 10px;
+        margin-left: 100px;
+        margin-right: 100px;
+        box-shadow: $basicBoxShadow;
+        position: relative;
+
+        .user-avatar {
+            flex: 1;
+
+            img {
+                max-width: 200px;
+                max-height: 200px;
+                border: $basicSectionBorder;
             }
         }
-    }
-    
-    .user-description-text {
-        text-align: justify;
-        display: block;
-        width: 60%;
-        margin: auto;
-    }
-    
-    .my-games-conteiner {
-        display: flex;
-    
-        .see-all {
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-games-info {
+            flex: 1
+        }
+
+        .user-info1 {
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .user-info2 {
+            font-size: 20px;
+            margin: 5px;
+
+            span {
+                font-weight: normal;
+                font-size: 15px;
+                margin: 5px;
+            }
+
+            .play-time {
+                font-weight: bold;
+                font-size: 20px;
+            }
+        }
+
+        .edit-profile-btn {
             text-decoration: none;
             color: $basicSectionColor;
-            display: block;
-            text-align: center;
-        }
-    
-        .last-add-games {
-            flex: 1;
-            width: 50%;
-            border: $basicSectionBorder;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: $basicBoxShadow;
-    
-            h3 {
-                text-align: center;
-                margin: 0;
-            }
-    
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-    
-                li {
-                    margin: 15px;
-                    border: 1px solid transparent;
-                    padding: 5px;
-                    transition-duration: 200ms;
-    
-                    &:hover {
-                        background-color: $headerBackgroundLight; 
-                        box-shadow: $basicBoxShadow;
-                        color: $basicMenuFontColor;
-    
-                        span {
-                            color: $basicMenuFontColor;
-                        }
-                    }
-                }
-    
-                a {
-                    text-decoration: none;
-    
-                    img {
-                        height: 70px;
-                        vertical-align: middle;
-                    }
-    
-                    span {
-                        margin: 10px;
-                        font-size: 17px;
-                        color: $basicSectionColor;
-                    }
-                }
-    
-                span {
-                    margin: 10px;
-                }
-            }
-        }
-    
-        .last-played-games {
-            flex: 1;
-            width: 50%;
-            border: $basicSectionBorder;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: $basicBoxShadow;
-    
-            h3 {
-                text-align: center;
-                margin: 0;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            background: $baseButtonBackground;
+            padding: 15px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 12px;
+            transition-duration: 300ms;
+
+            &:hover {
+                background: $basicHoverButton;
             }
         }
     }
-    
-    div.user-game-collection, .user-played-games {
-    
+}
+
+.user-description-text {
+    text-align: justify;
+    display: block;
+    width: 60%;
+    margin: auto;
+}
+
+.my-games-conteiner {
+    display: flex;
+
+    .see-all {
+        text-decoration: none;
+        color: $basicSectionColor;
+        display: block;
+        text-align: center;
+    }
+
+    .last-add-games {
+        flex: 1;
+        width: 50%;
+        border: $basicSectionBorder;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: $basicBoxShadow;
+
         h3 {
-            margin-top: 50px;
+            text-align: center;
+            margin: 0;
         }
-    
+
         ul {
+            list-style: none;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            list-style-type: none;
-            justify-content: center;
-            margin-bottom: 30px;
-    
+
             li {
-                width: 200px;
-                text-align: center;
+                margin: 15px;
+                border: 1px solid transparent;
+                padding: 5px;
+                transition-duration: 200ms;
+
+                &:hover {
+                    background-color: $headerBackgroundLight; 
+                    box-shadow: $basicBoxShadow;
+                    color: $basicMenuFontColor;
+
+                    span {
+                        color: $basicMenuFontColor;
+                    }
+                }
+            }
+
+            a {
+                text-decoration: none;
+
+                img {
+                    height: 70px;
+                    vertical-align: middle;
+                }
+
+                span {
+                    margin: 10px;
+                    font-size: 17px;
+                    color: $basicSectionColor;
+                }
+            }
+
+            span {
                 margin: 10px;
-                box-shadow: $basicBoxShadow;
-                border-radius: 10px;
-                padding: 10px;
-                border: $notPlayedGameBorder;
-    
-                &.played-game {
-                    border: $playedGameBorder;
-                    position: relative;
-    
-                    &:after {
-                        content: '';
-                        background-image: url('../img/complete.png');
-                        position: absolute;
-                        width: 50px;
-                        height: 50px;
-                        top: -15px;
-                        right: -15px;
-                        background-size: cover;
-                    }
+            }
+        }
+    }
+
+    .last-played-games {
+        flex: 1;
+        width: 50%;
+        border: $basicSectionBorder;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: $basicBoxShadow;
+
+        h3 {
+            text-align: center;
+            margin: 0;
+        }
+    }
+}
+
+div.user-game-collection, .user-played-games {
+
+    h3 {
+        margin-top: 50px;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        li {
+            width: 200px;
+            text-align: center;
+            margin: 10px;
+            box-shadow: $basicBoxShadow;
+            border-radius: 10px;
+            padding: 10px;
+            border: $notPlayedGameBorder;
+
+            &.played-game {
+                border: $playedGameBorder;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    background-image: url('../img/complete.png');
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    top: -15px;
+                    right: -15px;
+                    background-size: cover;
                 }
-                
-                a {
-                    display: flex;
-                    flex-direction: column;
-                    height: 230px;
-    
-                    img {
-                        max-height: 170px;
-                        max-width: 120px;
-                        margin: auto;
-                        border: $basicSectionBorder;
-                        margin-top: 0;
-                    }
+            }
+            
+            a {
+                display: flex;
+                flex-direction: column;
+                height: 230px;
+
+                img {
+                    max-height: 170px;
+                    max-width: 120px;
+                    margin: auto;
+                    border: $basicSectionBorder;
+                    margin-top: 0;
                 }
             }
         }
     }
-    
-    .user-played-games {
-    
-        ul {
-            margin-bottom: 30px;
-    
-            .played-game-item {
-                width: 250px;
-            }
+}
+
+.user-played-games {
+
+    ul {
+        margin-bottom: 30px;
+
+        .played-game-item {
+            width: 250px;
         }
+    }
+    
+}
+
+div.edit-user-profile {
+    
+    h2 {
+        margin-top: 50px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .user-data {
         
+        form {
+            padding: 20px 30px;
+            border: $basicSectionBorder;
+            border-radius: 10px;
+            box-shadow: $basicBoxShadow;
+            margin: 20px 0;
+
+            h4 {
+                margin: 0;
+                text-align: center;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .form-items-container {
+                text-align: center;
+                
+                .current-avatar {
+                    margin: 10px;
+
+                    img {
+                        max-width: 150px;
+                        max-height: 150px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .form-items-container > div {
+                display: inline-block;
+                width: 30%;
+            }
+
+            .form-info-container {
+
+                .form-info-item {
+                    text-align: center;
+                    margin: 15px;
+
+                    .form-info-item-header {
+                        width: 150px;
+                        text-align: right;
+                        margin-right: 15px;
+                    }
+
+                    .form-info-item-content {
+                        width: 300px;
+                    }
+                }
+
+                .form-info-item > div {
+                    display: inline-block;
+                }
+            }
+
+            .form-info-textarea {
+
+                textarea {
+                    width: 100%;
+                    height: 200px;
+                }
+            }
+
+            .base-btn {
+                display: block;
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
     }
+
+    .img-error {
+        text-align: center;
+        color: $errorColor;
+        font-weight: bold;
+    }
+}

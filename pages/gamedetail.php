@@ -12,7 +12,15 @@
     <h1><?= $detail['tytul'] ?></h1>
     <div class="game-detail-conteiner">
         <div class="game-cover">
-            <img src="db/covers/<?= $detail['cover'] ?>">'
+            <?php 
+
+                if($detail['cover'] != null){
+                    echo '<img src="db/covers/'.$detail['cover'].'">';
+                } else {
+                    echo '<img src="img/no-cover.png">';
+                }
+
+            ?>
         </div>
         <div class="game-information">
             <p>
