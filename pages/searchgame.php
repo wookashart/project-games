@@ -31,7 +31,7 @@
                 if ($cnt['cnt'] > 0) { 
                     while( $row = $allGames->fetch_assoc() ) {
                         
-                        $playersScore = $connection->query("SELECT sum(ocena) AS sumScore, count(ocena) AS allPosition FROM finish_games WHERE id_gry = {$row['id_games']}");
+                        $playersScore = $connection->query("SELECT sum(rating) AS sumScore, count(rating) AS allPosition FROM users_library WHERE id_game = {$row['id_games']}");
                         $allScore = $playersScore->fetch_assoc();
 
                         if ($allScore['sumScore'] != 0 && $allScore['allPosition'] != 0){

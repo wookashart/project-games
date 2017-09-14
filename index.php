@@ -40,7 +40,7 @@
                         <?php
                             if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
 
-                                echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="index.php?action=mycollection&amp;page=1" class="user-panel-menu-item">moje gry</a></li><li><a href="index.php?action=playedgames&amp;page=1" class="user-panel-menu-item">ostatnio grane</a></li><li><a href="php/logout.php" class="user-panel-menu-item">Wyloguj się</a></li>';
+                                echo '<div class="website-user-logged"><div class="greatings"><ul><li><a href="#" class="user-panel">'.$_SESSION['login'].'<i class="fa fa-caret-down" aria-hidden="true"></i></a><ul><li><a href="index.php?action=userprofile" class="user-panel-menu-item">mój profil</a></li><li><a href="index.php?action=editprofile" class="user-panel-menu-item">edytuj profil</a></li><li><a href="index.php?action=mycollection&amp;page=1" class="user-panel-menu-item">moja kolekcja gier</a></li><li><a href="index.php?action=playedgames&amp;page=1" class="user-panel-menu-item">ukończone gry</a></li><li><a href="php/logout.php" class="user-panel-menu-item">Wyloguj się</a></li>';
 
                                 if(($_SESSION['user_type'] == 'admin')){
                                     echo '<li><a href="./admins/admins.php" target="_blank" class="user-panel-menu-item">panel admina</a></li>';

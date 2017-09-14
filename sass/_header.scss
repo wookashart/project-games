@@ -132,6 +132,8 @@ header {
                                 list-style: none;
                                 float: left;
                                 position: relative;
+                                transition: 0.15s background ease-in;
+                                cursor: pointer;
 
                                 &:hover {
                                     background-color: $headerBackgroundDark;

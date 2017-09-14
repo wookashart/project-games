@@ -3,9 +3,31 @@
     session_start();
     require_once "../db/connect.php";
     $connection = @new mysqli($host, $db_user, $db_password, $db_name);
+  
+    $userInfo = $connection->query("SELECT * FROM users WHERE id = {$_SESSION['id']}");
+    $info = $userInfo->fetch_assoc();
+  
+    $fileName = $info['login'];
+    $fileFormat = $_FILES['change-avatar']['type'];
+  
+    if($fileFormat == 'image/jpg'){
+      $avatar = $fileName.'.jpg';
+    }
+  
+    if($fileFormat == 'image/jpeg'){
+      $avatar = $fileName.'.jpeg';
+    }
+
+    if($fileFormat == 'image/png'){
+      $avatar = $fileName.'.png';
+    }
+  
+    if($fileFormat == 'image/gif'){
+      $avatar = $fileName.'.gif';
+    }
 
     $targetDir = "../db/useravatars/";
-    $targetFile = $targetDir.basename($_FILES['change-avatar']['name']);
+    $targetFile = $targetDir.basename($avatar);
     $uploadOk = true;
     $imageFileType = pathinfo($targetFile, PATHINFO_EXTENSION);
 
@@ -31,8 +53,6 @@
         $_SESSION['imgerr'] = '<div class="img-error">Niedozwolony format obrazka</div>';
         $uploadOk = false;
     }
-
-    $avatar = $_FILES['change-avatar']["name"];
 
     if($uploadOk == true){
         move_uploaded_file($_FILES['change-avatar']['tmp_name'], $targetFile);

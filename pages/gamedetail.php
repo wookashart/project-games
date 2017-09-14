@@ -56,7 +56,7 @@
             <div><p>Ocena graczy:</p>
             <?php
 
-                $playersScore = $connection->query("SELECT sum(ocena) AS sumScore, count(ocena) AS allPosition FROM finish_games WHERE id_gry = {$_SESSION['gameId']}");
+                $playersScore = $connection->query("SELECT sum(rating) AS sumScore, count(rating) AS allPosition FROM users_library WHERE id_game = {$_SESSION['gameId']}");
                 $allScore = $playersScore->fetch_assoc();
 
                 if ($allScore['sumScore'] != 0 && $allScore['allPosition'] != 0){
@@ -70,10 +70,14 @@
             </div>
             <?php
                 if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
-                    $yourScore = $connection->query("SELECT * FROM finish_games WHERE id_gry = {$_SESSION['gameId']} AND id_gracza = {$_SESSION['id']}");
+                    $yourScore = $connection->query("SELECT * FROM users_library WHERE id_game = {$_SESSION['gameId']} AND id_user = {$_SESSION['id']}");
                     $displYourScore = $yourScore->fetch_assoc();
                     
-                    echo '<p>Twoja ocena:</p><p>'.$displYourScore['ocena'].'</p>';
+                    if ($displYourScore['rating'] != 0){
+                        echo '<p>Twoja ocena:</p><p>'.$displYourScore['rating'].'</p>';
+                    } else {
+                        echo '<p>Jeszcze nie oceniłeś tej gry</p>';
+                    }
                 }
 
             ?>
