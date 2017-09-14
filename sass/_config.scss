@@ -1,12 +1,14 @@
 // Background
 
 $bodyBackgroundColor: #080808;
+$formBackgroundColor: #f2f2f2;
 
 $headerBackgroundDark: #233975;
 $headerBackgroundLight: #2c5db1;
 
 $baseButtonBackground: #93939a;
 $basicHoverButton: #b0b0b1;
+$inputTextBackground: #ffffff;
 
 $errorColor: #e02929;
 
@@ -34,5 +36,6 @@ $basicBoxShadow: 0 0 13px -3px black;
 // Borders
 
 $basicSectionBorder: 1px solid #000000;
+$inputTextBorder: 1px solid $headerBackgroundDark;
 $notPlayedGameBorder: 10px solid transparent;
 $playedGameBorder: 10px solid green;

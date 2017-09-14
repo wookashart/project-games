@@ -69,14 +69,34 @@
                         <input type="text" name="change-email" value="<?= $info['email'] ?>">
                     </div>
                 </div>
+                <?= $_SESSION['emailerr'] ?>
             </div>
             <h4>Opis</h4>
             <div class="form-info-textarea">
                 <textarea type="input" name="change-description"><?= $info['opis'] ?></textarea>
             </div>
-            <div><input type="submit" value="Zapisz zmiany" class="base-btn"><div>
+            <div><input type="submit" value="Zapisz zmiany" class="base-btn"></div>
+        </form>
+        <form method="POST" action="./php/usereditpassword.php">
+            <h4>Edycja hasła</h4>
+            <div class="form-password-container">
+                <div class="form-password-item">
+                    <span class="form-password-item-header">Stare hasło:</span>
+                    <input type="password" name="old-password" placeholder="Stare hasło">
+                </div>
+                <div class="form-password-item">
+                    <span class="form-password-item-header">Nowe hasło:</span>
+                    <input type="password" name="new-password" placeholder="Nowe hasło">
+                </div>
+                <div class="form-password-item">
+                    <span class="form-password-item-header">Potwierdź hasło:</span>
+                    <input type="password" name="new-password-repeate" placeholder="Potwierdź hasło">
+                </div>
+            </div>
+            <div><input type="submit" value="Zmień hasło" class="base-btn"></div>
+            <?= $_SESSION['passerr'] ?>
         </form>
     </div>
 </div>
 
-<?php $_SESSION['imgerr'] = ''; ?>
+<?php $_SESSION['imgerr'] = ''; $_SESSION['emailerr'] = ''; $_SESSION['passerr'] = ''; ?>
