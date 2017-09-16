@@ -1,0 +1,86 @@
+div.articles-list {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 50px;
+
+        li {
+            padding-bottom: 20px;
+            margin-top: 20px;
+            border-bottom: $inputTextBorder;
+
+            h3 {
+                margin: 0;
+                margin-bottom: 10px;
+                color: $headerBackgroundDark;
+            }
+
+            .article-date {
+                font-size: 14px;
+                font-style: italic;
+                color: $basicMenuFontColor;
+                margin-bottom: 10px;
+            }
+
+            .article-header {
+                margin: 20px 0;
+            }
+
+            .read-more {
+                text-align: right;
+                font-size: 17px;
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: $headerBackgroundDark;
+                    font-weight: bold;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        width: 100px;
+                        bottom: -6px;
+                        right: 0;
+                        background-color: $headerBackgroundDark;
+                        transform: scaleX(0);
+                        transition: 0.2s transform linear;
+                    }
+
+                    &:hover {
+                        &:after {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+    }   
+}
+
+div.article-detail {
+
+    .article-detail-date, .article-detail-author {
+        font-size: 16px;
+        font-style: italic;
+        color: $basicMenuFontColor;
+        margin-bottom: 10px;
+    }
+
+    .article-detail-content {
+        padding: 20px 30px;
+        border-radius: 4px;
+        box-shadow: $basicBoxShadow;
+        margin: 20px 0;
+        background-color: $formBackgroundColor;
+        font-size: 18px;
+
+        img, iframe {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            max-width: 100%;
+        }
+    }
+}

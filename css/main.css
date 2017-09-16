@@ -524,6 +524,43 @@ body.admin-panel {
     bottom: 50px;
     right: 50px; }
 
+.new-articles-administrator .errors {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold; }
+
+.new-articles-administrator form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px;
+  margin: 20px;
+  border: 1px solid #080808;
+  border-radius: 10px;
+  position: relative; }
+  .new-articles-administrator form .article-title span {
+    display: inline-block;
+    margin-right: 20px; }
+  .new-articles-administrator form .article-title input {
+    display: inline-block;
+    width: 500px; }
+  .new-articles-administrator form .article-header textarea {
+    width: 100%;
+    height: 150px; }
+  .new-articles-administrator form .article-content textarea {
+    width: 100%;
+    height: 300px; }
+  .new-articles-administrator form label {
+    margin: 10px 0; }
+    .new-articles-administrator form label span {
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 5px; }
+
 div.games-list h1, .search-game-list h1 {
   margin-bottom: 0; }
 
@@ -1059,3 +1096,68 @@ div.edit-user-profile .img-error {
   text-align: center;
   color: #e02929;
   font-weight: bold; }
+
+div.articles-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px; }
+  div.articles-list ul li {
+    padding-bottom: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #233975; }
+    div.articles-list ul li h3 {
+      margin: 0;
+      margin-bottom: 10px;
+      color: #233975; }
+    div.articles-list ul li .article-date {
+      font-size: 14px;
+      font-style: italic;
+      color: #b9c0da;
+      margin-bottom: 10px; }
+    div.articles-list ul li .article-header {
+      margin: 20px 0; }
+    div.articles-list ul li .read-more {
+      text-align: right;
+      font-size: 17px;
+      position: relative; }
+      div.articles-list ul li .read-more a {
+        text-decoration: none;
+        color: #233975;
+        font-weight: bold; }
+        div.articles-list ul li .read-more a:after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          width: 100px;
+          bottom: -6px;
+          right: 0;
+          background-color: #233975;
+          -webkit-transform: scaleX(0);
+                  transform: scaleX(0);
+          -webkit-transition: 0.2s -webkit-transform linear;
+          transition: 0.2s -webkit-transform linear;
+          transition: 0.2s transform linear;
+          transition: 0.2s transform linear, 0.2s -webkit-transform linear; }
+        div.articles-list ul li .read-more a:hover:after {
+          -webkit-transform: scaleX(1);
+                  transform: scaleX(1); }
+
+div.article-detail .article-detail-date, div.article-detail .article-detail-author {
+  font-size: 16px;
+  font-style: italic;
+  color: #b9c0da;
+  margin-bottom: 10px; }
+
+div.article-detail .article-detail-content {
+  padding: 20px 30px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 13px -3px black;
+          box-shadow: 0 0 13px -3px black;
+  margin: 20px 0;
+  background-color: #f2f2f2;
+  font-size: 18px; }
+  div.article-detail .article-detail-content img, div.article-detail .article-detail-content iframe {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%; }

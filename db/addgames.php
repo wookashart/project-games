@@ -54,7 +54,7 @@
     if($connection->connect_errno!=0){
 
         $_SESSION['notadd'] = 'Nie udało się dodać gry do bazy. Spróbuj ponownie.';
-        header('Location: ../admins/admins.php?id=baza_gier');
+        header('Location: ../admins/admins.php?id=addgame');
         exit();
 
     } else {
@@ -62,7 +62,7 @@
 
         if($addresoult){
             $_SESSION['addsuccess'] = 'Gra pomyślnie dodana do bazy.';
-            header('Location: ../admins/admins.php?id=baza_gier');
+            header('Location: ../admins/admins.php?id=addgame');
             exit();
         }
     }

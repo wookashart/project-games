@@ -29,8 +29,28 @@
             <div class="left-panel">
                 <ul>
                     <li><img src="../img/icons/home.svg"><a href="../index.php">Strona główna</a></li>
-                    <li><img src="../img/icons/game-controller.svg"><a href="admins.php?id=baza_gier">Baza gier</a></li>
-                    <li><img src="../img/icons/browser.svg"><a href="admins.php?id=baza_artykuly">Artykuły</a></li>
+                    <li><img src="../img/icons/game-controller.svg">
+                        <span>Zarządzanie grami</span>
+                        <ul>
+                            <li>
+                                <a href="admins.php?id=addgame">Dodaj grę</a>                        
+                            </li>
+                            <li>
+                                <a href="admins.php?id=editgame">Edycja gier</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><img src="../img/icons/browser.svg">
+                        <span>Artykuły</span>
+                        <ul>
+                            <li>
+                                <a href="admins.php?id=addarticle">Dodaj artykuł</a>
+                            </li>
+                            <li>
+                                <a href="admins.php?id=editarticle">Edytuj artykuł</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li><img src="../img/icons/notepad.svg"><a href="admins.php?id=baza_poradniki">Poradniki</a></li>
                     <li><img src="../img/icons/users.svg"><a href="admins.php?id=baza_users">Zarządzanie kontami</a></li>
                     <li><img src="../img/icons/switch.svg"><a href="../php/logout.php">Wyloguj się</a></li>
@@ -40,8 +60,10 @@
                 <?php
                     switch($admins_panel){
                         case 'admins' : include 'adminpanel.php'; break;
-                        case 'baza_gier' : include 'admingames.php'; break;
-                        case 'baza_artykuly' : include 'adminarticles.php'; break;
+                        case 'addgame' : include 'admingames.php'; break;
+                        case 'editgame' : include 'admineditgame.php'; break;
+                        case 'addarticle' : include 'adminarticles.php'; break;
+                        case 'editarticle' : include 'admineditarticles.php'; break;
                         case 'baza_poradniki' : include 'admintutorials.php'; break;
                         case 'baza_users' : include 'adminusers.php'; break;
                         default : include 'adminpanel.php'; break;

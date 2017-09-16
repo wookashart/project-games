@@ -5,7 +5,6 @@
         exit();
     }
 
-
 ?>
 
 <div class="games-administration">

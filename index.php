@@ -87,7 +87,7 @@
                             <ul>
                                 <!--<li><a href="index.php?action=home">Strona główna</a></li>-->
                                 <li><a href="index.php?action=gamelibrary&amp;page=1">Biblioteka gier</a></li>
-                                <li><a href="index.php?action=articles">Artykuły</a></li>
+                                <li><a href="index.php?action=articles&amp;page=1">Artykuły</a></li>
                                 <li><a href="index.php?action=tutorials">Poradniki</a></li>
                                 <li><a href="index.php?action=forum">Forum</a></li>
                                 <li><a href="index.php?action=contact">Kontakt</a></li>
@@ -103,6 +103,7 @@
                     case 'home' : include 'pages/home.php'; break;
                     case 'gamelibrary' : include 'pages/gamelibrary.php'; break;
                     case 'articles' : include 'pages/articles.php'; break;
+                    case 'article' : include 'pages/articledetail.php'; break;
                     case 'tutorials' : include 'pages/tutorials.php'; break;
                     case 'forum' : include 'pages/forum.php'; break;
                     case 'contact' : include 'pages/contact.php'; break;
