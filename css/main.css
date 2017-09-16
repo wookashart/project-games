@@ -3,7 +3,8 @@
   src: url("../fonts/angrybirds-regular.ttf"); }
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -28,7 +29,8 @@ button.base-btn, input[type="submit"] {
   font-weight: bold;
   text-transform: uppercase;
   background: #93939a;
-  transition-duration: 300ms;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
   cursor: pointer;
   color: #000000; }
   button.base-btn:hover, input[type="submit"]:hover {
@@ -59,7 +61,8 @@ input[type="radio"], input[type="checkbox"] {
     padding: 5px 0;
     border-radius: 4px;
     margin: 2px;
-    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
     width: 45px; }
     .pagination-nav-bar a:hover {
       background-color: #b0b0b1; }
@@ -96,6 +99,8 @@ header {
 .header-first-line {
   background-color: #233975; }
   .header-first-line .first-line-conteiner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     .header-first-line .first-line-conteiner .website-name {
       padding: 15px 0 15px 0; }
@@ -160,18 +165,21 @@ header {
               position: absolute;
               visibility: hidden;
               top: 30px;
-              transition-duration: 200ms;
+              -webkit-transition-duration: 200ms;
+                      transition-duration: 200ms;
               padding: 20px 0px;
               border: 1px solid black;
               border-radius: 4px;
               background: #2c5db1;
-              box-shadow: 0 0 13px -3px black;
+              -webkit-box-shadow: 0 0 13px -3px black;
+                      box-shadow: 0 0 13px -3px black;
               z-index: 10; }
               .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul li {
                 padding: 5px 0;
                 list-style: none;
                 float: left;
                 position: relative;
+                -webkit-transition: 0.15s background ease-in;
                 transition: 0.15s background ease-in;
                 cursor: pointer; }
                 .header-first-line .first-line-conteiner .website-user-logged .greatings ul li ul li:hover {
@@ -188,8 +196,13 @@ header {
         position: absolute;
         display: none;
         width: 150px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         top: 50px;
         padding: 20px;
         text-align: right;
@@ -197,7 +210,8 @@ header {
         border: 1px solid black;
         border-radius: 4px;
         background: #2c5db1;
-        box-shadow: 0 0 13px -3px black; }
+        -webkit-box-shadow: 0 0 13px -3px black;
+                box-shadow: 0 0 13px -3px black; }
         .header-first-line .first-line-conteiner .website-user-logged .user-panel-menu .user-panel-menu-item {
           color: #b9c0da;
           text-decoration: none;
@@ -207,16 +221,22 @@ header {
     position: absolute;
     right: 2.5%;
     display: none;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 300px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     border: 1px solid black;
     border-radius: 4px;
     background: #2c5db1;
     padding: 0 15px 15px;
     top: 50px;
-    box-shadow: 0 0 13px -3px black;
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black;
     z-index: 10; }
     @media screen and (min-width: 767px) {
       .header-first-line .login-box {
@@ -260,6 +280,8 @@ header {
       text-decoration: none;
       color: black; }
   .header-first-line .login-open {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
 
 .second-line-conteiner {
@@ -284,20 +306,24 @@ header {
     height: 40px;
     width: 40px;
     background: #93939a;
-    transition-duration: 300ms;
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
     cursor: pointer; }
     .second-line-conteiner .search-btn:hover {
       background: #b0b0b1; }
 
 .header-third-line {
   background-color: #233975;
-  transition-duration: 300ms;
-  transform: translateX(100%); }
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%); }
   @media screen and (min-width: 767px) {
     .header-third-line {
       width: 100%;
       display: block;
-      transform: translateX(0); } }
+      -webkit-transform: translateX(0);
+              transform: translateX(0); } }
   .header-third-line .third-line-conteiner nav ul {
     margin: 0;
     padding: 0;
@@ -324,8 +350,10 @@ header {
   text-indent: 0;
   width: 100%;
   display: block;
-  transition-duration: 300ms;
-  transform: translateX(0); }
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
 
 .header-hamburger-line {
   width: 100%;
@@ -428,6 +456,8 @@ div.register-new-user form {
 body.admin-panel {
   font-family: 'Roboto', sans-serif; }
   body.admin-panel .admin-panel-conteiner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0 50px;
     background: white;
@@ -454,6 +484,8 @@ body.admin-panel {
       width: 84%; }
 
 .games-administration .admin-add-new-game form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 50px;
   margin: 20px;
@@ -461,10 +493,14 @@ body.admin-panel {
   border-radius: 10px;
   position: relative; }
   .games-administration .admin-add-new-game form .game-data {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin-right: 100px; }
   .games-administration .admin-add-new-game form .hardware-requirements {
-    flex: 1; }
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
     .games-administration .admin-add-new-game form .hardware-requirements .hardware-requirements-title {
       margin-bottom: 30px;
       font-size: 20px;
@@ -500,27 +536,44 @@ div.games-list ul, .search-game-list ul {
   padding: 0;
   font-size: 25px; }
   div.games-list ul li.games-list-item, .search-game-list ul li.games-list-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    transition-duration: 200ms;
+    -webkit-transition-duration: 200ms;
+            transition-duration: 200ms;
     position: relative; }
     div.games-list ul li.games-list-item a, .search-game-list ul li.games-list-item a {
       text-decoration: none;
       color: #000000;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       padding: 10px 30px;
-      flex: 1;
-      align-items: center; }
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
     div.games-list ul li.games-list-item .library-list-information, .search-game-list ul li.games-list-item .library-list-information {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex: 1;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
       padding-left: 50px;
-      align-items: center; }
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
       div.games-list ul li.games-list-item .library-list-information span, .search-game-list ul li.games-list-item .library-list-information span {
         font-size: 18px;
         padding: 5px; }
         div.games-list ul li.games-list-item .library-list-information span:nth-of-type(2), .search-game-list ul li.games-list-item .library-list-information span:nth-of-type(2) {
-          flex: 1;
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
           text-align: right;
           font-size: 30px;
           padding: 0; }
@@ -531,7 +584,8 @@ div.games-list ul, .search-game-list ul {
     div.games-list ul li.games-list-item .hover-cover, .search-game-list ul li.games-list-item .hover-cover {
       visibility: hidden;
       opacity: 0;
-      transition-duration: 300ms;
+      -webkit-transition-duration: 300ms;
+              transition-duration: 300ms;
       position: absolute;
       top: -200px;
       z-index: 10; }
@@ -539,7 +593,8 @@ div.games-list ul, .search-game-list ul {
         height: 200px; }
     div.games-list ul li.games-list-item:hover, .search-game-list ul li.games-list-item:hover {
       background-color: #2c5db1;
-      box-shadow: 0 0 13px -3px black;
+      -webkit-box-shadow: 0 0 13px -3px black;
+              box-shadow: 0 0 13px -3px black;
       color: #b9c0da;
       cursor: pointer; }
       div.games-list ul li.games-list-item:hover span, .search-game-list ul li.games-list-item:hover span {
@@ -547,7 +602,8 @@ div.games-list ul, .search-game-list ul {
       div.games-list ul li.games-list-item:hover .hover-cover, .search-game-list ul li.games-list-item:hover .hover-cover {
         visibility: visible;
         opacity: 1;
-        transition-delay: 400ms; }
+        -webkit-transition-delay: 400ms;
+                transition-delay: 400ms; }
 
 div.games-list .search-result-text, .search-game-list .search-result-text {
   padding-top: 20px;
@@ -565,21 +621,32 @@ div.game-detail .return-game-list {
   bottom: 0; }
 
 div.game-detail .game-detail-conteiner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 1px solid black;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 13px -3px black; }
+  -webkit-box-shadow: 0 0 13px -3px black;
+          box-shadow: 0 0 13px -3px black; }
   @media screen and (min-width: 767px) {
     div.game-detail .game-detail-conteiner {
-      flex-direction: row; } }
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   @media screen and (min-width: 1450px) {
     div.game-detail .game-detail-conteiner {
       margin-left: 100px;
       margin-right: 100px; } }
   div.game-detail .game-detail-conteiner .game-cover {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     text-align: center;
     margin: auto;
     margin-right: 10px; }
@@ -588,28 +655,43 @@ div.game-detail .game-detail-conteiner {
       border: 1px solid black;
       max-height: 275px; }
   div.game-detail .game-detail-conteiner .game-information {
-    flex: 2; }
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2; }
     div.game-detail .game-detail-conteiner .game-information p {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex; }
       div.game-detail .game-detail-conteiner .game-information p .game-info1 {
-        flex: 1;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
         font-weight: bold; }
       div.game-detail .game-detail-conteiner .game-information p .game-info2 {
-        flex: 1; }
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }
   div.game-detail .game-detail-conteiner .gameplay-detail {
     text-align: center;
-    flex: 1; }
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
 
 div.game-detail .add-games-collect {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   div.game-detail .add-games-collect button {
     margin: 10px; }
 
 div.game-detail .modal-conteiner {
   visibility: hidden;
   opacity: 0;
-  transition-duration: 200ms;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
   position: fixed;
   top: 0;
   left: 0;
@@ -629,7 +711,8 @@ div.game-detail .modal-conteiner {
     background-color: #2c5db1;
     border-radius: 10px;
     border: 1px solid #000000;
-    box-shadow: 0 0 13px -3px black;
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black;
     text-align: center; }
     @media screen and (min-width: 500px) {
       div.game-detail .modal-conteiner .modal-add-game {
@@ -704,7 +787,8 @@ div.game-detail .game-requirements ul {
 section.last-add-game {
   border: 1px solid #000000;
   border-radius: 10px;
-  box-shadow: 0 0 13px -3px black;
+  -webkit-box-shadow: 0 0 13px -3px black;
+          box-shadow: 0 0 13px -3px black;
   margin-top: 45px;
   width: 300px; }
   section.last-add-game h3 {
@@ -731,16 +815,21 @@ section.last-add-game {
 
 div.user-profile-page .user-info-conteiner {
   margin-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border: 1px solid #000000;
   padding: 20px;
   border-radius: 10px;
   margin-left: 100px;
   margin-right: 100px;
-  box-shadow: 0 0 13px -3px black;
+  -webkit-box-shadow: 0 0 13px -3px black;
+          box-shadow: 0 0 13px -3px black;
   position: relative; }
   div.user-profile-page .user-info-conteiner .user-avatar {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin: auto;
     text-align: center; }
     div.user-profile-page .user-info-conteiner .user-avatar img {
@@ -748,9 +837,13 @@ div.user-profile-page .user-info-conteiner {
       max-height: 200px;
       border: 1px solid #000000; }
   div.user-profile-page .user-info-conteiner .user-info {
-    flex: 1; }
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
   div.user-profile-page .user-info-conteiner .user-games-info {
-    flex: 1; }
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
   div.user-profile-page .user-info-conteiner .user-info1 {
     font-weight: bold;
     margin: 10px; }
@@ -776,7 +869,8 @@ div.user-profile-page .user-info-conteiner {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 12px;
-    transition-duration: 300ms; }
+    -webkit-transition-duration: 300ms;
+            transition-duration: 300ms; }
     div.user-profile-page .user-info-conteiner .edit-profile-btn:hover {
       background: #b0b0b1; }
 
@@ -787,6 +881,8 @@ div.user-profile-page .user-info-conteiner {
   margin: auto; }
 
 .my-games-conteiner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
   .my-games-conteiner .see-all {
     text-decoration: none;
@@ -794,12 +890,15 @@ div.user-profile-page .user-info-conteiner {
     display: block;
     text-align: center; }
   .my-games-conteiner .last-add-games {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     width: 50%;
     border: 1px solid #000000;
     border-radius: 10px;
     margin: 20px;
-    box-shadow: 0 0 13px -3px black; }
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black; }
     .my-games-conteiner .last-add-games h3 {
       text-align: center;
       margin: 0; }
@@ -811,10 +910,12 @@ div.user-profile-page .user-info-conteiner {
         margin: 15px;
         border: 1px solid transparent;
         padding: 5px;
-        transition-duration: 200ms; }
+        -webkit-transition-duration: 200ms;
+                transition-duration: 200ms; }
         .my-games-conteiner .last-add-games ul li:hover {
           background-color: #2c5db1;
-          box-shadow: 0 0 13px -3px black;
+          -webkit-box-shadow: 0 0 13px -3px black;
+                  box-shadow: 0 0 13px -3px black;
           color: #b9c0da; }
           .my-games-conteiner .last-add-games ul li:hover span {
             color: #b9c0da; }
@@ -830,12 +931,15 @@ div.user-profile-page .user-info-conteiner {
       .my-games-conteiner .last-add-games ul span {
         margin: 10px; }
   .my-games-conteiner .last-played-games {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     width: 50%;
     border: 1px solid #000000;
     border-radius: 10px;
     margin: 20px;
-    box-shadow: 0 0 13px -3px black; }
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black; }
     .my-games-conteiner .last-played-games h3 {
       text-align: center;
       margin: 0; }
@@ -846,16 +950,22 @@ div.user-game-collection h3, .user-played-games h3 {
 div.user-game-collection ul, .user-played-games ul {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style-type: none;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 30px; }
   div.user-game-collection ul li, .user-played-games ul li {
     width: 200px;
     text-align: center;
     margin: 10px;
-    box-shadow: 0 0 13px -3px black;
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black;
     border-radius: 10px;
     padding: 10px;
     border: 10px solid transparent; }
@@ -872,8 +982,13 @@ div.user-game-collection ul, .user-played-games ul {
         right: -15px;
         background-size: cover; }
     div.user-game-collection ul li a, .user-played-games ul li a {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
       height: 230px; }
       div.user-game-collection ul li a img, .user-played-games ul li a img {
         max-height: 170px;
@@ -895,7 +1010,8 @@ div.edit-user-profile h2 {
 div.edit-user-profile .user-data form {
   padding: 20px 30px;
   border-radius: 4px;
-  box-shadow: 0 0 13px -3px black;
+  -webkit-box-shadow: 0 0 13px -3px black;
+          box-shadow: 0 0 13px -3px black;
   margin: 20px 0;
   background-color: #f2f2f2; }
   div.edit-user-profile .user-data form h4 {
