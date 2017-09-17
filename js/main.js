@@ -1,3 +1,19 @@
+// Slider with news on homepage
+$(document).ready(function(){
+    $('.last-articles-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        pauseOnHover: true,
+    });
+})
+
 // Hamburger menu
 var hamburger = function(){
     $('.fa-bars').on('click', function(){
@@ -91,8 +107,5 @@ var addToPlayedModal = function(){
         e.preventDefault();
         $('.modal-add-played-games-conteiner').removeClass('modal-open');
     });
-
-
 }
 addToPlayedModal();
-

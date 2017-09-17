@@ -1,4 +1,20 @@
 <!-- <h1>Strona główna</h1> -->
+<section class="last-articles">
+    <h3>Najnowsze wiadomości</h3>
+    <div class="last-articles-container">
+        <ul class="last-articles-slider">
+        <?php
+
+            $articlesConnect = $connection->query("SELECT * FROM articles ORDER BY article_id LIMIT 5");
+            
+            while ( $article = $articlesConnect->fetch_assoc() ){
+                echo '<li class="articles-list-item"><div><h2>'.$article['article_title'].'</h2><div class="article-date">'.$article['article_date'].'</div><div class="article-header">'.$article['article_header'].'</div><div class="article-read-more"><a href="index.php?action=article&amp;id='.$article['article_id'].'">Czytaj więcej</a></div></div></li>';
+            }
+
+        ?>
+        </ul>
+    </div>
+</section>
 <section class="last-add-game">
     <h3>Ostatnio dodana gra</h3>
     <?php
@@ -19,6 +35,4 @@
         }
 
     ?>
-
-    
 </section>

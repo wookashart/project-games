@@ -13,7 +13,7 @@
 ?>
 
 <div class="articles-list">
-    <h1>Artykuły</h1>
+    <h1>Wiadomości</h1>
     <ul>
         <?php
 
