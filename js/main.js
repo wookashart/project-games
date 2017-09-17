@@ -11,6 +11,7 @@ $(document).ready(function(){
         autoplaySpeed: 5000,
         fade: true,
         pauseOnHover: true,
+        arrows: false,
     });
 })
 
@@ -92,10 +93,6 @@ function onchangeOptions(){
 }
 onchangeOptions();
 
-var slider = new Slider("#ex8", {
-	tooltip: 'always'
-});
-
 // Add played games modal
 var addToPlayedModal = function(){
     $('.add-to-played-btn').on('click', function(){
@@ -109,3 +106,7 @@ var addToPlayedModal = function(){
     });
 }
 addToPlayedModal();
+
+var slider = new Slider("#ex8", {
+	tooltip: 'always'
+});

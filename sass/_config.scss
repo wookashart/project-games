@@ -2,6 +2,7 @@
 
 $bodyBackgroundColor: #080808;
 $formBackgroundColor: #f2f2f2;
+$ratingBackgroundColor: rgba(214, 214, 214, 0.46);
 
 $headerBackgroundDark: #233975;
 $headerBackgroundLight: #2c5db1;
@@ -10,7 +11,7 @@ $baseButtonBackground: #93939a;
 $basicHoverButton: #b0b0b1;
 $inputTextBackground: #ffffff;
 
-$errorColor: #e02929;
+$errorColor: #e02929; 
 
 
 
@@ -32,6 +33,7 @@ $basicSectionColor: #000000;
 
 $basicTextShadow: 3px 3px 0px rgba(0, 0, 0, 1);
 $basicBoxShadow: 0 0 13px -3px black;
+$basicInsetBoxShadow: inset 0 0 13px -3px black;
 
 // Borders
 
