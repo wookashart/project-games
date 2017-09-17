@@ -30,7 +30,7 @@
                 <!--Pierwsza linia headera-->
                 <div class="header-first-line">
                     <div class="first-line-conteiner">
-                        <div class="website-name"><a href="index.php?action=home">project games</a></div>
+                        <div class="website-name"><a href="index.php?action=home"><span>project</span><span>games</span></a></div>
                         <div class="second-line-conteiner">
                             <form method="GET" action="php/searchresult.php">
                                 <input type="text" placeholder="Wyszukaj grę" class="base-input find-game-input" name="search">

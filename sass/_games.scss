@@ -175,6 +175,12 @@ div.games-list, .search-game-list {
             button {
                 margin: 10px;
             }
+
+            .alredy-played-btn, .alredy-in-library {
+                background-color: $disabledButtonBackground;
+                color: $disabledButtonColor;
+                box-shadow: $basicInsetBoxShadow;
+            }
         }
     
         .modal-conteiner {
