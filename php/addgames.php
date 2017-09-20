@@ -25,7 +25,7 @@
     $addDate = date('Y-m-d H:i:s');
 
     // upload cover
-    $targetDir = "covers/";
+    $targetDir = "../db/covers/";
     $targetFile = $targetDir.basename($_FILES['game-cover']["name"]);
     $uploadOk = true;
     $imageFileType = pathinfo($targetFile, PATHINFO_EXTENSION);
@@ -47,7 +47,7 @@
     $addCover = $_FILES['game-cover']["name"];
 
 
-    require_once "connect.php";
+    require_once "../db/connect.php";
 
     $connection = @new mysqli($host, $db_user, $db_password, $db_name);
 
@@ -59,12 +59,9 @@
 
     } else {
         $addresoult = $connection->query("INSERT INTO games VALUES (NULL, '$gameTitle', '$gamePlatform', '$gameDateWorld', '$gameDatePl', '$gameType', '$gameProducer', '$gamePublisher', '$gameDistributor', '$gameDescription', '$gameProcessor', '$gameGraphic', '$gameRam', '$gameSystem', '$gameDirectx', '$gameSpace', '$addDate', '$addCover')");
-
-        if($addresoult){
-            $_SESSION['addsuccess'] = 'Gra pomyślnie dodana do bazy.';
-            header('Location: ../admins/admins.php?id=addgame');
-            exit();
-        }
+        $_SESSION['addsuccess'] = '<div class="error">Gra pomyślnie dodana do bazy.</div>';
+        header('Location: ../admins/admins.php?id=addgame');
+        exit();
     }
 
     $connection->close();

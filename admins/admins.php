@@ -51,7 +51,17 @@
                             </li>
                         </ul>
                     </li>
-                    <li><img src="../img/icons/notepad.svg"><a href="admins.php?id=baza_poradniki">Poradniki</a></li>
+                    <li><img src="../img/icons/notepad.svg">
+                        <span>Poradniki</span>
+                        <ul>
+                            <li>
+                                <a href="admins.php?id=addtutorial">Dodaj poradnik</a>            
+                            </li>
+                            <li>
+                                <a href="admins.php?id=edittutorial">Edytuj poradnik</a>            
+                            </li>
+                        </ul>
+                    </li>
                     <li><img src="../img/icons/users.svg"><a href="admins.php?id=baza_users">Zarządzanie kontami</a></li>
                     <li><img src="../img/icons/switch.svg"><a href="../php/logout.php">Wyloguj się</a></li>
                 </ul>
@@ -64,7 +74,8 @@
                         case 'editgame' : include 'admineditgame.php'; break;
                         case 'addarticle' : include 'adminarticles.php'; break;
                         case 'editarticle' : include 'admineditarticles.php'; break;
-                        case 'baza_poradniki' : include 'admintutorials.php'; break;
+                        case 'addtutorial' : include 'admintutorials.php'; break;
+                        case 'edittutorial' : include 'adminedittutorials.php'; break;
                         case 'baza_users' : include 'adminusers.php'; break;
                         default : include 'adminpanel.php'; break;
                     }
