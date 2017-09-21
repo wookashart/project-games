@@ -1,0 +1,30 @@
+div.tutorials-list {
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        li {
+            transition-duration: 250ms;
+
+            &:hover {
+                background-color: $headerBackgroundLight;
+
+                a {
+                    color: $basicMenuFontColor;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: $basicSectionColor;
+                font-weight: normal;
+                font-size: 25px;
+                width: 100%;
+                display: block;
+                padding: 10px 30px;
+            }
+        }
+    }
+}
