@@ -3,13 +3,16 @@ div.user-profile-page {
     .user-info-conteiner {
         margin-top: 70px;
         display: flex;
-        border: $basicSectionBorder;
+        background-color: $formBackgroundColor;
         padding: 20px;
-        border-radius: 10px;
-        margin-left: 100px;
-        margin-right: 100px;
+        border-radius: 5px;
         box-shadow: $basicBoxShadow;
         position: relative;
+        flex-direction: column;
+
+        @media screen and (min-width: 767px){
+            flex-direction: row;
+        }
 
         .user-avatar {
             flex: 1;
@@ -28,7 +31,8 @@ div.user-profile-page {
         }
 
         .user-games-info {
-            flex: 1
+            flex: 1;
+            padding-bottom: 50px;
         }
 
         .user-info1 {
@@ -76,27 +80,62 @@ div.user-profile-page {
 .user-description-text {
     text-align: justify;
     display: block;
-    width: 60%;
+    // width: 60%;
     margin: auto;
+    width: 100%;
 }
 
 .my-games-conteiner {
     display: flex;
+    
+    flex-direction: column;
+
+    @media screen and (min-width: 1100px){
+        flex-direction: row;
+        margin: 0 -10px;
+    }
 
     .see-all {
         text-decoration: none;
-        color: $basicSectionColor;
+        color: $headerBackgroundDark;
         display: block;
         text-align: center;
+        font-weight: bold;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 135px;
+            bottom: -6px;
+            right: 0;
+            background-color: $headerBackgroundDark;
+            transform: scaleX(0);
+            transition: 0.2s transform linear;
+            margin: auto;
+            left: 0;
+        }
+
+        &:hover {
+            &:after {
+                transform: scaleX(1);
+            }
+        }
     }
 
     .last-add-games {
         flex: 1;
-        width: 50%;
-        border: $basicSectionBorder;
-        border-radius: 10px;
-        margin: 20px;
+        background-color: $formBackgroundColor;
+        border-radius: 5px;
         box-shadow: $basicBoxShadow;
+        width: 100%;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: 1100px){
+            margin: 10px;
+            width: 50%;
+        }
 
         h3 {
             text-align: center;
@@ -114,13 +153,15 @@ div.user-profile-page {
                 padding: 5px;
                 transition-duration: 200ms;
 
-                &:hover {
-                    background-color: $headerBackgroundLight; 
-                    box-shadow: $basicBoxShadow;
-                    color: $basicMenuFontColor;
-
-                    span {
+                @media screen and (min-width: 767px){
+                    &:hover {
+                        background-color: $headerBackgroundLight; 
+                        box-shadow: $basicBoxShadow;
                         color: $basicMenuFontColor;
+    
+                        span {
+                            color: $basicMenuFontColor;
+                        }
                     }
                 }
             }
@@ -131,12 +172,43 @@ div.user-profile-page {
                 img {
                     height: 70px;
                     vertical-align: middle;
+                    position: absolute;
+
+                    @media screen and (min-width: 767px){
+                        position: inherit;
+                    }
                 }
 
                 span {
-                    margin: 10px;
                     font-size: 17px;
                     color: $basicSectionColor;
+                    display: block;
+                    margin: 0;
+                    text-align: center;
+                    padding-left: 55px;
+                    vertical-align: middle;
+
+                    @media screen and (min-width: 767px){
+                        display: inline-block;
+                    }
+
+                    @media screen and (min-width: 1100px){
+                        margin: 10px;
+                        padding: 0;
+                    }
+
+                    &.game-title {
+                        font-weight: bold;
+                        
+                        @media screen and (min-width: 767px){
+                            max-width: 300px;
+                            text-align: left;
+                        }
+
+                        @media screen and (min-width: 1100px){
+                            max-width: 250px;
+                        }
+                    }
                 }
             }
 
@@ -149,9 +221,9 @@ div.user-profile-page {
     .last-played-games {
         flex: 1;
         width: 50%;
-        border: $basicSectionBorder;
-        border-radius: 10px;
-        margin: 20px;
+        background-color: $formBackgroundColor;
+        border-radius: 5px;
+        margin: 10px 10px 10px 0;
         box-shadow: $basicBoxShadow;
 
         h3 {
@@ -184,9 +256,10 @@ div.user-game-collection, .user-played-games {
             border-radius: 10px;
             padding: 10px;
             border: $notPlayedGameBorder;
+            background-color: $formBackgroundColor;
 
             &.played-game {
-                border: $playedGameBorder;
+                background-color: $haveGameBackground;
                 position: relative;
 
                 &:after {
@@ -205,6 +278,8 @@ div.user-game-collection, .user-played-games {
                 display: flex;
                 flex-direction: column;
                 height: 230px;
+                text-decoration: none;
+                color: $basicSectionColor;
 
                 img {
                     max-height: 170px;
@@ -212,6 +287,11 @@ div.user-game-collection, .user-played-games {
                     margin: auto;
                     border: $basicSectionBorder;
                     margin-top: 0;
+
+                    & + div {
+                        font-weight: bold;
+                        margin: 5px;
+                    }
                 }
             }
         }
@@ -241,12 +321,15 @@ div.edit-user-profile {
     .user-data {
         
         form {
-            padding: 20px 30px;
-            // border: $basicSectionBorder;
             border-radius: 4px;
             box-shadow: $basicBoxShadow;
             margin: 20px 0;
             background-color: $formBackgroundColor;
+            padding: 15px;
+
+            @media screen and (min-width: 1100px){
+            padding: 20px 30px;
+            }
 
             h4 {
                 margin: 0;
@@ -259,7 +342,7 @@ div.edit-user-profile {
                 text-align: center;
                 
                 .current-avatar {
-                    margin: 10px;
+                    margin: 0;
 
                     img {
                         max-width: 150px;
@@ -270,24 +353,39 @@ div.edit-user-profile {
             }
 
             .form-items-container > div {
-                display: inline-block;
-                width: 30%;
+                display: block;
+                width: 100%;
+                margin: 15px 0;
+
+                @media screen and (min-width: 767px){
+                    display: inline-block;
+                    width: 30%;
+                }
             }
 
             .form-info-container {
 
                 .form-info-item {
                     text-align: center;
-                    margin: 15px;
+                    margin: 15px 0;
 
                     .form-info-item-header {
                         width: 150px;
-                        text-align: right;
-                        margin-right: 15px;
+                        text-align: center;
+                        margin: 0;
+
+                        @media screen and (min-width: 767px){
+                            text-align: right;
+                            margin-right: 15px;
+                        }
                     }
 
                     .form-info-item-content {
-                        width: 300px;
+                        width: 100%;
+
+                        @media screen and (min-width: 767px){
+                            width: 300px;
+                        }
                     }
                 }
 
@@ -310,14 +408,22 @@ div.edit-user-profile {
 
                 .form-password-item {
                     display: inline-block;
-                    width: 250px;
+                    width: 100%;
+
+                    @media screen and (min-width: 767px){
+                        width: 250px;
+                    }
                 }
             }
 
             .base-btn {
                 display: block;
-                margin-left: auto;
-                margin-right: 0;
+                margin: auto;
+
+                @media screen and (min-width: 767px){
+                    margin-left: auto;
+                    margin-right: 0;
+                }
             }
         }
     }

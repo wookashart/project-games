@@ -4,6 +4,10 @@ header {
     z-index: 10;
 }
 
+.header-conteiner {
+    height: 0;
+}
+
 .header-second-line, .header-third-line, {
     width: 100%;
     border-bottom: 2px solid black;

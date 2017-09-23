@@ -1,4 +1,5 @@
 div.tutorials-list {
+    margin-top: 40px;
 
     ul {
         padding: 0;
@@ -20,16 +21,25 @@ div.tutorials-list {
                 text-decoration: none;
                 color: $basicSectionColor;
                 font-weight: normal;
-                font-size: 25px;
+                font-size: 20px;
                 width: 100%;
                 display: block;
                 padding: 10px 30px;
+
+                @media screen and (min-width: 767px){
+                    font-size: 25px;
+                }
             }
         }
+    }
+
+    .pagination-nav-bar {
+        margin-top: 50px;
     }
 }
 
 div.tutorial-detail {
+    margin-top: 40px;
 
     .tut-game-info {
         font-size: 18px;

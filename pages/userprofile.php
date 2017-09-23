@@ -81,7 +81,7 @@
         <ul>
             <?php
                 while($lastAddCollection = $myGameCollection->fetch_assoc()){
-                    echo '<li><a href="index.php?action=gamedetail&id='.$lastAddCollection['id_games'].'"><img src="db/covers/'.$lastAddCollection['cover'].'"><span>'.$lastAddCollection['tytul'].'</span><span>'.$lastAddCollection['game_platform'].'</span><span>'.$lastAddCollection['game_pc_platform'].'</span></a></li>';
+                    echo '<li><a href="index.php?action=gamedetail&id='.$lastAddCollection['id_games'].'"><img src="db/covers/'.$lastAddCollection['cover'].'"><span class="game-title">'.$lastAddCollection['tytul'].'</span><span>'.$lastAddCollection['game_platform'].'</span><span>'.$lastAddCollection['game_pc_platform'].'</span></a></li>';
                 }
                 
             ?>
@@ -102,7 +102,7 @@
         <ul>
             <?php
                 while($lastPlayed = $myPlayedGames->fetch_assoc()){
-                    echo '<li><a href="index.php?action=gamedetail&id='.$lastPlayed['id_games'].'"><img src="db/covers/'.$lastPlayed['cover'].'"><span>'.$lastPlayed['tytul'].'</span><span>Ocena: '.$lastPlayed['rating'].'</span><span>Czas gry: '.$lastPlayed['finish_game_h'].':'.$lastPlayed['finish_game_m'].'</span></a></li>';
+                    echo '<li><a href="index.php?action=gamedetail&id='.$lastPlayed['id_games'].'"><img src="db/covers/'.$lastPlayed['cover'].'"><span class="game-title">'.$lastPlayed['tytul'].'</span><span>Ocena: '.$lastPlayed['rating'].'</span><span>Czas gry: '.$lastPlayed['finish_game_h'].':'.$lastPlayed['finish_game_m'].'</span></a></li>';
                 }
                 
             ?>

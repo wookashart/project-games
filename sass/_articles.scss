@@ -1,4 +1,6 @@
 div.articles-list {
+    margin-top: 40px;
+
     ul {
         list-style-type: none;
         padding: 0;
@@ -61,6 +63,7 @@ div.articles-list {
 }
 
 div.article-detail {
+    margin-top: 40px;
 
     .article-detail-date, .article-detail-author {
         font-size: 16px;

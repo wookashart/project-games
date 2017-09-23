@@ -1,9 +1,5 @@
 div.games-list, .search-game-list {
-    
-        @media screen and (min-width: 1450px){
-            // margin-left: 100px;
-            // margin-right: 100px;
-        }
+    margin-top: 40px;
     
         h1 {
             margin-bottom: 0;
@@ -11,7 +7,7 @@ div.games-list, .search-game-list {
     
         .all-rows-sum {
             text-align: center;
-            font-size: 20px;
+            font-size: 16px;
         }
     
         ul {
@@ -24,6 +20,21 @@ div.games-list, .search-game-list {
                 width: 100%;
                 transition-duration: 200ms;
                 position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 85%;
+                    height: 1px;
+                    background-color: $headerBackgroundDark;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+
+                    @media screen and (min-width: 1100px){
+                        display: none;
+                    }
+                }
     
                 a {
                     text-decoration: none;
@@ -32,23 +43,63 @@ div.games-list, .search-game-list {
                     padding: 10px 30px;
                     flex: 1;
                     align-items: center;
+                    flex-direction: column;
+
+                    @media screen and (min-width: 1100px){
+                        flex-direction: row;
+                    }
+
+                    .game-title {
+                        text-align: center;
+                        font-size: 18px;
+
+                        @media screen and (min-width: 767px){
+                            font-size: 24px;
+                        }
+                    }
                 }
     
                 .library-list-information {
                     display: flex;
                     flex: 1;
-                    padding-left: 50px;
                     align-items: center;
+                    flex-direction: column;
+                    padding: 0;
+
+                    @media screen and (min-width: 1100px){
+                        flex-direction: row;
+                        padding-left: 50px;
+                    }
     
                     span {
-                        font-size: 18px;
                         padding: 5px;
+                        font-size: 16px;
+                        
+
+                        @media screen and (min-width: 767px){
+                            font-size: 18px;
+                        }
+
+                        @media screen and (min-width: 1100px){
+                            margin-right: auto;
+                        }
                         
                         &:nth-of-type(2){
-                            flex: 1;
                             text-align: right;
-                            font-size: 30px;
                             padding: 0;
+                            font-size: 24px;
+                            padding: 5px 15px;
+                            background: $ratingBackgroundColor;
+                            width: 100px;
+                            text-align: center;
+                            box-shadow: $basicInsetBoxShadow;
+                            border-radius: 5px;
+                            color: $headerBackgroundDark;
+                            font-weight: bold;
+
+                            @media screen and (min-width: 1100px){
+                                margin-right: 0;
+                            }
                         }
                     }
                 }
@@ -96,9 +147,17 @@ div.games-list, .search-game-list {
     
         .search-result-text {
             padding-top: 20px;
-            font-size: 25px;
+            font-size: 20px;
             text-align: center;
             border-bottom: $basicSectionBorder;
+            font-weight: normal;
+
+            .search-word {
+                text-transform: uppercase;
+                color: $headerBackgroundDark;
+                font-size: 24px;
+                font-weight: bold;
+            }
         }
     
         .search-no-result {
@@ -107,219 +166,290 @@ div.games-list, .search-game-list {
         }
     }
     
-    div.game-detail {
-    
-        .return-game-list {
-            position: absolute;
-            text-decoration: none;
-            bottom: 0;
+div.game-detail {
+    margin-top: 40px;
+
+    .return-game-list {
+        position: absolute;
+        text-decoration: none;
+        bottom: 0;
+    }
+
+    .game-detail-conteiner {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: $basicBoxShadow;
+        background-color: $formBackgroundColor;
+
+        @media screen and (min-width: 767px){
+            flex-direction: row;
         }
-    
-        .game-detail-conteiner {
-            display: flex;
-            flex-direction: column;
-            border: 1px solid black;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: $basicBoxShadow;
-    
+
+        .game-cover {
+            flex: 1;
+            text-align: center;
+            
+
             @media screen and (min-width: 767px){
-                flex-direction: row;
-            }
-    
-            @media screen and (min-width: 1450px){
-                margin-left: 100px;
-                margin-right: 100px;
-            }
-    
-            .game-cover {
-                flex: 1;
-                text-align: center;
                 margin: auto;
                 margin-right: 10px;
-    
-                img {
-                    max-width: 185px;
-                    border: 1px solid black;
-                    max-height: 275px;
-                }
-            }
-    
-            .game-information {
-                flex: 2;
-    
-                p {
-                    display: flex;
-    
-                    .game-info1 {
-                        flex: 1;
-                        font-weight: bold;
-                    }
-    
-                    .game-info2 {
-                        flex: 1;
-                    }
-                }
-            }
-            
-            .gameplay-detail {
-                text-align: center;
-                flex: 1;
-            }
-        }
-    
-        .add-games-collect {
-            display: flex;
-            justify-content: center;
-    
-            button {
-                margin: 10px;
             }
 
-            .alredy-played-btn, .alredy-in-library {
-                background-color: $disabledButtonBackground;
-                color: $disabledButtonColor;
-                box-shadow: $basicInsetBoxShadow;
+            img {
+                max-width: 185px;
+                border: 1px solid black;
+                max-height: 275px;
             }
         }
-    
-        .modal-conteiner {
-            visibility: hidden;
-            opacity: 0;
-            transition-duration: 200ms;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
+
+        .game-information {
+            flex: 2;
+
+            p {
+                display: flex;
+
+                .game-info1 {
+                    flex: 1;
+                    font-weight: bold;
+                }
+
+                .game-info2 {
+                    flex: 1;
+                }
+            }
+        }
+        
+        .gameplay-detail {
+            text-align: center;
+            flex: 1;
+
+            .game-rating {
+
+                .game-rating-header {
+                    margin-bottom: 5px;
+                }
+
+                .rating {
+                    width: 100px;
+                    margin: auto;
+                    padding: 5px 0;
+                    font-size: 22px;
+                    font-weight: bold;
+                    background-color: $ratingBackgroundColor;
+                    border-radius: 5px;
+                    color: $headerBackgroundDark;
+                    box-shadow: $basicInsetBoxShadow;
+                }
+            }
+
+            .game-time {
+
+                .play-time {
+                    font-weight: bold;
+                    margin: 0 7px;
+                }
+            }
+        }
+    }
+
+    .add-games-collect {
+        display: flex;
+        justify-content: center;
+
+        button {
+            margin: 10px;
+        }
+
+        .alredy-played-btn, .alredy-in-library {
+            background-color: $disabledButtonBackground;
+            color: $disabledButtonColor;
+            box-shadow: $basicInsetBoxShadow;
+        }
+    }
+
+    .modal-conteiner {
+        visibility: hidden;
+        opacity: 0;
+        transition-duration: 200ms;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        background-color: rgba(0,0,0,0.8);
+
+        .modal-add-game {
+            position: absolute;
             width: 100%;
+            height: 400px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             margin: auto;
-            background-color: rgba(0,0,0,0.8);
-    
-            .modal-add-game {
-                position: absolute;
-                width: 100%;
+            background-color: $headerBackgroundLight;
+            border-radius: 10px;
+            border: $basicSectionBorder;
+            box-shadow: $basicBoxShadow;
+            text-align: center;
+
+            @media screen and (min-width: 500px){
+                width: 500px;
                 height: 400px;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-                background-color: $headerBackgroundLight;
-                border-radius: 10px;
-                border: $basicSectionBorder;
-                box-shadow: $basicBoxShadow;
-                text-align: center;
-    
-                @media screen and (min-width: 500px){
-                    width: 500px;
-                    height: 400px;
-                }
-    
-                h3 {
-                    text-transform: uppercase;
-                    color: $basicMenuFontColor;
-                }
-    
-                .select-platform-form {
-    
-                    .select-platform {
-                        display: block;
-                        width: 300px;
-                        margin: auto;
-                        margin-bottom: 20px;
-                        height: 40px;
-                        font-size: 16px;
-                    }
-                }
-    
-                .distribution-options-conteiner {
-                    margin: 40px;
-    
-                    h4 {
-                        text-transform: uppercase;
-                        color: $basicMenuFontColor; 
-                    }
-    
-                    .distribution-options-box {
-                        display: inline-block;
-                        margin: 5px;
-                    }
-                }
             }
-        }
-    
-        .modal-add-played-games {
-    
-            .played-games-form {
-                margin-top: 30px;
-    
-                .slider-horizontal {
-                    display: block;
-                    margin-left: 100px;
-                    margin-bottom: 30px;
-    
-                    .slider-track {
-                        margin-top: 15px;
-                    }
-    
-                    .tooltip-main {
-                        margin-top: 0;
-                        font-size: 50px;
-                        font-weight: bold;
-                        color: $basicMenuFontColor;
-                        text-align: right;
-                        margin-right: -90px;
-                    }
-    
-                    .slider-handle {
-                        margin-top: 15px;
-                        width: 30px;
-                        height: 30px;
-                        background: $baseButtonBackground;
-                        cursor: pointer;
-                    }
-                }
-    
-                .game-time {
-                    margin: 50px 100px;
-                }
-            }
-        }
-    
-        .modal-open {
-            visibility: visible;
-            opacity: 1;
-        }
-    
-        .game-description {
-            line-height: 25px;
-            font-size: 18px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            text-align: justify;
-        }
-    
-        .game-requirements {
-    
+
             h3 {
-                border-bottom: 1px solid black;
+                text-transform: uppercase;
+                color: $basicMenuFontColor;
             }
-    
-            ul {
-                list-style-image: url('../img/icons/xbox.png');
-                
-    
-                li {
-                    margin: 10px;
-    
-                    span {
-                        margin: 5px;
-    
-                        &:nth-of-type(1) {
-                            font-weight: bold;
+
+            .select-platform-form {
+
+                .select-platform {
+                    display: block;
+                    width: 300px;
+                    margin: auto;
+                    margin-bottom: 20px;
+                    height: 40px;
+                    font-size: 16px;
+                }
+            }
+
+            .distribution-options-conteiner {
+                margin: 40px;
+
+                h4 {
+                    text-transform: uppercase;
+                    color: $basicMenuFontColor; 
+                }
+
+                .distribution-options-box {
+                    display: inline-block;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+
+    .modal-add-played-games {
+
+        .played-games-form {
+            margin-top: 30px;
+
+            .slider-horizontal {
+                display: block;
+                margin-left: 100px;
+                margin-bottom: 30px;
+
+                .slider-track {
+                    margin-top: 15px;
+                }
+
+                .tooltip-main {
+                    margin-top: 0;
+                    font-size: 50px;
+                    font-weight: bold;
+                    color: $basicMenuFontColor;
+                    text-align: right;
+                    margin-right: -90px;
+                }
+
+                .slider-handle {
+                    margin-top: 15px;
+                    width: 30px;
+                    height: 30px;
+                    background: $baseButtonBackground;
+                    cursor: pointer;
+                }
+            }
+
+            .game-time {
+                margin: 50px 100px;
+            }
+        }
+    }
+
+    .modal-open {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .game-description {
+        line-height: 25px;
+        font-size: 18px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: justify;
+    }
+
+    .game-requirements {
+
+        h3 {
+            border-bottom: $basicSectionBorder;
+        }
+
+        ul {
+            list-style-image: url('../img/icons/xbox.png');
+            
+
+            li {
+                margin: 10px;
+
+                span {
+                    margin: 5px;
+
+                    &:nth-of-type(1) {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .game-tutorials {
+
+        h3 {
+            border-bottom: $basicSectionBorder;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: 10px 0;
+
+                a {
+                    text-decoration: none;
+                    color: $headerBackgroundDark;
+                    font-size: 18px;
+                    font-weight: bold;
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        left: 0;
+                        bottom: -6px;
+                        right: 0;
+                        margin: auto;
+                        background-color: $headerBackgroundDark;
+                        transform: scaleX(0);
+                        transition: 0.2s transform linear;
+                    }
+
+                    &:hover {
+                        &:after {
+                            transform: scaleX(1);
                         }
                     }
                 }
             }
         }
     }
+}

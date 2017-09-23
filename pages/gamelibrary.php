@@ -32,7 +32,7 @@
                     $playersAverage = 'brak';
                 }
     
-                echo '<li class="games-list-item"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><span>'.$row['tytul'].'</span><div class="library-list-information"><span>'.$row['platforma'].'</span><span>'.$playersAverage.'</span></div></a><div class="hover-cover"><img src="db/covers/'.$row['cover'].'"</div></li>';
+                echo '<li class="games-list-item"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><span class="game-title">'.$row['tytul'].'</span><div class="library-list-information"><span>'.$row['platforma'].'</span><span>'.$playersAverage.'</span></div></a><div class="hover-cover"><img src="db/covers/'.$row['cover'].'"</div></li>';
                 
             }
 

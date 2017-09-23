@@ -53,7 +53,7 @@
             </p>
         </div>
         <div class="gameplay-detail">
-            <div><p>Ocena graczy:</p>
+            <div class="game-rating"><p class="game-rating-header">Ocena graczy:</p>
             <?php
 
                 $playersScore = $connection->query("SELECT sum(rating) AS sumScore, count(rating) AS allPosition FROM users_library WHERE id_game = {$_SESSION['gameId']}");
@@ -61,28 +61,58 @@
 
                 if ($allScore['sumScore'] != 0 && $allScore['allPosition'] != 0){
                     $playersAverage = $allScore['sumScore'] / $allScore['allPosition'];
-                    echo '<p>'.$playersAverage.'</p>';
+                    echo '<p class="rating">'.$playersAverage.'</p>';
                 } else {
-                    echo '<p>Jeszcze nikt nie ocenił!</p>';
+                    echo '<p class="rating">brak</p>';
                 }
 
             ?>
             </div>
-            <?php
-                if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
-                    $yourScore = $connection->query("SELECT * FROM users_library WHERE id_game = {$_SESSION['gameId']} AND id_user = {$_SESSION['id']}");
-                    $displYourScore = $yourScore->fetch_assoc();
-                    
-                    if ($displYourScore['rating'] != 0){
-                        echo '<p>Twoja ocena:</p><p>'.$displYourScore['rating'].'</p>';
-                    } else {
-                        echo '<p>Jeszcze nie oceniłeś tej gry</p>';
+            <div class="game-rating">
+                <?php
+                    if((isset($_SESSION['useronline'])) && ($_SESSION['useronline'] == true)){
+                        $yourScore = $connection->query("SELECT * FROM users_library WHERE id_game = {$_SESSION['gameId']} AND id_user = {$_SESSION['id']}");
+                        $displYourScore = $yourScore->fetch_assoc();
+                        
+                        if ($displYourScore['rating'] != 0){
+                            echo '<p class="game-rating-header">Twoja ocena:</p><p class="rating">'.$displYourScore['rating'].'</p>';
+                        } else {
+                            echo '<p class="game-rating-header">Twoja ocena:</p><p class="rating">brak</p>';
+                        }
                     }
-                }
 
-            ?>
-            <div><span>Średni czas przejścia:</span></div>
-            <div><span>Najszybsze przejście gry:</span></div>
+                ?>
+            </div>
+            <div class="game-time">
+                <p>Średni czas gry:</p>
+                <div>
+                    <?php
+
+                        $timeConnect = $connection->query("SELECT sum(finish_game_h) AS gameH, sum(finish_game_m) AS gameM, count(id_game) AS allGame FROM users_library WHERE id_game = {$_SESSION['gameId']} AND finish = 'yes'");
+                        $time = $timeConnect->fetch_assoc();
+
+                        if ($time['allGame'] == 0){
+                            echo '<span class="play-time">brak</span>';
+                        } else {
+                            $sumGodz = $time['gameH'];
+                            $sumMin = $time['gameM'];
+                            
+                            $allSec = ($sumGodz * 3600) + ($sumMin * 60);
+                            $allSecAverage = $allSec / $time['allGame'];
+                            
+                            $allGodz = $allSecAverage / 3600;
+                            $allGodz2 = floor($allGodz);
+                            
+                            $allMin = ($allSecAverage % 3600) / 60;
+                            $allMin2 = floor($allMin);
+
+                            echo '<span class="play-time">'.$allGodz2.'</span><span>Godz</span><span class="play-time">'.$allMin2.'</span><span>Min</span>';
+                        }
+                        
+
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
     <div class="add-games-collect">
@@ -170,6 +200,22 @@
             </li>
         </ul>
     </div>
+    <?php
+
+        $tutConnect = $connection->query("SELECT * FROM tutorials WHERE tut_game_id = {$_SESSION['gameId']}");
+        $howManyTut = $tutConnect->num_rows;
+
+        if($howManyTut > 0){
+            echo '<div class="game-tutorials"><h3>Poradniki</h3><ul>';
+
+            while($tut = $tutConnect->fetch_assoc()){
+                echo '<li><a href="index.php?action=tutorial&amp;id='.$tut['tut_id'].'">'.$tut['tut_title'].'</a></li>';
+            }
+
+            echo '</ul></div>';
+        }
+
+    ?>
 </div>
 
 <?php

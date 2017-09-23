@@ -23,7 +23,7 @@
 
 ?>
 <div class="search-game-list">
-    <h3 class="search-result-text">Wyniki wyszukiwania dla: <?= $_GET['search'] ?>, wyszukanych wyników: <?= $cnt['cnt'] ?></h3>
+    <h3 class="search-result-text">Znaleziono <?= $cnt['cnt'] ?> wyniki/ów dla frazy <span class="search-word"><?= $_GET['search'] ?></span></h3>
     <div>
         <ul>
             <?php
@@ -40,7 +40,7 @@
                             $playersAverage = 'brak';
                         }
 
-                        echo '<li class="games-list-item"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><span>'.$row['tytul'].'</span><div class="library-list-information"><span>'.$row['platforma'].'</span><span>'.$playersAverage.'</span></div></a><div class="hover-cover"><img src="db/covers/'.$row['cover'].'"</div></li>';
+                        echo '<li class="games-list-item"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><span class="game-title">'.$row['tytul'].'</span><div class="library-list-information"><span>'.$row['platforma'].'</span><span>'.$playersAverage.'</span></div></a><div class="hover-cover"><img src="db/covers/'.$row['cover'].'"</div></li>';
                         
                     }
                 } else {

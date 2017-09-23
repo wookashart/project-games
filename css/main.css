@@ -82,6 +82,9 @@ header {
   width: 100%;
   z-index: 10; }
 
+.header-conteiner {
+  height: 0; }
+
 .header-second-line, .header-third-line {
   width: 100%;
   border-bottom: 2px solid black; }
@@ -619,270 +622,368 @@ body.admin-panel {
 .new-tutorial-admins .tutorial-game-title select {
   display: inline-block; }
 
-div.games-list h1, .search-game-list h1 {
-  margin-bottom: 0; }
-
-div.games-list .all-rows-sum, .search-game-list .all-rows-sum {
-  text-align: center;
-  font-size: 20px; }
-
-div.games-list ul, .search-game-list ul {
-  list-style: none;
-  padding: 0;
-  font-size: 25px; }
-  div.games-list ul li.games-list-item, .search-game-list ul li.games-list-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-transition-duration: 200ms;
-            transition-duration: 200ms;
-    position: relative; }
-    div.games-list ul li.games-list-item a, .search-game-list ul li.games-list-item a {
-      text-decoration: none;
-      color: #000000;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      padding: 10px 30px;
-      -webkit-box-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
-    div.games-list ul li.games-list-item .library-list-information, .search-game-list ul li.games-list-item .library-list-information {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
-      padding-left: 50px;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
-      div.games-list ul li.games-list-item .library-list-information span, .search-game-list ul li.games-list-item .library-list-information span {
-        font-size: 18px;
-        padding: 5px; }
-        div.games-list ul li.games-list-item .library-list-information span:nth-of-type(2), .search-game-list ul li.games-list-item .library-list-information span:nth-of-type(2) {
-          -webkit-box-flex: 1;
-              -ms-flex: 1;
-                  flex: 1;
-          text-align: right;
-          font-size: 30px;
-          padding: 0; }
-    div.games-list ul li.games-list-item span, .search-game-list ul li.games-list-item span {
-      text-align: left; }
-      div.games-list ul li.games-list-item span:nth-of-type(2), .search-game-list ul li.games-list-item span:nth-of-type(2) {
-        text-align: center; }
-    div.games-list ul li.games-list-item .hover-cover, .search-game-list ul li.games-list-item .hover-cover {
-      visibility: hidden;
-      opacity: 0;
-      -webkit-transition-duration: 300ms;
-              transition-duration: 300ms;
-      position: absolute;
-      top: -200px;
-      z-index: 10; }
-      div.games-list ul li.games-list-item .hover-cover img, .search-game-list ul li.games-list-item .hover-cover img {
-        height: 200px; }
-    div.games-list ul li.games-list-item:hover, .search-game-list ul li.games-list-item:hover {
-      background-color: #2c5db1;
-      -webkit-box-shadow: 0 0 13px -3px black;
-              box-shadow: 0 0 13px -3px black;
-      color: #b9c0da;
-      cursor: pointer; }
-      div.games-list ul li.games-list-item:hover span, .search-game-list ul li.games-list-item:hover span {
-        color: #b9c0da; }
-      div.games-list ul li.games-list-item:hover .hover-cover, .search-game-list ul li.games-list-item:hover .hover-cover {
-        visibility: visible;
-        opacity: 1;
-        -webkit-transition-delay: 400ms;
-                transition-delay: 400ms; }
-
-div.games-list .search-result-text, .search-game-list .search-result-text {
-  padding-top: 20px;
-  font-size: 25px;
-  text-align: center;
-  border-bottom: 1px solid #000000; }
-
-div.games-list .search-no-result, .search-game-list .search-no-result {
-  margin-top: 100px;
-  text-align: center; }
-
-div.game-detail .return-game-list {
-  position: absolute;
-  text-decoration: none;
-  bottom: 0; }
-
-div.game-detail .game-detail-conteiner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 13px -3px black;
-          box-shadow: 0 0 13px -3px black; }
-  @media screen and (min-width: 767px) {
-    div.game-detail .game-detail-conteiner {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
-  @media screen and (min-width: 1450px) {
-    div.game-detail .game-detail-conteiner {
-      margin-left: 100px;
-      margin-right: 100px; } }
-  div.game-detail .game-detail-conteiner .game-cover {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+div.games-list, .search-game-list {
+  margin-top: 40px; }
+  div.games-list h1, .search-game-list h1 {
+    margin-bottom: 0; }
+  div.games-list .all-rows-sum, .search-game-list .all-rows-sum {
     text-align: center;
-    margin: auto;
-    margin-right: 10px; }
-    div.game-detail .game-detail-conteiner .game-cover img {
-      max-width: 185px;
-      border: 1px solid black;
-      max-height: 275px; }
-  div.game-detail .game-detail-conteiner .game-information {
-    -webkit-box-flex: 2;
-        -ms-flex: 2;
-            flex: 2; }
-    div.game-detail .game-detail-conteiner .game-information p {
+    font-size: 16px; }
+  div.games-list ul, .search-game-list ul {
+    list-style: none;
+    padding: 0;
+    font-size: 25px; }
+    div.games-list ul li.games-list-item, .search-game-list ul li.games-list-item {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex; }
-      div.game-detail .game-detail-conteiner .game-information p .game-info1 {
+      display: flex;
+      width: 100%;
+      -webkit-transition-duration: 200ms;
+              transition-duration: 200ms;
+      position: relative; }
+      div.games-list ul li.games-list-item:after, .search-game-list ul li.games-list-item:after {
+        content: '';
+        position: absolute;
+        width: 85%;
+        height: 1px;
+        background-color: #233975;
+        left: 0;
+        right: 0;
+        margin: auto; }
+        @media screen and (min-width: 1100px) {
+          div.games-list ul li.games-list-item:after, .search-game-list ul li.games-list-item:after {
+            display: none; } }
+      div.games-list ul li.games-list-item a, .search-game-list ul li.games-list-item a {
+        text-decoration: none;
+        color: #000000;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 10px 30px;
         -webkit-box-flex: 1;
             -ms-flex: 1;
                 flex: 1;
-        font-weight: bold; }
-      div.game-detail .game-detail-conteiner .game-information p .game-info2 {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        @media screen and (min-width: 1100px) {
+          div.games-list ul li.games-list-item a, .search-game-list ul li.games-list-item a {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row; } }
+        div.games-list ul li.games-list-item a .game-title, .search-game-list ul li.games-list-item a .game-title {
+          text-align: center;
+          font-size: 18px; }
+          @media screen and (min-width: 767px) {
+            div.games-list ul li.games-list-item a .game-title, .search-game-list ul li.games-list-item a .game-title {
+              font-size: 24px; } }
+      div.games-list ul li.games-list-item .library-list-information, .search-game-list ul li.games-list-item .library-list-information {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
         -webkit-box-flex: 1;
             -ms-flex: 1;
-                flex: 1; }
-  div.game-detail .game-detail-conteiner .gameplay-detail {
+                flex: 1;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        padding: 0; }
+        @media screen and (min-width: 1100px) {
+          div.games-list ul li.games-list-item .library-list-information, .search-game-list ul li.games-list-item .library-list-information {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            padding-left: 50px; } }
+        div.games-list ul li.games-list-item .library-list-information span, .search-game-list ul li.games-list-item .library-list-information span {
+          padding: 5px;
+          font-size: 16px; }
+          @media screen and (min-width: 767px) {
+            div.games-list ul li.games-list-item .library-list-information span, .search-game-list ul li.games-list-item .library-list-information span {
+              font-size: 18px; } }
+          @media screen and (min-width: 1100px) {
+            div.games-list ul li.games-list-item .library-list-information span, .search-game-list ul li.games-list-item .library-list-information span {
+              margin-right: auto; } }
+          div.games-list ul li.games-list-item .library-list-information span:nth-of-type(2), .search-game-list ul li.games-list-item .library-list-information span:nth-of-type(2) {
+            text-align: right;
+            padding: 0;
+            font-size: 24px;
+            padding: 5px 15px;
+            background: rgba(214, 214, 214, 0.46);
+            width: 100px;
+            text-align: center;
+            -webkit-box-shadow: inset 0 0 13px -3px black;
+                    box-shadow: inset 0 0 13px -3px black;
+            border-radius: 5px;
+            color: #233975;
+            font-weight: bold; }
+            @media screen and (min-width: 1100px) {
+              div.games-list ul li.games-list-item .library-list-information span:nth-of-type(2), .search-game-list ul li.games-list-item .library-list-information span:nth-of-type(2) {
+                margin-right: 0; } }
+      div.games-list ul li.games-list-item span, .search-game-list ul li.games-list-item span {
+        text-align: left; }
+        div.games-list ul li.games-list-item span:nth-of-type(2), .search-game-list ul li.games-list-item span:nth-of-type(2) {
+          text-align: center; }
+      div.games-list ul li.games-list-item .hover-cover, .search-game-list ul li.games-list-item .hover-cover {
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition-duration: 300ms;
+                transition-duration: 300ms;
+        position: absolute;
+        top: -200px;
+        z-index: 10; }
+        div.games-list ul li.games-list-item .hover-cover img, .search-game-list ul li.games-list-item .hover-cover img {
+          height: 200px; }
+      div.games-list ul li.games-list-item:hover, .search-game-list ul li.games-list-item:hover {
+        background-color: #2c5db1;
+        -webkit-box-shadow: 0 0 13px -3px black;
+                box-shadow: 0 0 13px -3px black;
+        color: #b9c0da;
+        cursor: pointer; }
+        div.games-list ul li.games-list-item:hover span, .search-game-list ul li.games-list-item:hover span {
+          color: #b9c0da; }
+        div.games-list ul li.games-list-item:hover .hover-cover, .search-game-list ul li.games-list-item:hover .hover-cover {
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition-delay: 400ms;
+                  transition-delay: 400ms; }
+  div.games-list .search-result-text, .search-game-list .search-result-text {
+    padding-top: 20px;
+    font-size: 20px;
     text-align: center;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
+    border-bottom: 1px solid #000000;
+    font-weight: normal; }
+    div.games-list .search-result-text .search-word, .search-game-list .search-result-text .search-word {
+      text-transform: uppercase;
+      color: #233975;
+      font-size: 24px;
+      font-weight: bold; }
+  div.games-list .search-no-result, .search-game-list .search-no-result {
+    margin-top: 100px;
+    text-align: center; }
 
-div.game-detail .add-games-collect {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-  div.game-detail .add-games-collect button {
-    margin: 10px; }
-  div.game-detail .add-games-collect .alredy-played-btn, div.game-detail .add-games-collect .alredy-in-library {
-    background-color: #d0d0d0;
-    color: #8e8e8e;
-    -webkit-box-shadow: inset 0 0 13px -3px black;
-            box-shadow: inset 0 0 13px -3px black; }
-
-div.game-detail .modal-conteiner {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.8); }
-  div.game-detail .modal-conteiner .modal-add-game {
+div.game-detail {
+  margin-top: 40px; }
+  div.game-detail .return-game-list {
     position: absolute;
-    width: 100%;
-    height: 400px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: #2c5db1;
+    text-decoration: none;
+    bottom: 0; }
+  div.game-detail .game-detail-conteiner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px;
     border-radius: 10px;
-    border: 1px solid #000000;
     -webkit-box-shadow: 0 0 13px -3px black;
             box-shadow: 0 0 13px -3px black;
-    text-align: center; }
-    @media screen and (min-width: 500px) {
-      div.game-detail .modal-conteiner .modal-add-game {
-        width: 500px;
-        height: 400px; } }
-    div.game-detail .modal-conteiner .modal-add-game h3 {
-      text-transform: uppercase;
-      color: #b9c0da; }
-    div.game-detail .modal-conteiner .modal-add-game .select-platform-form .select-platform {
-      display: block;
-      width: 300px;
+    background-color: #f2f2f2; }
+    @media screen and (min-width: 767px) {
+      div.game-detail .game-detail-conteiner {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row; } }
+    div.game-detail .game-detail-conteiner .game-cover {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      text-align: center; }
+      @media screen and (min-width: 767px) {
+        div.game-detail .game-detail-conteiner .game-cover {
+          margin: auto;
+          margin-right: 10px; } }
+      div.game-detail .game-detail-conteiner .game-cover img {
+        max-width: 185px;
+        border: 1px solid black;
+        max-height: 275px; }
+    div.game-detail .game-detail-conteiner .game-information {
+      -webkit-box-flex: 2;
+          -ms-flex: 2;
+              flex: 2; }
+      div.game-detail .game-detail-conteiner .game-information p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        div.game-detail .game-detail-conteiner .game-information p .game-info1 {
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          font-weight: bold; }
+        div.game-detail .game-detail-conteiner .game-information p .game-info2 {
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1; }
+    div.game-detail .game-detail-conteiner .gameplay-detail {
+      text-align: center;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1; }
+      div.game-detail .game-detail-conteiner .gameplay-detail .game-rating .game-rating-header {
+        margin-bottom: 5px; }
+      div.game-detail .game-detail-conteiner .gameplay-detail .game-rating .rating {
+        width: 100px;
+        margin: auto;
+        padding: 5px 0;
+        font-size: 22px;
+        font-weight: bold;
+        background-color: rgba(214, 214, 214, 0.46);
+        border-radius: 5px;
+        color: #233975;
+        -webkit-box-shadow: inset 0 0 13px -3px black;
+                box-shadow: inset 0 0 13px -3px black; }
+      div.game-detail .game-detail-conteiner .gameplay-detail .game-time .play-time {
+        font-weight: bold;
+        margin: 0 7px; }
+  div.game-detail .add-games-collect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    div.game-detail .add-games-collect button {
+      margin: 10px; }
+    div.game-detail .add-games-collect .alredy-played-btn, div.game-detail .add-games-collect .alredy-in-library {
+      background-color: #d0d0d0;
+      color: #8e8e8e;
+      -webkit-box-shadow: inset 0 0 13px -3px black;
+              box-shadow: inset 0 0 13px -3px black; }
+  div.game-detail .modal-conteiner {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition-duration: 200ms;
+            transition-duration: 200ms;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8); }
+    div.game-detail .modal-conteiner .modal-add-game {
+      position: absolute;
+      width: 100%;
+      height: 400px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       margin: auto;
-      margin-bottom: 20px;
-      height: 40px;
-      font-size: 16px; }
-    div.game-detail .modal-conteiner .modal-add-game .distribution-options-conteiner {
-      margin: 40px; }
-      div.game-detail .modal-conteiner .modal-add-game .distribution-options-conteiner h4 {
+      background-color: #2c5db1;
+      border-radius: 10px;
+      border: 1px solid #000000;
+      -webkit-box-shadow: 0 0 13px -3px black;
+              box-shadow: 0 0 13px -3px black;
+      text-align: center; }
+      @media screen and (min-width: 500px) {
+        div.game-detail .modal-conteiner .modal-add-game {
+          width: 500px;
+          height: 400px; } }
+      div.game-detail .modal-conteiner .modal-add-game h3 {
         text-transform: uppercase;
         color: #b9c0da; }
-      div.game-detail .modal-conteiner .modal-add-game .distribution-options-conteiner .distribution-options-box {
-        display: inline-block;
+      div.game-detail .modal-conteiner .modal-add-game .select-platform-form .select-platform {
+        display: block;
+        width: 300px;
+        margin: auto;
+        margin-bottom: 20px;
+        height: 40px;
+        font-size: 16px; }
+      div.game-detail .modal-conteiner .modal-add-game .distribution-options-conteiner {
+        margin: 40px; }
+        div.game-detail .modal-conteiner .modal-add-game .distribution-options-conteiner h4 {
+          text-transform: uppercase;
+          color: #b9c0da; }
+        div.game-detail .modal-conteiner .modal-add-game .distribution-options-conteiner .distribution-options-box {
+          display: inline-block;
+          margin: 5px; }
+  div.game-detail .modal-add-played-games .played-games-form {
+    margin-top: 30px; }
+    div.game-detail .modal-add-played-games .played-games-form .slider-horizontal {
+      display: block;
+      margin-left: 100px;
+      margin-bottom: 30px; }
+      div.game-detail .modal-add-played-games .played-games-form .slider-horizontal .slider-track {
+        margin-top: 15px; }
+      div.game-detail .modal-add-played-games .played-games-form .slider-horizontal .tooltip-main {
+        margin-top: 0;
+        font-size: 50px;
+        font-weight: bold;
+        color: #b9c0da;
+        text-align: right;
+        margin-right: -90px; }
+      div.game-detail .modal-add-played-games .played-games-form .slider-horizontal .slider-handle {
+        margin-top: 15px;
+        width: 30px;
+        height: 30px;
+        background: #93939a;
+        cursor: pointer; }
+    div.game-detail .modal-add-played-games .played-games-form .game-time {
+      margin: 50px 100px; }
+  div.game-detail .modal-open {
+    visibility: visible;
+    opacity: 1; }
+  div.game-detail .game-description {
+    line-height: 25px;
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: justify; }
+  div.game-detail .game-requirements h3 {
+    border-bottom: 1px solid #000000; }
+  div.game-detail .game-requirements ul {
+    list-style-image: url("../img/icons/xbox.png"); }
+    div.game-detail .game-requirements ul li {
+      margin: 10px; }
+      div.game-detail .game-requirements ul li span {
         margin: 5px; }
-
-div.game-detail .modal-add-played-games .played-games-form {
-  margin-top: 30px; }
-  div.game-detail .modal-add-played-games .played-games-form .slider-horizontal {
-    display: block;
-    margin-left: 100px;
-    margin-bottom: 30px; }
-    div.game-detail .modal-add-played-games .played-games-form .slider-horizontal .slider-track {
-      margin-top: 15px; }
-    div.game-detail .modal-add-played-games .played-games-form .slider-horizontal .tooltip-main {
-      margin-top: 0;
-      font-size: 50px;
-      font-weight: bold;
-      color: #b9c0da;
-      text-align: right;
-      margin-right: -90px; }
-    div.game-detail .modal-add-played-games .played-games-form .slider-horizontal .slider-handle {
-      margin-top: 15px;
-      width: 30px;
-      height: 30px;
-      background: #93939a;
-      cursor: pointer; }
-  div.game-detail .modal-add-played-games .played-games-form .game-time {
-    margin: 50px 100px; }
-
-div.game-detail .modal-open {
-  visibility: visible;
-  opacity: 1; }
-
-div.game-detail .game-description {
-  line-height: 25px;
-  font-size: 18px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: justify; }
-
-div.game-detail .game-requirements h3 {
-  border-bottom: 1px solid black; }
-
-div.game-detail .game-requirements ul {
-  list-style-image: url("../img/icons/xbox.png"); }
-  div.game-detail .game-requirements ul li {
-    margin: 10px; }
-    div.game-detail .game-requirements ul li span {
-      margin: 5px; }
-      div.game-detail .game-requirements ul li span:nth-of-type(1) {
-        font-weight: bold; }
+        div.game-detail .game-requirements ul li span:nth-of-type(1) {
+          font-weight: bold; }
+  div.game-detail .game-tutorials h3 {
+    border-bottom: 1px solid #000000; }
+  div.game-detail .game-tutorials ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    div.game-detail .game-tutorials ul li {
+      margin: 10px 0; }
+      div.game-detail .game-tutorials ul li a {
+        text-decoration: none;
+        color: #233975;
+        font-size: 18px;
+        font-weight: bold;
+        position: relative; }
+        div.game-detail .game-tutorials ul li a:after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          left: 0;
+          bottom: -6px;
+          right: 0;
+          margin: auto;
+          background-color: #233975;
+          -webkit-transform: scaleX(0);
+                  transform: scaleX(0);
+          -webkit-transition: 0.2s -webkit-transform linear;
+          transition: 0.2s -webkit-transform linear;
+          transition: 0.2s transform linear;
+          transition: 0.2s transform linear, 0.2s -webkit-transform linear; }
+        div.game-detail .game-tutorials ul li a:hover:after {
+          -webkit-transform: scaleX(1);
+                  transform: scaleX(1); }
 
 div.home-page {
   display: -webkit-box;
@@ -1189,14 +1290,22 @@ div.user-profile-page .user-info-conteiner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #000000;
+  background-color: #f2f2f2;
   padding: 20px;
-  border-radius: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 0 13px -3px black;
           box-shadow: 0 0 13px -3px black;
-  position: relative; }
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (min-width: 767px) {
+    div.user-profile-page .user-info-conteiner {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   div.user-profile-page .user-info-conteiner .user-avatar {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -1214,7 +1323,8 @@ div.user-profile-page .user-info-conteiner {
   div.user-profile-page .user-info-conteiner .user-games-info {
     -webkit-box-flex: 1;
         -ms-flex: 1;
-            flex: 1; }
+            flex: 1;
+    padding-bottom: 50px; }
   div.user-profile-page .user-info-conteiner .user-info1 {
     font-weight: bold;
     margin: 10px; }
@@ -1248,28 +1358,64 @@ div.user-profile-page .user-info-conteiner {
 .user-description-text {
   text-align: justify;
   display: block;
-  width: 60%;
-  margin: auto; }
+  margin: auto;
+  width: 100%; }
 
 .my-games-conteiner {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (min-width: 1100px) {
+    .my-games-conteiner {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      margin: 0 -10px; } }
   .my-games-conteiner .see-all {
     text-decoration: none;
-    color: #000000;
+    color: #233975;
     display: block;
-    text-align: center; }
+    text-align: center;
+    font-weight: bold;
+    position: relative; }
+    .my-games-conteiner .see-all:after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 135px;
+      bottom: -6px;
+      right: 0;
+      background-color: #233975;
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+      -webkit-transition: 0.2s -webkit-transform linear;
+      transition: 0.2s -webkit-transform linear;
+      transition: 0.2s transform linear;
+      transition: 0.2s transform linear, 0.2s -webkit-transform linear;
+      margin: auto;
+      left: 0; }
+    .my-games-conteiner .see-all:hover:after {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1); }
   .my-games-conteiner .last-add-games {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    width: 50%;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    margin: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
     -webkit-box-shadow: 0 0 13px -3px black;
-            box-shadow: 0 0 13px -3px black; }
+            box-shadow: 0 0 13px -3px black;
+    width: 100%;
+    margin-bottom: 20px; }
+    @media screen and (min-width: 1100px) {
+      .my-games-conteiner .last-add-games {
+        margin: 10px;
+        width: 50%; } }
     .my-games-conteiner .last-add-games h3 {
       text-align: center;
       margin: 0; }
@@ -1283,22 +1429,47 @@ div.user-profile-page .user-info-conteiner {
         padding: 5px;
         -webkit-transition-duration: 200ms;
                 transition-duration: 200ms; }
-        .my-games-conteiner .last-add-games ul li:hover {
-          background-color: #2c5db1;
-          -webkit-box-shadow: 0 0 13px -3px black;
-                  box-shadow: 0 0 13px -3px black;
-          color: #b9c0da; }
-          .my-games-conteiner .last-add-games ul li:hover span {
+        @media screen and (min-width: 767px) {
+          .my-games-conteiner .last-add-games ul li:hover {
+            background-color: #2c5db1;
+            -webkit-box-shadow: 0 0 13px -3px black;
+                    box-shadow: 0 0 13px -3px black;
             color: #b9c0da; }
+            .my-games-conteiner .last-add-games ul li:hover span {
+              color: #b9c0da; } }
       .my-games-conteiner .last-add-games ul a {
         text-decoration: none; }
         .my-games-conteiner .last-add-games ul a img {
           height: 70px;
-          vertical-align: middle; }
+          vertical-align: middle;
+          position: absolute; }
+          @media screen and (min-width: 767px) {
+            .my-games-conteiner .last-add-games ul a img {
+              position: inherit; } }
         .my-games-conteiner .last-add-games ul a span {
-          margin: 10px;
           font-size: 17px;
-          color: #000000; }
+          color: #000000;
+          display: block;
+          margin: 0;
+          text-align: center;
+          padding-left: 55px;
+          vertical-align: middle; }
+          @media screen and (min-width: 767px) {
+            .my-games-conteiner .last-add-games ul a span {
+              display: inline-block; } }
+          @media screen and (min-width: 1100px) {
+            .my-games-conteiner .last-add-games ul a span {
+              margin: 10px;
+              padding: 0; } }
+          .my-games-conteiner .last-add-games ul a span.game-title {
+            font-weight: bold; }
+            @media screen and (min-width: 767px) {
+              .my-games-conteiner .last-add-games ul a span.game-title {
+                max-width: 300px;
+                text-align: left; } }
+            @media screen and (min-width: 1100px) {
+              .my-games-conteiner .last-add-games ul a span.game-title {
+                max-width: 250px; } }
       .my-games-conteiner .last-add-games ul span {
         margin: 10px; }
   .my-games-conteiner .last-played-games {
@@ -1306,9 +1477,9 @@ div.user-profile-page .user-info-conteiner {
         -ms-flex: 1;
             flex: 1;
     width: 50%;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    margin: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin: 10px 10px 10px 0;
     -webkit-box-shadow: 0 0 13px -3px black;
             box-shadow: 0 0 13px -3px black; }
     .my-games-conteiner .last-played-games h3 {
@@ -1339,9 +1510,10 @@ div.user-game-collection ul, .user-played-games ul {
             box-shadow: 0 0 13px -3px black;
     border-radius: 10px;
     padding: 10px;
-    border: 10px solid transparent; }
+    border: 10px solid transparent;
+    background-color: #f2f2f2; }
     div.user-game-collection ul li.played-game, .user-played-games ul li.played-game {
-      border: 10px solid green;
+      background-color: rgba(175, 202, 174, 0.59);
       position: relative; }
       div.user-game-collection ul li.played-game:after, .user-played-games ul li.played-game:after {
         content: '';
@@ -1360,13 +1532,18 @@ div.user-game-collection ul, .user-played-games ul {
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column;
-      height: 230px; }
+      height: 230px;
+      text-decoration: none;
+      color: #000000; }
       div.user-game-collection ul li a img, .user-played-games ul li a img {
         max-height: 170px;
         max-width: 120px;
         margin: auto;
         border: 1px solid #000000;
         margin-top: 0; }
+        div.user-game-collection ul li a img + div, .user-played-games ul li a img + div {
+          font-weight: bold;
+          margin: 5px; }
 
 .user-played-games ul {
   margin-bottom: 30px; }
@@ -1379,12 +1556,15 @@ div.edit-user-profile h2 {
   margin-bottom: 20px; }
 
 div.edit-user-profile .user-data form {
-  padding: 20px 30px;
   border-radius: 4px;
   -webkit-box-shadow: 0 0 13px -3px black;
           box-shadow: 0 0 13px -3px black;
   margin: 20px 0;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  padding: 15px; }
+  @media screen and (min-width: 1100px) {
+    div.edit-user-profile .user-data form {
+      padding: 20px 30px; } }
   div.edit-user-profile .user-data form h4 {
     margin: 0;
     text-align: center;
@@ -1393,23 +1573,35 @@ div.edit-user-profile .user-data form {
   div.edit-user-profile .user-data form .form-items-container {
     text-align: center; }
     div.edit-user-profile .user-data form .form-items-container .current-avatar {
-      margin: 10px; }
+      margin: 0; }
       div.edit-user-profile .user-data form .form-items-container .current-avatar img {
         max-width: 150px;
         max-height: 150px;
         vertical-align: middle; }
   div.edit-user-profile .user-data form .form-items-container > div {
-    display: inline-block;
-    width: 30%; }
+    display: block;
+    width: 100%;
+    margin: 15px 0; }
+    @media screen and (min-width: 767px) {
+      div.edit-user-profile .user-data form .form-items-container > div {
+        display: inline-block;
+        width: 30%; } }
   div.edit-user-profile .user-data form .form-info-container .form-info-item {
     text-align: center;
-    margin: 15px; }
+    margin: 15px 0; }
     div.edit-user-profile .user-data form .form-info-container .form-info-item .form-info-item-header {
       width: 150px;
-      text-align: right;
-      margin-right: 15px; }
+      text-align: center;
+      margin: 0; }
+      @media screen and (min-width: 767px) {
+        div.edit-user-profile .user-data form .form-info-container .form-info-item .form-info-item-header {
+          text-align: right;
+          margin-right: 15px; } }
     div.edit-user-profile .user-data form .form-info-container .form-info-item .form-info-item-content {
-      width: 300px; }
+      width: 100%; }
+      @media screen and (min-width: 767px) {
+        div.edit-user-profile .user-data form .form-info-container .form-info-item .form-info-item-content {
+          width: 300px; } }
   div.edit-user-profile .user-data form .form-info-container .form-info-item > div {
     display: inline-block; }
   div.edit-user-profile .user-data form .form-info-textarea textarea {
@@ -1420,144 +1612,160 @@ div.edit-user-profile .user-data form {
     margin-bottom: 10px; }
     div.edit-user-profile .user-data form .form-password-container .form-password-item {
       display: inline-block;
-      width: 250px; }
+      width: 100%; }
+      @media screen and (min-width: 767px) {
+        div.edit-user-profile .user-data form .form-password-container .form-password-item {
+          width: 250px; } }
   div.edit-user-profile .user-data form .base-btn {
     display: block;
-    margin-left: auto;
-    margin-right: 0; }
+    margin: auto; }
+    @media screen and (min-width: 767px) {
+      div.edit-user-profile .user-data form .base-btn {
+        margin-left: auto;
+        margin-right: 0; } }
 
 div.edit-user-profile .img-error {
   text-align: center;
   color: #e02929;
   font-weight: bold; }
 
-div.articles-list ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 50px; }
-  div.articles-list ul li {
-    padding-bottom: 20px;
-    margin-top: 20px;
-    border-bottom: 1px solid #233975; }
-    div.articles-list ul li h3 {
-      margin: 0;
-      margin-bottom: 10px;
-      color: #233975; }
-    div.articles-list ul li .article-date {
-      font-size: 14px;
-      font-style: italic;
-      color: #b9c0da;
-      margin-bottom: 10px; }
-    div.articles-list ul li .article-header {
-      margin: 20px 0; }
-    div.articles-list ul li .read-more {
-      text-align: right;
-      font-size: 17px;
-      position: relative; }
-      div.articles-list ul li .read-more a {
+div.articles-list {
+  margin-top: 40px; }
+  div.articles-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px; }
+    div.articles-list ul li {
+      padding-bottom: 20px;
+      margin-top: 20px;
+      border-bottom: 1px solid #233975; }
+      div.articles-list ul li h3 {
+        margin: 0;
+        margin-bottom: 10px;
+        color: #233975; }
+      div.articles-list ul li .article-date {
+        font-size: 14px;
+        font-style: italic;
+        color: #b9c0da;
+        margin-bottom: 10px; }
+      div.articles-list ul li .article-header {
+        margin: 20px 0; }
+      div.articles-list ul li .read-more {
+        text-align: right;
+        font-size: 17px;
+        position: relative; }
+        div.articles-list ul li .read-more a {
+          text-decoration: none;
+          color: #233975;
+          font-weight: bold; }
+          div.articles-list ul li .read-more a:after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100px;
+            bottom: -6px;
+            right: 0;
+            background-color: #233975;
+            -webkit-transform: scaleX(0);
+                    transform: scaleX(0);
+            -webkit-transition: 0.2s -webkit-transform linear;
+            transition: 0.2s -webkit-transform linear;
+            transition: 0.2s transform linear;
+            transition: 0.2s transform linear, 0.2s -webkit-transform linear; }
+          div.articles-list ul li .read-more a:hover:after {
+            -webkit-transform: scaleX(1);
+                    transform: scaleX(1); }
+
+div.article-detail {
+  margin-top: 40px; }
+  div.article-detail .article-detail-date, div.article-detail .article-detail-author {
+    font-size: 16px;
+    font-style: italic;
+    color: #b9c0da;
+    margin-bottom: 10px; }
+  div.article-detail .article-detail-content {
+    padding: 20px 30px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black;
+    margin: 20px 0;
+    background-color: #f2f2f2;
+    font-size: 18px; }
+    div.article-detail .article-detail-content img, div.article-detail .article-detail-content iframe {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      max-width: 100%; }
+
+div.tutorials-list {
+  margin-top: 40px; }
+  div.tutorials-list ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+    div.tutorials-list ul li {
+      -webkit-transition-duration: 250ms;
+              transition-duration: 250ms; }
+      div.tutorials-list ul li:hover {
+        background-color: #2c5db1; }
+        div.tutorials-list ul li:hover a {
+          color: #b9c0da; }
+      div.tutorials-list ul li a {
         text-decoration: none;
-        color: #233975;
-        font-weight: bold; }
-        div.articles-list ul li .read-more a:after {
-          content: '';
-          position: absolute;
-          height: 2px;
-          width: 100px;
-          bottom: -6px;
-          right: 0;
-          background-color: #233975;
-          -webkit-transform: scaleX(0);
-                  transform: scaleX(0);
-          -webkit-transition: 0.2s -webkit-transform linear;
-          transition: 0.2s -webkit-transform linear;
-          transition: 0.2s transform linear;
-          transition: 0.2s transform linear, 0.2s -webkit-transform linear; }
-        div.articles-list ul li .read-more a:hover:after {
-          -webkit-transform: scaleX(1);
-                  transform: scaleX(1); }
+        color: #000000;
+        font-weight: normal;
+        font-size: 20px;
+        width: 100%;
+        display: block;
+        padding: 10px 30px; }
+        @media screen and (min-width: 767px) {
+          div.tutorials-list ul li a {
+            font-size: 25px; } }
+  div.tutorials-list .pagination-nav-bar {
+    margin-top: 50px; }
 
-div.article-detail .article-detail-date, div.article-detail .article-detail-author {
-  font-size: 16px;
-  font-style: italic;
-  color: #b9c0da;
-  margin-bottom: 10px; }
-
-div.article-detail .article-detail-content {
-  padding: 20px 30px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 0 13px -3px black;
-          box-shadow: 0 0 13px -3px black;
-  margin: 20px 0;
-  background-color: #f2f2f2;
-  font-size: 18px; }
-  div.article-detail .article-detail-content img, div.article-detail .article-detail-content iframe {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 100%; }
-
-div.tutorials-list ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none; }
-  div.tutorials-list ul li {
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms; }
-    div.tutorials-list ul li:hover {
-      background-color: #2c5db1; }
-      div.tutorials-list ul li:hover a {
-        color: #b9c0da; }
-    div.tutorials-list ul li a {
+div.tutorial-detail {
+  margin-top: 40px; }
+  div.tutorial-detail .tut-game-info {
+    font-size: 18px;
+    letter-spacing: 1px; }
+    div.tutorial-detail .tut-game-info a {
       text-decoration: none;
-      color: #000000;
-      font-weight: normal;
-      font-size: 25px;
-      width: 100%;
-      display: block;
-      padding: 10px 30px; }
-
-div.tutorial-detail .tut-game-info {
-  font-size: 18px;
-  letter-spacing: 1px; }
-  div.tutorial-detail .tut-game-info a {
-    text-decoration: none;
-    color: #233975;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative; }
-    div.tutorial-detail .tut-game-info a:after {
-      content: '';
-      position: absolute;
-      height: 2px;
-      left: 0;
-      bottom: -6px;
-      right: 0;
-      background-color: #233975;
-      -webkit-transform: scaleX(0);
-              transform: scaleX(0);
-      -webkit-transition: 0.2s -webkit-transform linear;
-      transition: 0.2s -webkit-transform linear;
-      transition: 0.2s transform linear;
-      transition: 0.2s transform linear, 0.2s -webkit-transform linear; }
-    div.tutorial-detail .tut-game-info a:hover:after {
-      -webkit-transform: scaleX(1);
-              transform: scaleX(1); }
-
-div.tutorial-detail .tut-detail-date, div.tutorial-detail .tut-detail-author {
-  font-size: 16px;
-  font-style: italic;
-  color: #b9c0da;
-  margin-bottom: 10px; }
-
-div.tutorial-detail .tut-detail-content {
-  padding: 20px 30px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 0 13px -3px black;
-          box-shadow: 0 0 13px -3px black;
-  margin: 20px 0;
-  background-color: #f2f2f2;
-  font-size: 18px; }
-  div.tutorial-detail .tut-detail-content img, div.tutorial-detail .tut-detail-content iframe {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 100%; }
+      color: #233975;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: relative; }
+      div.tutorial-detail .tut-game-info a:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        left: 0;
+        bottom: -6px;
+        right: 0;
+        background-color: #233975;
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        -webkit-transition: 0.2s -webkit-transform linear;
+        transition: 0.2s -webkit-transform linear;
+        transition: 0.2s transform linear;
+        transition: 0.2s transform linear, 0.2s -webkit-transform linear; }
+      div.tutorial-detail .tut-game-info a:hover:after {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1); }
+  div.tutorial-detail .tut-detail-date, div.tutorial-detail .tut-detail-author {
+    font-size: 16px;
+    font-style: italic;
+    color: #b9c0da;
+    margin-bottom: 10px; }
+  div.tutorial-detail .tut-detail-content {
+    padding: 20px 30px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black;
+    margin: 20px 0;
+    background-color: #f2f2f2;
+    font-size: 18px; }
+    div.tutorial-detail .tut-detail-content img, div.tutorial-detail .tut-detail-content iframe {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      max-width: 100%; }
