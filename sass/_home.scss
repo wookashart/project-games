@@ -1,16 +1,31 @@
 div.home-page {
     display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 1100px){
+        flex-direction: row;
+    }
 
     .main-content {
-        width: 70%;
+        width: 100%;
+
+        @media screen and (min-width: 1100px){
+            width: 65%;
+        }
     }
 
     aside {
-        width: 30%;
-        margin-top: 50px;
+        width: 100%;
+        margin-top: 20px;
+
+        @media screen and (min-width: 1100px){
+            width: 33%;
+            margin-top: 50px;
+            margin-left: 20px;
+        }
 
         .top-list-container {
-            margin: 0 20px;
+            margin: 0;
             box-shadow: $basicBoxShadow;
             background-color: $formBackgroundColor;
             border-radius: 4px;
@@ -42,9 +57,14 @@ div.home-page {
 
                 .list-number {
                     margin: auto;
-                    font-size: 30px;
-                    width: 40px;
                     text-align: center;
+                    font-size: 20px;
+                    width: auto;
+
+                    @media screen and (min-width: 425px){
+                        font-size: 30px;
+                        width: 40px;
+                    }
                 }
 
                 .game-cover {
@@ -96,23 +116,41 @@ div.home-page {
 
 
 section.last-add-game {
-    border: $basicSectionBorder;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: $basicBoxShadow;
-    margin-top: 45px;
-
-    width: 300px; //temporary
+    margin-top: 20px;
+    padding: 25px;
+    background-color: $formBackgroundColor;
 
     h3 {
-        text-align: center;
-        background: $headerBackgroundLight;
         margin: 0;
-        padding: 15px;
-        color: $basicMenuFontColor;
-        border-radius: 9px 9px 0 0;
-        font-size: 20px;
         text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+        border-bottom: $inputTextBorder;
         
+    }
+
+    .last-add-game-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @media screen and (min-width: 570px){
+            flex-direction: row;
+        }
+
+        .last-add-game-item {
+            margin: 15px 40px 0;
+
+            @media screen and (min-width: 570px){
+                margin: 15px 0 0;
+            }
+
+            @media screen and (min-width: 1330px){
+                margin: 15px 40px 0;
+            }
+        }
     }
     
     .last-add-game-cover {
@@ -121,7 +159,7 @@ section.last-add-game {
 
         a {
             img {
-                width: 200px;
+                width: 150px;
                 border: $basicSectionBorder;
             }
         }
@@ -134,6 +172,7 @@ section.last-add-game {
         h4 {
             font-size: 18px;
             text-align: center;
+            margin: 10px;
         }
     }
 }
@@ -178,7 +217,7 @@ section.last-articles {
                 }
 
                 .article-header {
-                    height: 75px;
+                    // height: 75px;
                 }
 
                 .article-read-more {
@@ -231,6 +270,122 @@ section.last-articles {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+section.last-tutorials {
+    padding: 25px;
+    box-shadow: $basicBoxShadow;
+    background-color: $formBackgroundColor;
+    border-radius: 4px;
+    margin-top: 20px;
+
+    h3 {
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+        border-bottom: $inputTextBorder;
+    }
+
+    .last-tut-container {
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 20px 0 30px 0;
+            position: relative;
+
+            h2 {
+                text-align: left;
+                text-transform: inherit;
+                font-size: 20px;
+                color: $headerBackgroundDark;
+            }
+
+            .tut-date {
+                font-style: italic;
+                color: $basicMenuFontColor;
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            .tut-info {
+                display: flex;
+                flex-direction: column;
+
+                @media screen and (min-width: 550px){
+                    flex-direction: row;
+                }
+
+                & > div {
+                    text-align: center;
+                }
+
+                .tut-header {
+                    text-align: justify;
+                }
+
+                img {
+                    height: 150px;
+                    margin: 0 15px;
+                }
+            }
+
+            .tut-read-game, .tut-read-more {
+                text-align: right;
+                margin-bottom: 20px;
+                
+                a {
+                    text-decoration: none;
+                    color: $headerBackgroundDark;
+                    font-weight: bold;
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        width: 144px;
+                        bottom: -6px;
+                        right: 0;
+                        background-color: $headerBackgroundDark;
+                        transform: scaleX(0);
+                        transition: 0.2s transform linear;
+                    }
+
+                    &:hover {
+                        &:after {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+
+            .tut-read-game {
+                a {
+                    &:after {
+                        width: 112px;
+                    }
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 85%;
+                height: 1px;
+                background-color: $ratingBackgroundColor;
+                bottom: -20px;
+                left: 0;
+                right: 0;
+                margin: auto;
             }
         }
     }

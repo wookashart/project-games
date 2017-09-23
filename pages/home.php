@@ -6,7 +6,7 @@
                 <ul class="last-articles-slider">
                 <?php
 
-                    $articlesConnect = $connection->query("SELECT * FROM articles ORDER BY article_id LIMIT 5");
+                    $articlesConnect = $connection->query("SELECT * FROM articles ORDER BY article_id DESC LIMIT 5");
                     
                     while ( $article = $articlesConnect->fetch_assoc() ){
                         echo '<li class="articles-list-item"><div><h2>'.$article['article_title'].'</h2><div class="article-date">'.$article['article_date'].'</div><div class="article-header">'.$article['article_header'].'</div><div class="article-read-more"><a href="index.php?action=article&amp;id='.$article['article_id'].'" title="'.$article['article_title'].'">Czytaj więcej</a></div></div></li>';
@@ -16,15 +16,32 @@
                 </ul>
             </div>
         </section>
-        <section class="last-add-game">
-            <h3>Ostatnio dodana gra</h3>
+        <section class="last-tutorials">
+            <h3>Najnowsze poradniki</h3>
+            <div class="last-tut-container">
+                <ul>
             <?php
 
-                $allGames = $connection->query("SELECT id_games, tytul, platforma, gatunek, cover FROM games ORDER BY data_dodania DESC LIMIT 1");
+                $tutConnect = $connection->query("SELECT games.*, tutorials.* FROM games, tutorials WHERE tutorials.tut_game_id = games.id_games ORDER BY tutorials.tut_id DESC LIMIT 3");
+
+                while($tut = $tutConnect->fetch_assoc()){
+                    echo '<li><div><h2>'.$tut['tytul'].' - '.$tut['tut_title'].'</h2><div class="tut-date">'.$tut['tut_date'].'</div><div class="tut-info"><div><img src="db/covers/'.$tut['cover'].'"></div><div class="tut-header">'.$tut['tut_header'].'</div></div><div class="tut-read-game"><a href="index.php?action=gamedetail&amp;id='.$tut['id_games'].'">Poczytaj o grze</a></div><div class="tut-read-more"><a href="index.php?action=tutorial&amp;id='.$tut['tut_id'].'">Przeczytaj poradnik</a></div></div></li>';
+                }
+
+            ?>
+                </ul>
+            </div>
+        </section>
+        <section class="last-add-game">
+            <h3>Ostatnio dodana gra</h3>
+            <div class="last-add-game-container">
+            <?php
+
+                $allGames = $connection->query("SELECT id_games, tytul, platforma, gatunek, cover FROM games ORDER BY data_dodania DESC LIMIT 3");
 
                 
                 while ($row = $allGames->fetch_assoc()) {
-                    echo '<div class="last-add-game-cover"><a href="index.php?action=gamedetail&id='.$row['id_games'].'">';
+                    echo '<div class="last-add-game-item"><div class="last-add-game-cover"><a href="index.php?action=gamedetail&id='.$row['id_games'].'">';
                     
                     if($row['cover'] != null){
                         echo '<img src="db/covers/'.$row['cover'].'">';
@@ -32,10 +49,11 @@
                         echo '<img src="img/no-cover.png">';
                     }
                     
-                    echo '</a></div><div class="last-add-game-info"><h4>'.$row['tytul'].'</h4><div class="last-add-game-platform">'.$row['platforma'].'</div><div class="last-add-game-type">'.$row['gatunek'].'</div></div>';
+                    echo '</a></div><div class="last-add-game-info"><h4>'.$row['tytul'].'</h4><div class="last-add-game-platform">'.$row['platforma'].'</div><div class="last-add-game-type">'.$row['gatunek'].'</div></div></div>';
                 }
 
             ?>
+            </div>
         </section>
     </div>
     <aside>
