@@ -1159,12 +1159,21 @@ section.last-articles {
         text-align: left;
         text-transform: inherit;
         font-size: 20px;
-        color: #233975; }
+        color: #233975;
+        height: 125px; }
+        @media screen and (min-width: 767px) {
+          section.last-articles .last-articles-container .last-articles-slider .articles-list-item h2 {
+            height: 50px; } }
       section.last-articles .last-articles-container .last-articles-slider .articles-list-item .article-date {
         font-style: italic;
         color: #b9c0da;
         margin: 5px 0;
         font-size: 14px; }
+      section.last-articles .last-articles-container .last-articles-slider .articles-list-item .article-header {
+        height: 275px; }
+        @media screen and (min-width: 767px) {
+          section.last-articles .last-articles-container .last-articles-slider .articles-list-item .article-header {
+            height: 140px; } }
       section.last-articles .last-articles-container .last-articles-slider .articles-list-item .article-read-more {
         text-align: right; }
         section.last-articles .last-articles-container .last-articles-slider .articles-list-item .article-read-more a {
@@ -1769,3 +1778,40 @@ div.tutorial-detail {
       margin-top: 50px;
       margin-bottom: 50px;
       max-width: 100%; }
+
+div.contact-form {
+  margin-top: 40px; }
+  div.contact-form .contact-form-text {
+    text-align: center; }
+  div.contact-form form {
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black;
+    border-radius: 5px;
+    padding: 5px 0; }
+    @media screen and (min-width: 767px) {
+      div.contact-form form {
+        padding: 25px; } }
+    div.contact-form form .error {
+      text-align: center;
+      font-weight: bold; }
+    div.contact-form form label {
+      display: block;
+      text-align: left;
+      margin: 10px; }
+      div.contact-form form label span {
+        display: inline-block;
+        width: 100px;
+        text-align: left;
+        font-weight: bold; }
+      div.contact-form form label input {
+        display: inline-block;
+        width: 100%; }
+        @media screen and (min-width: 767px) {
+          div.contact-form form label input {
+            width: 300px; } }
+      div.contact-form form label textarea {
+        width: 100%;
+        height: 400px; }
+    div.contact-form form .submit {
+      text-align: center; }

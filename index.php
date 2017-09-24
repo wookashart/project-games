@@ -91,7 +91,7 @@
                                 <li><a href="index.php?action=gamelibrary&amp;page=1">Biblioteka gier</a></li>
                                 <li><a href="index.php?action=articles&amp;page=1">Wiadomości</a></li>
                                 <li><a href="index.php?action=tutorials&amp;page=1">Poradniki</a></li>
-                                <li><a href="index.php?action=forum">Forum</a></li>
+                                <!-- <li><a href="index.php?action=forum">Forum</a></li> -->
                                 <li><a href="index.php?action=contact">Kontakt</a></li>
                             </ul>
                         </nav>

@@ -57,7 +57,7 @@
 
         // ReCAPTCHA
 
-        $secret_key = "6Ld8HCkUAAAAAMxUrNW4qVg9SvgaHtpYuf3OtJVv";
+        $secret_key = "6LcLmDAUAAAAAOBsDbQYtVjEcocxWOsMIEeAg-0c";
         $check = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$_POST['g-recaptcha-response']);
 
         $response = json_decode($check);
@@ -227,7 +227,7 @@
         <div class="form-line">
             <input type="checkbox" name="zgoda"><label>Wyrażam zgodę na przetwarzanie danych osobowych w celach marketingowych i celem otrzymywania informacji handlowych drogą elektroniczną</label>
         </div>
-        <div class="g-recaptcha" data-sitekey="6Ld8HCkUAAAAAF4p89ycmPJNgquCBz166YGL1Vk6"></div>
+        <div class="g-recaptcha" data-sitekey="6LcLmDAUAAAAAG4CnGNVLRPlHs9ou04x-xXLiA7D"></div>
         <?php
                 if(isset($_SESSION['e_bot'])){
                     echo '<div class="error">'.$_SESSION['e_bot'].'</div>';

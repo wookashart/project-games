@@ -1,0 +1,54 @@
+div.contact-form {
+    margin-top: 40px;
+
+    .contact-form-text {
+        text-align: center;
+    }
+
+    form {
+        background-color: $formBackgroundColor;
+        box-shadow: $basicBoxShadow;
+        border-radius: 5px;
+        padding: 5px 0;
+
+        @media screen and (min-width: 767px){
+            padding: 25px;
+        }
+
+        .error {
+            text-align: center;
+            font-weight: bold; 
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px;
+
+            span {
+                display: inline-block;
+                width: 100px;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            input {
+                display: inline-block;
+                width: 100%;
+
+                @media screen and (min-width: 767px){
+                    width: 300px;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        .submit {
+            text-align: center;
+        }
+    }
+}

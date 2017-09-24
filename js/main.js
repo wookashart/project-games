@@ -6,7 +6,7 @@ $(document).ready(function(){
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        adaptiveHeight: true,
+        adaptiveHeight: false,
         autoplay: true,
         autoplaySpeed: 5000,
         fade: true,
