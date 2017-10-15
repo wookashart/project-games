@@ -8,7 +8,8 @@
     }
 
     $gameTitle = addslashes($_POST['game-title']);
-    $gamePlatform = addslashes($_POST['game-platform']);
+    $gameTitlePl = addslashes($_POST['game-title-pl']);
+    $gamePlatform = implode(' / ', $_POST['game-platform']);
     $gameDateWorld = $_POST['game-date-world'];
     $gameDatePl = $_POST['game-date-pl'];
     $gameType = addslashes($_POST['game-type']);
@@ -53,17 +54,27 @@
 
     if($connection->connect_errno!=0){
 
-        $_SESSION['notadd'] = 'Nie udało się dodać gry do bazy. Spróbuj ponownie.';
+        $_SESSION['addalert'] = '<div class="error">Nie udało się dodać gry do bazy. Spróbuj ponownie.</div>';
         header('Location: ../admins/admins.php?id=addgame');
         exit();
 
     } else {
-        $addresoult = $connection->query("INSERT INTO games VALUES (NULL, '$gameTitle', '$gamePlatform', '$gameDateWorld', '$gameDatePl', '$gameType', '$gameProducer', '$gamePublisher', '$gameDistributor', '$gameDescription', '$gameProcessor', '$gameGraphic', '$gameRam', '$gameSystem', '$gameDirectx', '$gameSpace', '$addDate', '$addCover')");
-        $_SESSION['addsuccess'] = '<div class="error">Gra pomyślnie dodana do bazy.</div>';
-        header('Location: ../admins/admins.php?id=addgame');
-        exit();
-    }
 
+        $gameConnect = $connection->query("SELECT * FROM games WHERE tytul = '$gameTitle'");
+        $gamesCount = $gameConnect->num_rows;
+
+        if ($gamesCount > 0){
+            $_SESSION['addalert'] = '<div class="error">Ta gra już jest w bazie!</div>';
+            header('Location: ../admins/admins.php?id=addgame');
+            exit();
+        } else {
+            $addresoult = $connection->query("INSERT INTO games VALUES (NULL, '$gameTitle', '$gameTitlePl', '$gamePlatform', '$gameDateWorld', '$gameDatePl', '$gameType', '$gameProducer', '$gamePublisher', '$gameDistributor', '$gameDescription', '$gameProcessor', '$gameGraphic', '$gameRam', '$gameSystem', '$gameDirectx', '$gameSpace', '$addDate', '$addCover')");
+            $_SESSION['addalert'] = '<div class="error">Gra pomyślnie dodana do bazy.</div>';
+            header('Location: ../admins/admins.php?id=addgame');
+            exit();    
+        }   
+    }
+    
     $connection->close();
 
 ?>

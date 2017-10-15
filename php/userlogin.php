@@ -39,11 +39,15 @@
 
                     header('Location: ../index.php');
                 } else {
-                    $_SESSION['blad'] = '<span style="color:red>Nieprawidłowy login lub hasło</span>';
+                    $_SESSION['blad'] = '<div class="error">Nieprawidłowy login lub hasło!</div>';
+                    header('Location: ../index.php');
+                    exit();
                 }
             }
             else {
-                $_SESSION['blad'] = '<span style="color:red>Nieprawidłowy login lub hasło</span>';
+                $_SESSION['blad'] = '<div class="error">Nieprawidłowy login lub hasło!</div>';
+                header('Location: ../index.php');
+                exit();
             }
         }
 

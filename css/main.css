@@ -572,6 +572,14 @@ body.admin-panel {
       vertical-align: middle; }
     .games-administration .admin-add-new-game form label input[name="game-description"] {
       height: 200px; }
+    .games-administration .admin-add-new-game form label select {
+      display: inline-block;
+      width: 69%;
+      height: 150px;
+      margin: 10px 0;
+      border: 1px solid #233975;
+      vertical-align: middle;
+      font-size: 16px; }
   .games-administration .admin-add-new-game form input[type="submit"] {
     position: absolute;
     bottom: 50px;

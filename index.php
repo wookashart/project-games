@@ -58,15 +58,16 @@
                     </div>
                     <div class="login-box">
                         <p class="log-reg-text">Zaloguj się</p>
+                        <?php
+                            if(isset($_SESSION['blad']) && isset($_SESSION['blad']) == true){
+                                echo $_SESSION['blad'];
+                            }
+                        ?>
                         <form action="php/userlogin.php" method="post">
                             <input type="text" name="login" placeholder="Login" class="base-input">
                             <input type="password" name="haslo" placeholder="Hasło" class="base-input">
                             <input type="submit" value="Zaloguj się">
                         </form>
-                        <?php
-                            if(isset($_SESSION['blad']))
-                            {echo $_SESSION['blad'];}
-                        ?>
                         <p class="password-reminder"><a href="#">Przypomnienie hasła</a></p>
                         <p class="log-reg-text">Zarejestruj się</p>
                         <button class="base-btn registration-button"><a href="index.php?action=registration">Rejestracja</a></button>
@@ -129,3 +130,4 @@
         <script type="text/javascript"  src="./js/main.js"></script>
     </body>
 </html>
+<?php $_SESSION['blad'] = ''; ?>
