@@ -88,25 +88,18 @@
                 <div>
                     <?php
 
-                        $timeConnect = $connection->query("SELECT sum(finish_game_h) AS gameH, sum(finish_game_m) AS gameM, count(id_game) AS allGame FROM users_library WHERE id_game = {$_SESSION['gameId']} AND finish = 'yes'");
+                        $timeConnect = $connection->query("SELECT sum(finish_game_min) AS sumMin, count(id_game) AS allGame FROM users_library WHERE id_game = {$_SESSION['gameId']} AND finish = 'yes'");
                         $time = $timeConnect->fetch_assoc();
 
                         if ($time['allGame'] == 0){
                             echo '<span class="play-time">brak</span>';
                         } else {
-                            $sumGodz = $time['gameH'];
-                            $sumMin = $time['gameM'];
-                            
-                            $allSec = ($sumGodz * 3600) + ($sumMin * 60);
-                            $allSecAverage = $allSec / $time['allGame'];
-                            
-                            $allGodz = $allSecAverage / 3600;
-                            $allGodz2 = floor($allGodz);
-                            
-                            $allMin = ($allSecAverage % 3600) / 60;
-                            $allMin2 = floor($allMin);
-
-                            echo '<span class="play-time">'.$allGodz2.'</span><span>Godz</span><span class="play-time">'.$allMin2.'</span><span>Min</span>';
+                                                      
+                            $sumMin = $time['sumMin'];
+                            $allHour = floor($sumMin / 60);
+                            $allMin = $sumMin % 60;
+                          
+                            echo '<span class="play-time">'.$allHour.'</span><span>Godz</span><span class="play-time">'.$allMin.'</span><span>Min</span>';
                         }
                         
 

@@ -6,10 +6,16 @@
     $from = $page * $limit;
     $allPage = ceil($cnt['cnt'] / $limit);
     $myGameCollection = $connection->query("SELECT games.id_games, games.tytul, games.cover, games.platforma, users_library.game_platform, users_library.game_pc_platform, users_library.finish FROM games, users_library WHERE games.id_games = users_library.id_game AND users_library.id_user = {$_SESSION['id']} AND have = 'yes' ORDER BY games.tytul ASC LIMIT $from , $limit");
+  
+    $myGameCollFinish = $connection->query("SELECT count(*) AS myFinish FROM users_library WHERE finish = 'yes' AND have = 'yes'");
+    $allFinish = $myGameCollFinish->fetch_assoc();
+  
+    $finishProc = floor(($allFinish['myFinish'] * 100) / $cnt['cnt']);
 ?>
 
 <div class="user-game-collection">
 <h3>Gier w kolekcji: <?= $cnt['cnt'] ?></h3>
+<p class="have-and-finish"><span>W tym ukończonych: <?= $allFinish['myFinish'] ?></span><span> (<?= $finishProc ?>%)</span></p>
 <ul>
             <?php
                 
@@ -19,7 +25,7 @@
                     } else {
                         $played = 'not-played-game';
                     }
-                    echo '<li class="'.$played.'"><a href="index.php?action=gamedetail&id='.$game['id_games'].'"><img src="db/covers/'.$game['cover'].'"><div>'.$game['tytul'].'</div><div><span>'.$game['game_platform'].'</span><span>('.$game['game_pc_platform'].')</span></div></a></li>';
+                    echo '<li class="'.$played.'"><a href="index.php?action=gamedetail&id='.$game['id_games'].'"><img src="db/covers/'.$game['cover'].'"><div class="collect-game-title">'.$game['tytul'].'</div><div class="collection-platform"><span>'.$game['game_platform'].'</span><span>('.$game['game_pc_platform'].')</span></div></a><div class="collection-delete"><button title="Usuń grę"></button></div></li>';
                 }
             ?>
         </ul>
@@ -51,5 +57,12 @@
             
             echo '<a href="index.php?action=mycollection&amp;page='.$allPage.'"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
         ?>
+    </div>
+</div>
+<div class="collection-delete-modal">
+    <div class="collection-delete-content">
+        <h2>Czy na pewno chcesz usunąć grę z kolekcji?</h2>
+        <button class="base-btn">Tak</button>
+        <button class="base-btn collection-delete-reject">Nie</button>
     </div>
 </div>

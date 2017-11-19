@@ -93,6 +93,15 @@ function onchangeOptions(){
 }
 onchangeOptions();
 
+// Delete game from collection
+$('.collection-delete button').on('click', () => {
+    $('.collection-delete-modal').fadeIn(200).css('display', 'block');
+})
+
+$('.collection-delete-reject').on('click', () => {
+    $('.collection-delete-modal').fadeOut(200).css('display', 'none');
+})
+
 // Add played games modal
 var addToPlayedModal = function(){
     $('.add-to-played-btn').on('click', function(){

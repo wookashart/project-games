@@ -20,6 +20,7 @@ div.games-list, .search-game-list {
                 width: 100%;
                 transition-duration: 200ms;
                 position: relative;
+                margin: 5px 0;
 
                 &:after {
                     content: '';
@@ -114,15 +115,18 @@ div.games-list, .search-game-list {
                 }
     
                 .hover-cover {
-                    visibility: hidden;
-                    opacity: 0;
-                    transition-duration: 300ms;
-                    position: absolute;
-                    top: -200px;
-                    z-index: 10;
+                    // visibility: hidden;
+                    // opacity: 0;
+                    // transition-duration: 300ms;
+                    // position: absolute;
+                    // top: -200px;
+                    // z-index: 10;\
+                    width: 85px;
+                    text-align: right;
     
                     img {
-                        height: 200px;
+                        height: 80px;
+                        vertical-align: middle;
                     }
                 }
     
@@ -136,11 +140,11 @@ div.games-list, .search-game-list {
                         color: $basicMenuFontColor;
                     }
     
-                    .hover-cover {
-                        visibility: visible;
-                        opacity: 1;
-                        transition-delay: 400ms;
-                    }
+                //     .hover-cover {
+                //         visibility: visible;
+                //         opacity: 1;
+                //         transition-delay: 400ms;
+                //     }
                 }
             }
         }

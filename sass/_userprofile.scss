@@ -237,6 +237,16 @@ div.user-game-collection, .user-played-games {
 
     h3 {
         margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    .have-and-finish {
+        margin: 0;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        font-weight: bold;
+        font-size: 18px;
+        border-bottom: $basicSectionBorder;
     }
 
     ul {
@@ -257,6 +267,7 @@ div.user-game-collection, .user-played-games {
             padding: 10px;
             border: $notPlayedGameBorder;
             background-color: $formBackgroundColor;
+            position: relative;
 
             &.played-game {
                 background-color: $haveGameBackground;
@@ -277,7 +288,7 @@ div.user-game-collection, .user-played-games {
             a {
                 display: flex;
                 flex-direction: column;
-                height: 230px;
+                height: 260px;
                 text-decoration: none;
                 color: $basicSectionColor;
 
@@ -291,6 +302,53 @@ div.user-game-collection, .user-played-games {
                     & + div {
                         font-weight: bold;
                         margin: 5px;
+                    }
+                }
+
+                .collection-platform {
+                    span {
+                        margin: 2px;
+
+                        &:nth-of-type(2) {
+                            font-style: italic;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .collection-delete {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+
+                button {
+                    width: 20px;
+                    height: 20px;
+                    border: none;
+                    border-radius: 50%;
+                    background-color: $inputTextBackground;
+                    box-shadow: $basicInsetBoxShadow;
+                    position: relative;
+                    cursor: pointer;
+
+                    &:before, &:after {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        width: 10px;
+                        background: black;
+                        transform: rotate(45deg);
+                        display: block;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        top: 0;
+                        bottom: 0;
+                    }
+
+                    &:after {
+                        transform: rotate(-45deg);
                     }
                 }
             }
@@ -432,5 +490,38 @@ div.edit-user-profile {
         text-align: center;
         color: $errorColor;
         font-weight: bold;
+    }
+}
+
+.collection-delete-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+
+    .collection-delete-content {
+        width: 50%;
+        text-align: center;
+        border: $basicSectionBorder;
+        margin: auto;
+        margin-top: 25%;
+        transform: translateY(-50%);
+        padding: 20px;
+        background-color: $headerBackgroundLight;
+        border-radius: 10px;
+        box-shadow: $basicBoxShadow;
+
+        h2 {
+            margin-bottom: 20px;
+            color: $basicMenuFontColor;
+        }
+
+        button {
+            margin: 30px;
+        }
     }
 }

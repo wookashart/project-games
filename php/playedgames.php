@@ -17,17 +17,20 @@
     } else {
         $gameMinut = 0;
     }
+    
+    $sumPlayedTime = ($gameHour * 60) + $gameMinut;
+  
     if(isset($connection)) {
         $haveGame = $connection->query("SELECT * FROM users_library WHERE id_user = $idUser AND id_game = $idGame");
         $alredyHave = $haveGame->num_rows;
         $game = $haveGame->fetch_assoc();
         if($alredyHave == 0){
-            $addGameLibr = $connection->query("INSERT INTO users_library VALUES (NULL, '$idUser', '$idGame', 'brak', 'brak', 'no', 'yes', '$gameHour', '$gameMinut', '$score')");    
+            $addGameLibr = $connection->query("INSERT INTO users_library VALUES (NULL, '$idUser', '$idGame', 'brak', 'brak', 'no', 'yes', '$sumPlayedTime', '$score')");    
             header('Location: ../index.php?action=gamedetail&id='.$idGame);
             exit();
             } else {
                 if($game['finish'] == 'no'){
-                    $addGameLibr = $connection->query("UPDATE users_library SET finish = 'yes', finish_game_h = '$gameHour', finish_game_m = '$gameMinut', rating = '$score' WHERE id_user = $idUser AND id_game = $idGame");
+                    $addGameLibr = $connection->query("UPDATE users_library SET finish = 'yes', finish_game_min = '$sumPlayedTime', rating = '$score' WHERE id_user = $idUser AND id_game = $idGame");
                     header('Location: ../index.php?action=gamedetail&id='.$idGame);
                     exit();
                 } else {

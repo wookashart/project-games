@@ -12,7 +12,7 @@
     $gamePlatform = implode(' / ', $_POST['game-platform']);
     $gameDateWorld = $_POST['game-date-world'];
     $gameDatePl = $_POST['game-date-pl'];
-    $gameType = addslashes($_POST['game-type']);
+    $gameType = implode(' / ', $_POST['game-type']);
     $gameProducer = addslashes($_POST['game-producer']);
     $gamePublisher = addslashes($_POST['game-publisher']);
     $gameDistributor = addslashes($_POST['game-distributor']);

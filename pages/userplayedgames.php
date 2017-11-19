@@ -12,8 +12,11 @@ $allGames = $connection->query("SELECT * FROM games, users_library WHERE games.i
     <ul>
     <?php
             while( $row = $allGames->fetch_assoc() ) {
+              
+                $lastGameH = floor($row['finish_game_min'] / 60);
+                $lastGameM = $row['finish_game_min'] % 60;
     
-                echo '<li class="played-game-item"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><img src="db/covers/'.$row['cover'].'"><div>'.$row['tytul'].'</div><div><span>Czas gry:</span><span>'.$row['finish_game_h'].'godz '.$row['finish_game_m'].' min</span></div><div><span>Moja ocena:</span><span>'.$row['rating'].'</span></div></a></li>';
+                echo '<li class="played-game-item"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><img src="db/covers/'.$row['cover'].'"><div>'.$row['tytul'].'</div><div><span>Czas gry:</span><span>'.$lastGameH.'godz '.$lastGameM.' min</span></div><div><span>Moja ocena:</span><span>'.$row['rating'].'</span></div></a></li>';
                 
             }
         ?>

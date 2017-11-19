@@ -75,7 +75,50 @@
                     <span>Data premiery - Polska</span><input type="date" name="game-date-pl">
                 </label>
                 <label>
-                    <span>Gatunek gry</span><input type="text" name="game-type">
+                    <span>Gatunek gry</span>
+                    <select multiple name="game-type[]">
+                      <option value="Action RPG">Action RPG</option>
+                      <option value="Akcja">Akcja</option>
+                      <option value="Arcade">Arcade</option>
+                      <option value="Bijatyka">Bijatyka</option>
+                      <option value="Edukacyjna">Edukacyjna</option>
+                      <option value="Ekonomiczna">Ekonomiczna</option>
+                      <option value="Erotyczna">Erotyczna</option>
+                      <option value="FPS">FPS</option>
+                      <option value="Hack &amp; Slash">Hack &amp; Slash</option>
+                      <option value="Horror">Horror</option>
+                      <option value="jRPG">jRPG</option>
+                      <option value="Karcianka">Karcianka</option>
+                      <option value="Logiczna">Logiczna</option>
+                      <option value="MMO">MMO</option>
+                      <option value="MMORPG">MMORPG</option>
+                      <option value="Muzyczna">Muzyczna</option>
+                      <option value="Platformowa">Platformowa</option>
+                      <option value="Point &amp; click">Point &amp; click</option>
+                      <option value="Przeglądarkowa">Przeglądarkowa</option>
+                      <option value="Przygodowa">Przygodowa</option>
+                      <option value="Rail Shooter">Rail Shooter</option>
+                      <option value="Roguelike">Roguelike</option>
+                      <option value="RPG">RPG</option>
+                      <option value="RPS">RPS</option>
+                      <option value="RTS">RTS</option>
+                      <option value="Skradanka">Skradanka</option>
+                      <option value="Sportowa">Sportowa</option>
+                      <option value="Strategiczna">Strategiczna</option>
+                      <option value="Survival">Survival</option>
+                      <option value="Symulacja">Symulacja</option>
+                      <option value="Taktyczna">Taktyczna</option>
+                      <option value="Tekstowa">Tekstowa</option>
+                      <option value="Interaktywny film">Interaktywny film</option>
+                      <option value="Towarzyska">Towarzyska</option>
+                      <option value="Tower defense">Tower Defense</option>
+                      <option value="TPP">TPP</option>
+                      <option value="Tradycyjna">Tradycyjna</option>
+                      <option value="Turowa">Turowa</option>
+                      <option value="Wyścigi">Wyścigi</option>
+                      <option value="Visual Novel">Visual Novel</option>
+                      <option value="Zręcznościowa">Zręcznościowa</option>
+                    </select>
                 </label>
                 <label>
                     <span>Producent</span><input type="text" name="game-producer">

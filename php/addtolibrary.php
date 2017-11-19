@@ -15,7 +15,7 @@
         $alredyHave = $haveGame->num_rows;
         $game = $haveGame->fetch_assoc();
         if ($alredyHave == 0){
-            $addGameLibr = $connection->query("INSERT INTO users_library VALUES (NULL, '$idUser', '$idGame', '$selectPlatform', '$selectDistribution', 'yes', 'no', 0, 0, 0)");
+            $addGameLibr = $connection->query("INSERT INTO users_library VALUES (NULL, '$idUser', '$idGame', '$selectPlatform', '$selectDistribution', 'yes', 'no', 0, 0)");
             header('Location: ../index.php?action=gamedetail&id='.$idGame);
             exit();
             } else {

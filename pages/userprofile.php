@@ -44,22 +44,19 @@
                 $howManyGames = $connection->query("SELECT count(*) AS allgames FROM users_library WHERE id_user = {$_SESSION['id']} AND have = 'yes'");
                 $allGames = $howManyGames->fetch_assoc();
                 echo '<p><span class="user-info1">Gier w kolekcji:</span><span class="user-info2">'.$allGames['allgames'].'</span></p>';
-                $allFinishGames = $connection->query("SELECT count(*) AS allfinishgames, sum(finish_game_h) AS sumHour, sum(finish_game_m) AS sumMin FROM users_library WHERE id_user = {$_SESSION['id']} AND finish = 'yes'");
+                $allFinishGames = $connection->query("SELECT count(*) AS allfinishgames, sum(finish_game_min) AS sumMin FROM users_library WHERE id_user = {$_SESSION['id']} AND finish = 'yes'");
                 $endGames = $allFinishGames->fetch_assoc();
                 echo '<p><span class="user-info1">Ukończonych gier:</span><span class="user-info2">'.$endGames['allfinishgames'].'</span></p>';
-                $sumGodz = $endGames['sumHour'];
+  
                 $sumMin = $endGames['sumMin'];
                 
-                $allSec = ($sumGodz * 3600) + ($sumMin * 60);
-                
-                $allDay = $allSec / 86400;
-                $allDay2 = floor($allDay);
-                
-                $allGodz = ($allSec % 86400) / 3600;
-                $allGodz2 = floor($allGodz);
-                
-                $allMin = ($allSec % 3600) / 60;
-                echo '<div><div class="user-info1">Łączny czas w grach:</div><div class="user-info2"><span class="play-time">'.$allDay2.'</span><span>Dni</span><span class="play-time">'.$allGodz2.'</span><span>Godz</span><span class="play-time">'.$allMin.'</span><span>Min</span></div></div>';
+                $allDay = floor($sumMin / 1440);
+                $allHour = floor(($sumMin % 1440) / 60);
+                $allMin = $sumMin % 60;
+  
+                echo '<div><div class="user-info1">Łączny czas w grach:</div><div class="user-info2"><span class="play-time">'.$allDay.'</span><span>Dni</span><span class="play-time">'.$allHour.'</span><span>Godz</span><span class="play-time">'.$allMin.'</span><span>Min</span></div></div>';
+  
+  
             ?>
         </div>
         <a href="index.php?action=editprofile" class="edit-profile-btn">Edytuj profil</a>
@@ -96,13 +93,16 @@
             }
         
             echo '<a href="index.php?action=playedgames&amp;page=1" class="see-all">(Zobacz wszystkie)</a>';
-            $myPlayedGames = $connection->query("SELECT games.id_games, games.tytul, games.cover, users_library.rating, users_library.finish_game_h, users_library.finish_game_m FROM games, users_library WHERE games.id_games = users_library.id_game AND users_library.id_user = {$_SESSION['id']} AND finish = 'yes' ORDER BY users_library.finish_game_h DESC LIMIT 3");
+            $myPlayedGames = $connection->query("SELECT games.id_games, games.tytul, games.cover, users_library.rating, users_library.finish_game_min FROM games, users_library WHERE games.id_games = users_library.id_game AND users_library.id_user = {$_SESSION['id']} AND finish = 'yes' ORDER BY users_library.finish_game_min DESC LIMIT 3");
         ?>
 
         <ul>
             <?php
                 while($lastPlayed = $myPlayedGames->fetch_assoc()){
-                    echo '<li><a href="index.php?action=gamedetail&id='.$lastPlayed['id_games'].'"><img src="db/covers/'.$lastPlayed['cover'].'"><span class="game-title">'.$lastPlayed['tytul'].'</span><span>Ocena: '.$lastPlayed['rating'].'</span><span>Czas gry: '.$lastPlayed['finish_game_h'].':'.$lastPlayed['finish_game_m'].'</span></a></li>';
+                    $lastGameH = floor($lastPlayed['finish_game_min'] / 60);
+                    $lastGameM = $lastPlayed['finish_game_min'] % 60;
+                  
+                    echo '<li><a href="index.php?action=gamedetail&id='.$lastPlayed['id_games'].'"><img src="db/covers/'.$lastPlayed['cover'].'"><span class="game-title">'.$lastPlayed['tytul'].'</span><span>Ocena: '.$lastPlayed['rating'].'</span><span>Czas gry: '.$lastGameH.':'.$lastGameM.'</span></a></li>';
                 }
                 
             ?>
