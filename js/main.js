@@ -94,8 +94,8 @@ function onchangeOptions(){
 onchangeOptions();
 
 // Delete game from collection
-function removeGameFromCollection(nr) {
-    let gameNrClass = document.getElementsByClassName(nr);
+function removeGameFromCollection(id) {
+    let gameNrClass = document.getElementsByClassName(id);
     
     $(gameNrClass).find('.collection-delete-modal').fadeIn(200).css('display', 'block');
 }
@@ -127,6 +127,36 @@ function closeFailModal() {
     $('.fail-remove-container').fadeOut(200, () => {
         $(this).css('display', 'none');
     });
+}
+
+// Delete from played games
+function removeGameFromLastPlayed(id) {
+    let gameIdClass = document.getElementsByClassName(id);
+    
+    $(gameIdClass).find('.played-delete-modal').fadeIn(200).css('display', 'block');
+}
+
+$('.played-delete-reject').on('click', () => {
+    $('.played-delete-modal').fadeOut(200, () => {
+        $(this).css('display', 'none');
+    });
+})
+
+function acceptRemoveFromLastPlayed(id) {
+    $.ajax ({
+        method: "POST",
+        url: "php/removefromplayed.php",
+        data: { idGame: id }
+    })
+    .done(() => {
+        location.reload();
+    })
+    .fail(() => {
+        let failCom = '<div class="fail-remove-container"><div class="fail-remove-content"><h2>Niestety nie udało się usunąć gry! Odczekaj chwilę i spróbuj ponownie.</h2><button class="base-btn fail-remove-close" onclick="closeFailModal()">Zamknij</button></div></div>';
+    
+        $(failCom).appendTo('.user-played-games');
+        $('.played-delete-modal').css('display', 'none');
+    })
 }
 
 // Add played games modal

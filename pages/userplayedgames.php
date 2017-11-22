@@ -16,7 +16,7 @@ $allGames = $connection->query("SELECT * FROM games, users_library WHERE games.i
                 $lastGameH = floor($row['finish_game_min'] / 60);
                 $lastGameM = $row['finish_game_min'] % 60;
     
-                echo '<li class="played-game-item"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><img src="db/covers/'.$row['cover'].'"><div>'.$row['tytul'].'</div><div><span>Czas gry:</span><span>'.$lastGameH.'godz '.$lastGameM.' min</span></div><div><span>Moja ocena:</span><span>'.$row['rating'].'</span></div></a></li>';
+                echo '<li class="played-game-item '.$row['id_games'].'"><a href="index.php?action=gamedetail&id='.$row['id_games'].'"><img src="db/covers/'.$row['cover'].'"><div>'.$row['tytul'].'</div><div><span>Czas gry:</span><span>'.$lastGameH.'godz '.$lastGameM.' min</span></div><div><span>Moja ocena:</span><span>'.$row['rating'].'</span></div></a><div class="played-delete"><button title="Usuń grę" onclick="removeGameFromLastPlayed('.$row['id_games'].')"></button></div><div class="played-delete-modal"><div class="played-delete-content"><h2>Czy na pewno chcesz usunąć &quot'.$row['tytul'].'&quot z gier, w które grałeś?</h2><button class="base-btn" onclick="acceptRemoveFromLastPlayed('.$row['id_games'].')">Tak</button><button class="base-btn played-delete-reject">Nie</button></div></div></li>';
                 
             }
         ?>

@@ -1574,11 +1574,11 @@ div.user-game-collection ul, .user-played-games ul {
         div.user-game-collection ul li a .collection-platform span:nth-of-type(2), .user-played-games ul li a .collection-platform span:nth-of-type(2) {
           font-style: italic;
           font-size: 14px; }
-    div.user-game-collection ul li .collection-delete, .user-played-games ul li .collection-delete {
+    div.user-game-collection ul li .collection-delete, div.user-game-collection ul li .played-delete, .user-played-games ul li .collection-delete, .user-played-games ul li .played-delete {
       position: absolute;
       bottom: 0;
       right: 0; }
-      div.user-game-collection ul li .collection-delete button, .user-played-games ul li .collection-delete button {
+      div.user-game-collection ul li .collection-delete button, div.user-game-collection ul li .played-delete button, .user-played-games ul li .collection-delete button, .user-played-games ul li .played-delete button {
         width: 20px;
         height: 20px;
         border: none;
@@ -1588,7 +1588,7 @@ div.user-game-collection ul, .user-played-games ul {
                 box-shadow: inset 0 0 13px -3px black;
         position: relative;
         cursor: pointer; }
-        div.user-game-collection ul li .collection-delete button:before, div.user-game-collection ul li .collection-delete button:after, .user-played-games ul li .collection-delete button:before, .user-played-games ul li .collection-delete button:after {
+        div.user-game-collection ul li .collection-delete button:before, div.user-game-collection ul li .collection-delete button:after, div.user-game-collection ul li .played-delete button:before, div.user-game-collection ul li .played-delete button:after, .user-played-games ul li .collection-delete button:before, .user-played-games ul li .collection-delete button:after, .user-played-games ul li .played-delete button:before, .user-played-games ul li .played-delete button:after {
           content: '';
           position: absolute;
           height: 2px;
@@ -1602,7 +1602,7 @@ div.user-game-collection ul, .user-played-games ul {
           margin: auto;
           top: 0;
           bottom: 0; }
-        div.user-game-collection ul li .collection-delete button:after, .user-played-games ul li .collection-delete button:after {
+        div.user-game-collection ul li .collection-delete button:after, div.user-game-collection ul li .played-delete button:after, .user-played-games ul li .collection-delete button:after, .user-played-games ul li .played-delete button:after {
           -webkit-transform: rotate(-45deg);
                   transform: rotate(-45deg); }
 
@@ -1690,7 +1690,7 @@ div.edit-user-profile .img-error {
   color: #e02929;
   font-weight: bold; }
 
-.collection-delete-modal, .fail-remove-container {
+.collection-delete-modal, .fail-remove-container, .played-delete-modal {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -1700,7 +1700,7 @@ div.edit-user-profile .img-error {
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
   z-index: 9; }
-  .collection-delete-modal .collection-delete-content, .collection-delete-modal .fail-remove-content, .fail-remove-container .collection-delete-content, .fail-remove-container .fail-remove-content {
+  .collection-delete-modal .collection-delete-content, .collection-delete-modal .fail-remove-content, .collection-delete-modal .played-delete-content, .fail-remove-container .collection-delete-content, .fail-remove-container .fail-remove-content, .fail-remove-container .played-delete-content, .played-delete-modal .collection-delete-content, .played-delete-modal .fail-remove-content, .played-delete-modal .played-delete-content {
     width: 50%;
     text-align: center;
     border: 1px solid #000000;
@@ -1713,11 +1713,11 @@ div.edit-user-profile .img-error {
     border-radius: 10px;
     -webkit-box-shadow: 0 0 13px -3px black;
             box-shadow: 0 0 13px -3px black; }
-    .collection-delete-modal .collection-delete-content h2, .collection-delete-modal .fail-remove-content h2, .fail-remove-container .collection-delete-content h2, .fail-remove-container .fail-remove-content h2 {
+    .collection-delete-modal .collection-delete-content h2, .collection-delete-modal .fail-remove-content h2, .collection-delete-modal .played-delete-content h2, .fail-remove-container .collection-delete-content h2, .fail-remove-container .fail-remove-content h2, .fail-remove-container .played-delete-content h2, .played-delete-modal .collection-delete-content h2, .played-delete-modal .fail-remove-content h2, .played-delete-modal .played-delete-content h2 {
       margin-bottom: 20px;
       color: #b9c0da;
       text-transform: capitalize; }
-    .collection-delete-modal .collection-delete-content button, .collection-delete-modal .fail-remove-content button, .fail-remove-container .collection-delete-content button, .fail-remove-container .fail-remove-content button {
+    .collection-delete-modal .collection-delete-content button, .collection-delete-modal .fail-remove-content button, .collection-delete-modal .played-delete-content button, .fail-remove-container .collection-delete-content button, .fail-remove-container .fail-remove-content button, .fail-remove-container .played-delete-content button, .played-delete-modal .collection-delete-content button, .played-delete-modal .fail-remove-content button, .played-delete-modal .played-delete-content button {
       margin: 30px; }
 
 .fail-remove-container {

@@ -317,7 +317,7 @@ div.user-game-collection, .user-played-games {
                 }
             }
 
-            .collection-delete {
+            .collection-delete, .played-delete {
                 position: absolute;
                 bottom: 0;
                 right: 0;
@@ -493,7 +493,7 @@ div.edit-user-profile {
     }
 }
 
-.collection-delete-modal, .fail-remove-container {
+.collection-delete-modal, .fail-remove-container, .played-delete-modal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -504,7 +504,7 @@ div.edit-user-profile {
     display: none;
     z-index: 9;
 
-    .collection-delete-content, .fail-remove-content {
+    .collection-delete-content, .fail-remove-content, .played-delete-content {
         width: 50%;
         text-align: center;
         border: $basicSectionBorder;
