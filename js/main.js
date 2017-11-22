@@ -94,13 +94,40 @@ function onchangeOptions(){
 onchangeOptions();
 
 // Delete game from collection
-$('.collection-delete button').on('click', () => {
-    $('.collection-delete-modal').fadeIn(200).css('display', 'block');
-})
+function removeGameFromCollection(nr) {
+    let gameNrClass = document.getElementsByClassName(nr);
+    
+    $(gameNrClass).find('.collection-delete-modal').fadeIn(200).css('display', 'block');
+}
 
 $('.collection-delete-reject').on('click', () => {
-    $('.collection-delete-modal').fadeOut(200).css('display', 'none');
+    $('.collection-delete-modal').fadeOut(200, () => {
+        $(this).css('display', 'none');
+    });
 })
+
+function acceptRemoveFromCollection(id) {
+    $.ajax ({
+        method: "POST",
+        url: "php/removefromcollection.php",
+        data: { idGame: id }
+    })
+    .done(() => {
+        location.reload();
+    })
+    .fail(() => {
+        let failCom = '<div class="fail-remove-container"><div class="fail-remove-content"><h2>Niestety nie udało się usunąć gry! Odczekaj chwilę i spróbuj ponownie.</h2><button class="base-btn fail-remove-close" onclick="closeFailModal()">Zamknij</button></div></div>';
+    
+        $(failCom).appendTo('.user-game-collection');
+        $('.collection-delete-modal').css('display', 'none');
+    })
+}
+
+function closeFailModal() {
+    $('.fail-remove-container').fadeOut(200, () => {
+        $(this).css('display', 'none');
+    });
+}
 
 // Add played games modal
 var addToPlayedModal = function(){
@@ -117,5 +144,5 @@ var addToPlayedModal = function(){
 addToPlayedModal();
 
 var slider = new Slider("#ex8", {
-	tooltip: 'always'
+  tooltip: 'always'
 });

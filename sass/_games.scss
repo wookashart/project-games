@@ -115,12 +115,6 @@ div.games-list, .search-game-list {
                 }
     
                 .hover-cover {
-                    // visibility: hidden;
-                    // opacity: 0;
-                    // transition-duration: 300ms;
-                    // position: absolute;
-                    // top: -200px;
-                    // z-index: 10;\
                     width: 85px;
                     text-align: right;
     
@@ -139,12 +133,6 @@ div.games-list, .search-game-list {
                     span {
                         color: $basicMenuFontColor;
                     }
-    
-                //     .hover-cover {
-                //         visibility: visible;
-                //         opacity: 1;
-                //         transition-delay: 400ms;
-                //     }
                 }
             }
         }
@@ -169,6 +157,12 @@ div.games-list, .search-game-list {
             text-align: center;
         }
     }
+
+.search-game-list {
+    .games-list-item {
+        flex-direction: row-reverse;
+    }
+}
     
 div.game-detail {
     margin-top: 40px;

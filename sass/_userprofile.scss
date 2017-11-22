@@ -493,7 +493,7 @@ div.edit-user-profile {
     }
 }
 
-.collection-delete-modal {
+.collection-delete-modal, .fail-remove-container {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -502,8 +502,9 @@ div.edit-user-profile {
     margin: auto;
     background-color: rgba(0,0,0,0.8);
     display: none;
+    z-index: 9;
 
-    .collection-delete-content {
+    .collection-delete-content, .fail-remove-content {
         width: 50%;
         text-align: center;
         border: $basicSectionBorder;
@@ -518,10 +519,15 @@ div.edit-user-profile {
         h2 {
             margin-bottom: 20px;
             color: $basicMenuFontColor;
+            text-transform: capitalize;
         }
 
         button {
             margin: 30px;
         }
     }
+}
+
+.fail-remove-container {
+    display: block;
 }

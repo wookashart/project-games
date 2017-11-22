@@ -771,6 +771,12 @@ div.games-list, .search-game-list {
     margin-top: 100px;
     text-align: center; }
 
+.search-game-list .games-list-item {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+
 div.game-detail {
   margin-top: 40px; }
   div.game-detail .return-game-list {
@@ -1684,7 +1690,7 @@ div.edit-user-profile .img-error {
   color: #e02929;
   font-weight: bold; }
 
-.collection-delete-modal {
+.collection-delete-modal, .fail-remove-container {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -1692,8 +1698,9 @@ div.edit-user-profile .img-error {
   right: 0;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.8);
-  display: none; }
-  .collection-delete-modal .collection-delete-content {
+  display: none;
+  z-index: 9; }
+  .collection-delete-modal .collection-delete-content, .collection-delete-modal .fail-remove-content, .fail-remove-container .collection-delete-content, .fail-remove-container .fail-remove-content {
     width: 50%;
     text-align: center;
     border: 1px solid #000000;
@@ -1706,11 +1713,15 @@ div.edit-user-profile .img-error {
     border-radius: 10px;
     -webkit-box-shadow: 0 0 13px -3px black;
             box-shadow: 0 0 13px -3px black; }
-    .collection-delete-modal .collection-delete-content h2 {
+    .collection-delete-modal .collection-delete-content h2, .collection-delete-modal .fail-remove-content h2, .fail-remove-container .collection-delete-content h2, .fail-remove-container .fail-remove-content h2 {
       margin-bottom: 20px;
-      color: #b9c0da; }
-    .collection-delete-modal .collection-delete-content button {
+      color: #b9c0da;
+      text-transform: capitalize; }
+    .collection-delete-modal .collection-delete-content button, .collection-delete-modal .fail-remove-content button, .fail-remove-container .collection-delete-content button, .fail-remove-container .fail-remove-content button {
       margin: 30px; }
+
+.fail-remove-container {
+  display: block; }
 
 div.articles-list {
   margin-top: 40px; }

@@ -25,7 +25,7 @@
                     } else {
                         $played = 'not-played-game';
                     }
-                    echo '<li class="'.$played.'"><a href="index.php?action=gamedetail&id='.$game['id_games'].'"><img src="db/covers/'.$game['cover'].'"><div class="collect-game-title">'.$game['tytul'].'</div><div class="collection-platform"><span>'.$game['game_platform'].'</span><span>('.$game['game_pc_platform'].')</span></div></a><div class="collection-delete"><button title="Usuń grę"></button></div></li>';
+                    echo '<li class="collection-game '.$game['id_games'].' '.$played.'"><a href="index.php?action=gamedetail&id='.$game['id_games'].'"><img src="db/covers/'.$game['cover'].'"><div class="collect-game-title">'.$game['tytul'].'</div><div class="collection-platform"><span>'.$game['game_platform'].'</span><span>('.$game['game_pc_platform'].')</span></div></a><div class="collection-delete"><button title="Usuń grę" onclick="removeGameFromCollection('.$game['id_games'].')"></button></div><div class="collection-delete-modal"><div class="collection-delete-content"><h2>Czy na pewno chcesz usunąć &quot'.$game['tytul'].'&quot z kolekcji?</h2><button class="base-btn" onclick="acceptRemoveFromCollection('.$game['id_games'].')">Tak</button><button class="base-btn collection-delete-reject">Nie</button></div></div></li>';
                 }
             ?>
         </ul>
@@ -57,12 +57,5 @@
             
             echo '<a href="index.php?action=mycollection&amp;page='.$allPage.'"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>';
         ?>
-    </div>
-</div>
-<div class="collection-delete-modal">
-    <div class="collection-delete-content">
-        <h2>Czy na pewno chcesz usunąć grę z kolekcji?</h2>
-        <button class="base-btn">Tak</button>
-        <button class="base-btn collection-delete-reject">Nie</button>
     </div>
 </div>
