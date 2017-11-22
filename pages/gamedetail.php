@@ -7,6 +7,18 @@
     
     $_SESSION['gameId'] = $_GET['id'];
 
+    if ($detail['data_premiery'] == '0000-00-00') {
+        $dateWorld = 'Brak danych';
+    } else {
+        $dateWorld = $detail['data_premiery'];
+    }
+
+    if ($detail['data_premiery_pl'] == '0000-00-00') {
+        $datePl = 'Brak danych';
+    } else {
+        $datePl = $detail['data_premiery_pl'];
+    }
+
     ?>
     
     <h1><?= $detail['tytul'] ?></h1>
@@ -29,11 +41,11 @@
             </p>
             <p>
                 <span class="game-info1">Data premiery na świecie:</span>
-                <span class="game-info2"><?= $detail['data_premiery'] ?></span>
+                <span class="game-info2"><?= $dateWorld ?></span>
             </p>
             <p>
                 <span class="game-info1">Data premiery w Polsce:</span>
-                <span class="game-info2"><?= $detail['data_premiery_pl'] ?></span>
+                <span class="game-info2"><?= $datePl ?></span>
             </p>
             <p>
                 <span class="game-info1">Gatunek:</span>
@@ -203,6 +215,19 @@
 
             while($tut = $tutConnect->fetch_assoc()){
                 echo '<li><a href="index.php?action=tutorial&amp;id='.$tut['tut_id'].'">'.$tut['tut_title'].'</a></li>';
+            }
+
+            echo '</ul></div>';
+        }
+
+        $dlcConnect = $connection->query("SELECT * FROM dlc WHERE id_game = {$_SESSION['gameId']}");
+        $howManyDlc = $dlcConnect->num_rows;
+
+        if ($howManyDlc > 0) {
+            echo '<div class="game-tutorials game-dlc"><h3>Oficjalne Dodatki</h3><ul>';
+
+            while($dlc = $dlcConnect->fetch_assoc()){
+                echo '<li><a href="index.php?action=dlc&amp;id='.$dlc['id_dlc'].'"><div class="dlc-cover"><img src="db/covers_dlc/'.$dlc['dlc_cover'].'" /></div><div class="dlc-title">'.$dlc['dlc_name'].'</div></a></li>';
             }
 
             echo '</ul></div>';

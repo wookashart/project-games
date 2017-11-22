@@ -550,6 +550,11 @@ body.admin-panel {
         -ms-flex: 1;
             flex: 1;
     margin-right: 100px; }
+  .games-administration .admin-add-new-game form .dlc-data label {
+    margin: auto;
+    width: 65%; }
+  .games-administration .admin-add-new-game form .dlc-data .one-choose-select {
+    height: 30px; }
   .games-administration .admin-add-new-game form .hardware-requirements {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -990,6 +995,43 @@ div.game-detail {
         div.game-detail .game-tutorials ul li a:hover:after {
           -webkit-transform: scaleX(1);
                   transform: scaleX(1); }
+
+.game-dlc h3 {
+  margin-top: 50px; }
+
+.game-dlc ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .game-dlc ul li {
+    width: 12.5%;
+    -webkit-box-shadow: 0 0 13px -3px black;
+            box-shadow: 0 0 13px -3px black;
+    padding: 5px;
+    padding-top: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    -webkit-transition: 0.25s all ease-in-out;
+    transition: 0.25s all ease-in-out; }
+    .game-dlc ul li:hover {
+      background-color: #2c5db1; }
+      .game-dlc ul li:hover .dlc-title {
+        color: #b9c0da; }
+    .game-dlc ul li .dlc-cover {
+      text-align: center;
+      min-height: 180px; }
+      .game-dlc ul li .dlc-cover img {
+        width: 85%; }
+    .game-dlc ul li .dlc-title {
+      text-align: center;
+      font-size: 16px;
+      color: #000000; }
 
 div.home-page {
   display: -webkit-box;

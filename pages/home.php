@@ -33,7 +33,7 @@
             </div>
         </section>
         <section class="last-add-game">
-            <h3>Ostatnio dodana gra</h3>
+            <h3>Ostatnio dodane gry</h3>
             <div class="last-add-game-container">
             <?php
 
@@ -50,6 +50,29 @@
                     }
                     
                     echo '</a></div><div class="last-add-game-info"><h4>'.$row['tytul'].'</h4><div class="last-add-game-platform">'.$row['platforma'].'</div><div class="last-add-game-type">'.$row['gatunek'].'</div></div></div>';
+                }
+
+            ?>
+            </div>
+        </section>
+        <section class="last-add-game">
+            <h3>Ostatnio dodane DLC</h3>
+            <div class="last-add-game-container">
+            <?php
+
+                $allGames = $connection->query("SELECT * FROM dlc, games WHERE games.id_games = dlc.id_game ORDER BY dlc.id_dlc DESC LIMIT 3");
+
+                
+                while ($row = $allGames->fetch_assoc()) {
+                    echo '<div class="last-add-game-item"><div class="last-add-game-cover"><a href="index.php?action=dlc&id='.$row['id_dlc'].'">';
+                    
+                    if($row['dlc_cover'] != null){
+                        echo '<img src="db/covers_dlc/'.$row['dlc_cover'].'">';
+                    } else {
+                        echo '<img src="img/no-cover.png">';
+                    }
+                    
+                    echo '</a></div><div class="last-add-game-info"><h4>'.$row['tytul'].' - '.$row['dlc_name'].'</h4><div class="last-add-game-platform">'.$row['dlc_platform'].'</div></div></div>';
                 }
 
             ?>

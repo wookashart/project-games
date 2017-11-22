@@ -451,3 +451,48 @@ div.game-detail {
         }
     }
 }
+
+.game-dlc {
+    h3 {
+        margin-top: 50px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+            width: 12.5%;
+            box-shadow: $basicBoxShadow;
+            padding: 5px;
+            padding-top: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: 0.25s all ease-in-out;
+
+            &:hover {
+                background-color: $headerBackgroundLight;
+
+                .dlc-title {
+                    color: $basicMenuFontColor;
+                }
+            }
+
+            .dlc-cover {
+                text-align: center;
+                min-height: 180px;
+                
+                img {
+                    width: 85%;
+                }
+            }
+
+            .dlc-title {
+                text-align: center;
+                font-size: 16px;
+                color: $basicSectionColor;
+            }
+        }
+    }
+}

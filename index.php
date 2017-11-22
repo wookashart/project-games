@@ -120,6 +120,7 @@
                     case 'mycollection' : include 'pages/usergamecollection.php'; break;
                     case 'playedgames' : include 'pages/userplayedgames.php'; break;
                     case 'searchgame' : include 'pages/searchgame.php'; break;
+                    case 'dlc' : include 'pages/dlcdetail.php'; break;
                     default : include 'pages/home.php'; break;
                 }
             ?>

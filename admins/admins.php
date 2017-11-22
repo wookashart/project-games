@@ -40,6 +40,17 @@
                             </li>
                         </ul>
                     </li>
+                    <li>
+                        <span>Zarządzanie DLC</span>
+                        <ul>
+                            <li>
+                                <a href="admins.php?id=adddlc">Dodaj DLC</a>                        
+                            </li>
+                            <li>
+                                <a href="admins.php?id=editdlc">Edycja DLC</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li><img src="../img/icons/browser.svg">
                         <span>Artykuły</span>
                         <ul>
@@ -72,6 +83,8 @@
                         case 'admins' : include 'adminpanel.php'; break;
                         case 'addgame' : include 'admingames.php'; break;
                         case 'editgame' : include 'admineditgame.php'; break;
+                        case 'adddlc' : include 'admindlc.php'; break;
+                        case 'editdlc' : include 'admineditdlc.php'; break;
                         case 'addarticle' : include 'adminarticles.php'; break;
                         case 'editarticle' : include 'admineditarticles.php'; break;
                         case 'addtutorial' : include 'admintutorials.php'; break;

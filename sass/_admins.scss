@@ -58,6 +58,17 @@ body.admin-panel {
                 margin-right: 100px;
             }
 
+            .dlc-data {
+                label {
+                    margin: auto;
+                    width: 65%;
+                }
+
+                .one-choose-select {
+                    height: 30px;
+                }
+            }
+
             .hardware-requirements {
                 flex: 1;
 
